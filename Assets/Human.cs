@@ -1,23 +1,33 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Human : MonoBehaviour
 {
-    private Collider2D collider;
+    private CircleCollider2D collider;
 
     private HPBar hpbar;
     private float maxHP = 10;
     private float currentHP = 10;
-    private float hpDecreaseSpeed = 5;
+    private float hpDecreaseSpeed = 3;
     private int collideByVineCount = 0;
+    private int numberOfPoints = 12;
+    private float checkRadius;
+    private string vineTag = "Vine";
+    private LayerMask layerMask;
+    private bool isRunningAway = false;
+    private float runAwayTime = 1;
     private void Awake()
     {
         hpbar = GetComponentInChildren<HPBar>();
-        collider = GetComponent<Collider2D>();
+        collider = GetComponent<CircleCollider2D>();
         currentHP = maxHP;
         hpbar.init(maxHP);
+        checkRadius = collider.radius * collider.transform.lossyScale.x;
+        layerMask = 1 << LayerMask.NameToLayer(vineTag);
     }
 
     // Start is called before the first frame update
@@ -34,21 +44,88 @@ public class Human : MonoBehaviour
             
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
             hpbar.updateCurrent(currentHP);
+            if (!isRunningAway)
+            {
+                
+                RunAway();
+            }
         }
+    }
+
+    Vector3 findOutRunAwayPointByDistance(int startIndex, float angleStep, int distanceScale)
+    {
+        for (int i = 0; i < numberOfPoints; i++)
+        {
+            float angle = angleStep * ((i+startIndex)%numberOfPoints);
+            Vector2 point = transform.position + new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * checkRadius *distanceScale;
+
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(point, checkRadius, layerMask);
+            bool hit = false;
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.gameObject.CompareTag(vineTag))
+                {
+                    hit = true;
+                }
+            }
+
+            if (!hit)
+            {
+                return point;
+            }
+        }
+
+        return Vector3.positiveInfinity;
+    }
+    
+    private Vector3 RunAwayPoint()
+    {
+        float angleStep = 360f / numberOfPoints;
+        int startIndex = Random.Range(0, numberOfPoints);
+        for (int i = 2; i < 10; i += 2)
+        {
+            var point = findOutRunAwayPointByDistance(startIndex, angleStep, i);
+            if (point.x != Vector3.positiveInfinity.x)
+            {
+                return point;
+            }
+        }
+
+        var startAngle =startIndex*angleStep;
+        return transform.position + new Vector3(Mathf.Cos(startAngle * Mathf.Deg2Rad), Mathf.Sin(startAngle * Mathf.Deg2Rad), 0) * checkRadius;
+    }
+    
+    void RunAway()
+    {
+
+        //transform.position = RunAwayPoint();
+        isRunningAway = true;
+        var target = RunAwayPoint();
+        var distance = (target - transform.position).magnitude;
+        var time = distance * runAwayTime;
+        transform.DOMove(RunAwayPoint(), time).SetEase(Ease.Linear);
+        StartCoroutine(finishedRunAway(time));
+    }
+
+    IEnumerator finishedRunAway(float time)
+    {
+        yield return new WaitForSeconds(time);
+        isRunningAway = false;
+        
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Vine")
+        if (other.tag == vineTag)
         {
             collideByVineCount++;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Vine")
+        if (other.tag == vineTag)
         {
             collideByVineCount--;
         }
