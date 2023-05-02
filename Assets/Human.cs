@@ -19,7 +19,7 @@ public class Human : MonoBehaviour
     private string vineTag = "Vine";
     private LayerMask layerMask;
     private bool isRunningAway = false;
-    private float runAwayTime = 1;
+    private float runAwayTime = 0.3f;
     private void Awake()
     {
         hpbar = GetComponentInChildren<HPBar>();
