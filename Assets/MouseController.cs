@@ -13,6 +13,7 @@ public class MouseController : MonoBehaviour
         {
             if (!MPProgressManager.Instance.CanStartDraw())
             {
+                FloatingTextManager.Instance.addText("Not Enough Energy", Vector3.zero, Color.black);
                 return;
             }
             spriteShapeControllers = GameObject.FindObjectsOfType<SpriteShapeController>();

@@ -12,7 +12,7 @@ public class Human : MonoBehaviour
     private HPBar hpbar;
     private float maxHP = 10;
     private float currentHP = 10;
-    private float hpDecreaseSpeed = 3;
+    private float hpDecreaseSpeed = 2;
     private int collideByVineCount = 0;
     private int numberOfPoints = 12;
     private float checkRadius;
@@ -39,16 +39,16 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isRunningAway)
+        {
+                
+            RunAway();
+        }
         if (collideByVineCount > 0)
         {
             
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
             hpbar.updateCurrent(currentHP);
-            if (!isRunningAway)
-            {
-                
-                RunAway();
-            }
         }
     }
 
@@ -95,6 +95,8 @@ public class Human : MonoBehaviour
         return transform.position + new Vector3(Mathf.Cos(startAngle * Mathf.Deg2Rad), Mathf.Sin(startAngle * Mathf.Deg2Rad), 0) * checkRadius;
     }
     
+    
+    
     void RunAway()
     {
 
@@ -107,6 +109,8 @@ public class Human : MonoBehaviour
         StartCoroutine(finishedRunAway(time));
     }
 
+    
+    
     IEnumerator finishedRunAway(float time)
     {
         yield return new WaitForSeconds(time);
