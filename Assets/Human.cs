@@ -20,6 +20,8 @@ public class Human : MonoBehaviour
     private LayerMask layerMask;
     private bool isRunningAway = false;
     private float runAwayTime = 0.3f;
+
+    private HumanAI humanAi;
     private void Awake()
     {
         hpbar = GetComponentInChildren<HPBar>();
@@ -28,6 +30,8 @@ public class Human : MonoBehaviour
         hpbar.init(maxHP);
         checkRadius = collider.radius * collider.transform.lossyScale.x;
         layerMask = 1 << LayerMask.NameToLayer(vineTag);
+        humanAi = GetComponent<HumanAI>();
+        ;
     }
 
     // Start is called before the first frame update
@@ -39,16 +43,20 @@ public class Human : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isRunningAway)
-        {
-                
-            RunAway();
-        }
+        // if (!isRunningAway)
+        // {
+        //         
+        //     RunAway();
+        // }
         if (collideByVineCount > 0)
         {
             
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
             hpbar.updateCurrent(currentHP);
+            if (!humanAi.isEscaping)
+            {
+                humanAi.Escape();
+            }
         }
     }
 

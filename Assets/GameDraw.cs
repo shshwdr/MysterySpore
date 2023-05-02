@@ -64,6 +64,8 @@ public class GameDraw : MonoBehaviour
         //GetComponent<Sprinkle>().UpdateSprinkles();
         GetComponent<SequentialWidthChange>().FinishCreation();
         MPProgressManager.Instance.stopDraw();
+
+        GameObject.FindObjectOfType<AstarPath>().Scan();
     }
     // Update is called once per frame
     void Update()
@@ -95,6 +97,13 @@ public class GameDraw : MonoBehaviour
             spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.3f, 0.5f));
             lastPosition = mp;
 
+            GameObject.FindObjectOfType<AstarPath>().Scan();
+
+            // foreach (var humanAi in HumanManager.Instance.humans)
+            // {
+            //     humanAi.FindNextRandomPath();
+            // }
+            
             if (!MPProgressManager.Instance.CanDrawDistance(dt))
             {
                 

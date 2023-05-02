@@ -13,7 +13,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
     private float startCost = 30;
     private float moveCost = 1;
     private bool isStartingDraw = false;
-    private float recoverSpeed = 20;
+    private float recoverSpeed = 50;
     private void Awake()
     {
         hpbar = GetComponent<HPBar>();
@@ -23,6 +23,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
 
     public bool CanDrawDistance(float dis)
     {
+        
         currentValue -= moveCost*dis;
         updateValue();
         return currentValue > 0;
