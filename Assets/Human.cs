@@ -10,7 +10,7 @@ public class Human : MonoBehaviour
     private CircleCollider2D collider;
 
     private HPBar hpbar;
-    private float maxHP = 10;
+    public float maxHP = 15;
     private float currentHP = 10;
     private float hpDecreaseSpeed = 2;
     private int collideByVineCount = 0;

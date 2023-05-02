@@ -71,7 +71,7 @@ public class HumanAI : MonoBehaviour
         }
         else
         {
-            transform.position += direction * Time.deltaTime * (human.isSuffering ? speed / 3:speed);
+            transform.position += direction * Time.deltaTime * (human.isSuffering ? speed / 2:speed);
         }
     }
 

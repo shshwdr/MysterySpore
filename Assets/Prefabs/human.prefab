@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6851a9a6be8f0864594df86fc8859790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 15
 --- !u!50 &1249391918472364001
 Rigidbody2D:
   serializedVersion: 4
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
-  speed: 5
+  speed: 3
   nextWaypointDistance: 3
   moveRange: 10
   minTimeBetweenMoves: 1
