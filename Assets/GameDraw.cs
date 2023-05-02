@@ -5,8 +5,16 @@ using UnityEngine.U2D;
 public class GameDraw : MonoBehaviour
 {
     public float minimumDistance = 1.0f;
-    private Vector3 lastPosition;
+    public Vector3 lastPosition;
+    private Vector3 startPosition;
+    public bool isFinished = true;
 
+   public void init(Vector3 pos)
+    {
+        isFinished = false;
+        lastPosition = pos;
+        startPosition = pos;
+    }
     // Use this for initialization
     void Start()
     {
@@ -51,9 +59,22 @@ public class GameDraw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isFinished)
+        {
+            return;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isFinished = true;
+            
+            MPProgressManager.Instance.stopDraw();
+        }
+        
         var mp = Input.mousePosition;
         mp.z = 10.0f;
         mp = Camera.main.ScreenToWorldPoint(mp);
+        mp -= startPosition;
         var dt = Mathf.Abs((mp - lastPosition).magnitude);
         var md = (minimumDistance > 1.0f) ? minimumDistance : 1.0f;
         if (Input.GetMouseButton(0) && dt > md)
@@ -66,8 +87,16 @@ public class GameDraw : MonoBehaviour
 
             spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.3f, 0.5f));
             lastPosition = mp;
+
+            if (!MPProgressManager.Instance.CanDrawDistance(dt))
+            {
+                
+                isFinished = true;
             
-            GetComponent<Sprinkle>().UpdateSprinkles();
+                MPProgressManager.Instance.stopDraw();
+            }
+
+            //GetComponent<Sprinkle>().UpdateSprinkles();
         }
     }
 }

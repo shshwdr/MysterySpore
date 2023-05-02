@@ -1,38 +1,74 @@
-// using UnityEngine;
-// using UnityEngine.U2D;
-//
-// public class MouseController : MonoBehaviour
-// {
-//     public SpriteShapeController spriteShapeController;
-//     public int numberOfSamples = 100;
-//     public Transform marker;
-//
-//     private void Update()
-//     {
-//         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-//         mouseWorldPosition.z = 0;
-//
-//         float closestDistance = Mathf.Infinity;
-//         Vector3 closestPoint = Vector3.zero;
-//
-//         for (int i = 0; i < numberOfSamples; i++)
-//         {
-//             float t = (float)i / numberOfSamples;
-//             Vector3 point = spriteShapeController.spline.GetPosition(SplineUtility.Interpolate(spriteShapeController.spline.GetPointCount(), t));
-//             float distance = Vector3.Distance(mouseWorldPosition, point);
-//
-//             if (distance < closestDistance)
-//             {
-//                 closestDistance = distance;
-//                 closestPoint = point;
-//             }
-//         }
-//
-//         if (marker != null)
-//         {
-//             marker.position = closestPoint;
-//         }
-//
-//         Debug.Log("Closest point on SpriteShape: " + closestPoint);
-//     }
-// }
+using UnityEngine;
+using UnityEngine.U2D;
+
+public class MouseController : MonoBehaviour
+{
+    public SpriteShapeController[] spriteShapeControllers;
+    public int numberOfSamples = 100;
+    public GameObject shapePrefab;
+    private float growDistance = 2;
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!MPProgressManager.Instance.CanStartDraw())
+            {
+                return;
+            }
+            spriteShapeControllers = GameObject.FindObjectsOfType<SpriteShapeController>();
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPosition.z = 0;
+
+            float closestDistance = Mathf.Infinity;
+            Vector3 closestPoint = Vector3.zero;
+
+            foreach (var spriteShapeController in spriteShapeControllers)
+            {
+                for (int i = 0; i < numberOfSamples; i++)
+                {
+                    float t = (float)i / numberOfSamples;
+                    Vector3 point = GetInterpolatedPosition(spriteShapeController.spline, t) + spriteShapeController.transform.position;
+                    float distance = Vector3.Distance(mouseWorldPosition, point);
+
+                    if (distance < closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestPoint = point;
+                    }
+                }
+            }
+
+            if (closestDistance < growDistance)
+            {
+                
+                var go = Instantiate(shapePrefab);
+                go.transform.position = closestPoint;
+                go.GetComponent<SpriteShapeController>().spline.SetPosition(0,Vector3.zero);
+                go.GetComponent<SpriteShapeController>().spline.SetPosition(1,mouseWorldPosition - closestPoint);
+                go.GetComponent<GameDraw>().init(mouseWorldPosition);
+                MPProgressManager.Instance.startDraw();
+            }
+        }
+
+        
+    }
+
+    private Vector3 GetInterpolatedPosition(Spline spline, float t)
+    {
+        int pointCount = spline.GetPointCount();
+        float interpolatedIndex = t * (pointCount - 1);
+        int startIndex = Mathf.FloorToInt(interpolatedIndex);
+        int endIndex = Mathf.CeilToInt(interpolatedIndex);
+
+        if (startIndex == endIndex)
+        {
+            return spline.GetPosition(startIndex);
+        }
+
+        Vector3 startPosition = spline.GetPosition(startIndex);
+        Vector3 endPosition = spline.GetPosition(endIndex);
+        float localT = interpolatedIndex - startIndex;
+
+        return Vector3.Lerp(startPosition, endPosition, localT);
+    }
+}
