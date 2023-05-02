@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 310109785620813959}
   - component: {fileID: 310109785620813958}
   - component: {fileID: 310109785620813957}
+  - component: {fileID: -7656905576646784205}
+  - component: {fileID: 1746265193}
   m_Layer: 6
   m_Name: SpriteShape (pakcage
   m_TagString: Vine
@@ -149,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumDistance: 1
+  lastPosition: {x: 0, y: 0, z: 0}
   isFinished: 1
 --- !u!114 &310109785620813959
 MonoBehaviour:
@@ -209,3 +212,36 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &-7656905576646784205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310109785620814011}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6ea82f9c848bc43b4df9b2ea4cec53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteShapeController: {fileID: 310109785620813953}
+  animationSprites:
+  - {fileID: 21300000, guid: 248f2d0c63d8ae941835cef1f208de0e, type: 3}
+  - {fileID: 21300000, guid: 3bab026df42df40a5a6b43d96aac577a, type: 3}
+  frameDuration: 0.1
+--- !u!114 &1746265193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310109785620814011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fecc8553ead5f4d866e53ed00816c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteShapeController: {fileID: 0}
+  widthMultiplier: 1.5
+  changeSpeed: 0.1
+  smoothness: 1

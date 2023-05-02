@@ -56,6 +56,15 @@ public class GameDraw : MonoBehaviour
         sc.spline.SetRightTangent(pointIndex, rightTangent);
     }
 
+    void finishCreation()
+    {
+        
+        isFinished = true;
+            
+        //GetComponent<Sprinkle>().UpdateSprinkles();
+        GetComponent<SequentialWidthChange>().FinishCreation();
+        MPProgressManager.Instance.stopDraw();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -66,9 +75,7 @@ public class GameDraw : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            isFinished = true;
-            
-            MPProgressManager.Instance.stopDraw();
+            finishCreation();
         }
         
         var mp = Input.mousePosition;
@@ -91,12 +98,8 @@ public class GameDraw : MonoBehaviour
             if (!MPProgressManager.Instance.CanDrawDistance(dt))
             {
                 
-                isFinished = true;
-            
-                MPProgressManager.Instance.stopDraw();
+                finishCreation();
             }
-
-            //GetComponent<Sprinkle>().UpdateSprinkles();
         }
     }
 }
