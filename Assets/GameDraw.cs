@@ -64,7 +64,14 @@ public class GameDraw : MonoBehaviour
         //GetComponent<Sprinkle>().UpdateSprinkles();
         GetComponent<SequentialWidthChange>().FinishCreation();
         MPProgressManager.Instance.stopDraw();
-
+        foreach (var humanAi in HumanManager.Instance.humans)
+        {
+            if (humanAi.GetComponentInChildren<MeleeAttack>())
+            {
+                humanAi.GetComponentInChildren<MeleeAttack>().updateShapeControllers();
+            }
+        }
+        
         GameObject.FindObjectOfType<AstarPath>().Scan();
     }
     // Update is called once per frame
@@ -94,7 +101,7 @@ public class GameDraw : MonoBehaviour
             var newPointIndex = spline.GetPointCount() - 1;
             Smoothen(spriteShapeController, newPointIndex - 1);
 
-            spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.3f, 0.5f));
+            spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.7f, 0.9f));
             lastPosition = mp;
 
             GameObject.FindObjectOfType<AstarPath>().Scan();

@@ -6,7 +6,10 @@ public class MouseController : MonoBehaviour
     public SpriteShapeController[] spriteShapeControllers;
     public int numberOfSamples = 100;
     public GameObject shapePrefab;
-    private float growDistance = 2;
+    private float growDistance =5;
+
+    public Transform Core;
+    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -22,6 +25,14 @@ public class MouseController : MonoBehaviour
 
             float closestDistance = Mathf.Infinity;
             Vector3 closestPoint = Vector3.zero;
+
+            var corePoint = Core.position;
+            var dis = Vector3.Distance(mouseWorldPosition, corePoint);
+            if (dis < closestDistance)
+            {
+                closestDistance = dis;
+                closestPoint = corePoint;
+            }
 
             foreach (var spriteShapeController in spriteShapeControllers)
             {

@@ -14,6 +14,11 @@ public class SequentialWidthChange : MonoBehaviour
     private float elapsedTime;
     private int currentIndex;
     private bool finished = false;
+
+    public void SetHeight(int index, float value)
+    {
+        originalHeights[index] = value;
+    }
     private void Start()
     {
         spriteShapeController = GetComponent<SpriteShapeController>();
@@ -50,7 +55,10 @@ public class SequentialWidthChange : MonoBehaviour
                     float distanceFromCurrent = Mathf.Abs(i - currentIndex);
                     float multiplier = GaussianFunction(distanceFromCurrent, smoothness) * (widthMultiplier - 1.0f) + 1.0f;
                     float newHeight = originalHeights[i] * multiplier;
-                    spline.SetHeight(i, newHeight);
+                    if (i < spline.GetPointCount())
+                    {
+                        spline.SetHeight(i, newHeight);
+                    }
                 }
 
                 spriteShapeController.RefreshSpriteShape();

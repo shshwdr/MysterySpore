@@ -20,6 +20,9 @@ public class Human : MonoBehaviour
     private LayerMask layerMask;
     private bool isRunningAway = false;
     private float runAwayTime = 0.3f;
+    private float strugglingAwayTime = 1f;
+
+    public bool isSuffering => collideByVineCount > 0;
 
     private HumanAI humanAi;
     private void Awake()
@@ -52,6 +55,10 @@ public class Human : MonoBehaviour
         {
             
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
+            if (currentHP <= 0)
+            {
+                Destroy(gameObject);
+            }
             hpbar.updateCurrent(currentHP);
             if (!humanAi.isEscaping)
             {

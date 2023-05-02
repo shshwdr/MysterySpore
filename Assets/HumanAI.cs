@@ -30,7 +30,7 @@ public class HumanAI : MonoBehaviour
     //     rb = GetComponent<Rigidbody2D>();
     //     seeker.StartPath(rb.position,)
     // }
-
+    private Human human;
     public float moveRange = 10f;
     public float minTimeBetweenMoves = 1f;
     public float maxTimeBetweenMoves = 3f;
@@ -43,6 +43,7 @@ public class HumanAI : MonoBehaviour
 
     private void Start()
     {
+        human = GetComponent<Human>();
         seeker = GetComponent<Seeker>();
         nextMoveTime = Time.time + Random.Range(minTimeBetweenMoves, maxTimeBetweenMoves);
         FindNextRandomPath();
@@ -70,7 +71,7 @@ public class HumanAI : MonoBehaviour
         }
         else
         {
-            transform.position += direction * Time.deltaTime * speed;
+            transform.position += direction * Time.deltaTime * (human.isSuffering ? speed / 3:speed);
         }
     }
 
@@ -83,9 +84,34 @@ public class HumanAI : MonoBehaviour
     }
     public void FindNextRandomPath()
     {
-        Vector3 randomPosition = GetRandomPosition(transform.position, moveRange);
-        seeker.StartPath(transform.position, randomPosition, OnPathComplete);
+        if (GetComponent<MeleeAttack>())
+        {
+            if (GetComponent<MeleeAttack>().isAttacking)
+            {
+                return;
+            }
+            Vector3 res;
+            var meleeFoundTarget = GetComponent<MeleeAttack>().ClosestPosition(out res);
+            if (meleeFoundTarget)
+            {
+                seeker.StartPath(transform.position, res, OnPathComplete);
+                return;
+            }
+        }
+        
+        {
+            Vector3 randomPosition = GetRandomPositionAwayFromTarget(Vector3.zero, 10, 50);
+            //Vector3 randomPosition = GetRandomPosition(transform.position, moveRange);
+            seeker.StartPath(transform.position, randomPosition, OnPathComplete);
+        }
     }
+
+    public void StopSeekPath()
+    {
+        seeker.CancelCurrentPathRequest();
+        path = null;
+    }
+    
     private void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -101,6 +127,17 @@ public class HumanAI : MonoBehaviour
         float z = Random.Range(center.z - range, center.z + range);
 
         return new Vector3(x, z, 0);
+    }
+    
+    private Vector3 GetRandomPositionAwayFromTarget(Vector3 targetPosition, float minRange, float maxRange)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere.normalized;
+        float randomDistance = Random.Range(minRange, maxRange);
+
+        Vector3 randomPosition = targetPosition + randomDirection * randomDistance;
+        randomPosition.z = targetPosition.z;
+
+        return randomPosition;
     }
 
 }
