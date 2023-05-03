@@ -153,6 +153,8 @@ MonoBehaviour:
   minimumDistance: 1
   lastPosition: {x: 0, y: 0, z: 0}
   isFinished: 1
+  growTime: 0.05
+  growLength: 0.5
 --- !u!114 &310109785620813959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteShapeController: {fileID: 0}
-  widthMultiplier: 1.5
+  widthMultiplier: 2
   changeSpeed: 0.1
-  smoothness: 1
+  smoothness: 5

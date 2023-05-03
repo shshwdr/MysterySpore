@@ -66,7 +66,7 @@ public class GameDraw : MonoBehaviour
         MPProgressManager.Instance.stopDraw();
         foreach (var humanAi in HumanManager.Instance.humans)
         {
-            if (humanAi.GetComponentInChildren<MeleeAttack>())
+            if (humanAi && humanAi.GetComponentInChildren<MeleeAttack>())
             {
                 humanAi.GetComponentInChildren<MeleeAttack>().updateShapeControllers();
             }
@@ -74,6 +74,12 @@ public class GameDraw : MonoBehaviour
         
         GameObject.FindObjectOfType<AstarPath>().Scan();
     }
+
+    public float growTime = 0.3f;
+
+    private float growTimer = 0;
+
+    public float growLength = 1;
     // Update is called once per frame
     void Update()
     {
@@ -86,36 +92,46 @@ public class GameDraw : MonoBehaviour
         {
             finishCreation();
         }
-        
-        var mp = Input.mousePosition;
-        mp.z = 10.0f;
-        mp = Camera.main.ScreenToWorldPoint(mp);
-        mp -= startPosition;
-        var dt = Mathf.Abs((mp - lastPosition).magnitude);
-        var md = (minimumDistance > 1.0f) ? minimumDistance : 1.0f;
-        if (Input.GetMouseButton(0) && dt > md)
+
+        growTimer += Time.deltaTime;
+        if (growTimer > growTime)
         {
-            var spriteShapeController = gameObject.GetComponent<SpriteShapeController>();
-            var spline = spriteShapeController.spline;
-            spline.InsertPointAt(spline.GetPointCount(), mp);
-            var newPointIndex = spline.GetPointCount() - 1;
-            Smoothen(spriteShapeController, newPointIndex - 1);
-
-            spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.7f, 0.9f));
-            lastPosition = mp;
-
-            GameObject.FindObjectOfType<AstarPath>().Scan();
-
-            // foreach (var humanAi in HumanManager.Instance.humans)
-            // {
-            //     humanAi.FindNextRandomPath();
-            // }
+            growTimer = 0;
             
-            if (!MPProgressManager.Instance.CanDrawDistance(dt))
+            var mp = Input.mousePosition;
+            mp.z = 10.0f;
+            mp = Camera.main.ScreenToWorldPoint(mp);
+            mp -= startPosition;
+            var dt = Mathf.Abs((mp - lastPosition).magnitude);
+            var md = minimumDistance;
+            if (Input.GetMouseButton(0) && dt > md)
             {
+                var spriteShapeController = gameObject.GetComponent<SpriteShapeController>();
+                var spline = spriteShapeController.spline;
+                var dir = (mp - lastPosition).normalized *growLength;
+            
+                spline.InsertPointAt(spline.GetPointCount(), lastPosition+dir);
+                var newPointIndex = spline.GetPointCount() - 1;
+                Smoothen(spriteShapeController, newPointIndex - 1);
+
+                spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.7f, 0.9f));
+                lastPosition = lastPosition+dir;
+
+                GameObject.FindObjectOfType<AstarPath>().Scan();
+
+                // foreach (var humanAi in HumanManager.Instance.humans)
+                // {
+                //     humanAi.FindNextRandomPath();
+                // }
+            
+                if (!MPProgressManager.Instance.CanDrawDistance(growLength))
+                {
                 
-                finishCreation();
+                    finishCreation();
+                }
             }
         }
+        
+        
     }
 }
