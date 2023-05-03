@@ -118,7 +118,7 @@ public class MeleeAttack : MonoBehaviour
         int closestIndex = -1;
         Spline spline = controller.spline;
 
-        for (int i = 0; i < spline.GetPointCount(); i++)
+        for (int i = 0; i < spline.GetPointCount()-5; i++)
         {
             Vector3 pointWorldPosition = controller.transform.TransformPoint(spline.GetPosition(i));
             float distance = Vector3.Distance(position, pointWorldPosition);
@@ -140,7 +140,7 @@ public class MeleeAttack : MonoBehaviour
 
         // Example: Decrease the width by the damage value
         FloatingTextManager.Instance.addText("HIT!", transform.position, Color.red);
-        float currentWidth = controller.spline.GetHeight(index);
+        float currentWidth = controller.GetComponent<SequentialWidthChange>().GetHeight(index);
         float newWidth = Mathf.Max(0, currentWidth - damage);
         controller.spline.SetHeight(index, newWidth);
         controller.GetComponent<SequentialWidthChange>().SetHeight(index,newWidth);

@@ -370,11 +370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538929, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: -20.8
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538929, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.2
+      value: 11.7
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538929, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538931, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
@@ -478,11 +478,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538929, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.9
+      value: 16.49
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538929, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.1
+      value: 6.22
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538929, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538931, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 671580130}
   - component: {fileID: 671580131}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Energy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,6 +879,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ea4d41a7a3277468336741b208eb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxValue: 100
+  startCost: 20
+  moveCost: 1
+  recoverSpeed: 5
+  recoverFromHuman: 50
   isStartingDraw: 0
 --- !u!1 &801070350
 GameObject:
@@ -1112,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 649389210273538931, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}

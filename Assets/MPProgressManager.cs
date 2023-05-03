@@ -7,14 +7,17 @@ using UnityEngine;
 public class MPProgressManager : Singleton<MPProgressManager>
 {
     private HPBar hpbar;
-    private float maxValue = 100;
+    public float maxValue = 100;
     private float currentValue;
 
-    private float startCost = 30;
-    private float moveCost = 1;
-    public bool isStartingDraw = false;
-    private float recoverSpeed = 50;
+    public float startCost = 30;
+    public float moveCost = 1;
+    public float recoverSpeed = 50;
+    public float recoverFromHuman = 50;
     
+    
+    [HideInInspector]
+    public bool isStartingDraw = false;
     private void Awake()
     {
         hpbar = GetComponent<HPBar>();
@@ -46,6 +49,12 @@ public class MPProgressManager : Singleton<MPProgressManager>
     {
         hpbar.updateCurrent(currentValue);
         
+    }
+
+    public void recoverEnergy(float value)
+    {
+        currentValue += value;
+        updateValue();
     }
 
     public void stopDraw()

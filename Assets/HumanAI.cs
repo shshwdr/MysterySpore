@@ -91,7 +91,7 @@ public class HumanAI : MonoBehaviour
     }
     public void FindNextRandomPath()
     {
-        return;
+        
         if (GetComponent<MeleeAttack>())
         {
             if (GetComponent<MeleeAttack>().isAttacking)
@@ -106,7 +106,7 @@ public class HumanAI : MonoBehaviour
                 return;
             }
         }
-        
+        return;
         {
             Vector3 randomPosition = GetRandomPositionAwayFromTarget(Vector3.zero, 10, 50);
             //Vector3 randomPosition = GetRandomPosition(transform.position, moveRange);

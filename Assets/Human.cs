@@ -37,11 +37,6 @@ public class Human : MonoBehaviour
         ;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -58,6 +53,7 @@ public class Human : MonoBehaviour
             if (currentHP <= 0)
             {
                 Destroy(gameObject);
+                MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);
             }
             hpbar.updateCurrent(currentHP);
             if (!humanAi.isEscaping)
@@ -67,72 +63,8 @@ public class Human : MonoBehaviour
         }
     }
 
-    Vector3 findOutRunAwayPointByDistance(int startIndex, float angleStep, int distanceScale)
-    {
-        for (int i = 0; i < numberOfPoints; i++)
-        {
-            float angle = angleStep * ((i+startIndex)%numberOfPoints);
-            Vector2 point = transform.position + new Vector3(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad), 0) * checkRadius *distanceScale;
-
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(point, checkRadius, layerMask);
-            bool hit = false;
-            foreach (Collider2D collider in colliders)
-            {
-                if (collider.gameObject.CompareTag(vineTag))
-                {
-                    hit = true;
-                }
-            }
-
-            if (!hit)
-            {
-                return point;
-            }
-        }
-
-        return Vector3.positiveInfinity;
-    }
-    
-    private Vector3 RunAwayPoint()
-    {
-        float angleStep = 360f / numberOfPoints;
-        int startIndex = Random.Range(0, numberOfPoints);
-        for (int i = 2; i < 10; i += 2)
-        {
-            var point = findOutRunAwayPointByDistance(startIndex, angleStep, i);
-            if (point.x != Vector3.positiveInfinity.x)
-            {
-                return point;
-            }
-        }
-
-        var startAngle =startIndex*angleStep;
-        return transform.position + new Vector3(Mathf.Cos(startAngle * Mathf.Deg2Rad), Mathf.Sin(startAngle * Mathf.Deg2Rad), 0) * checkRadius;
-    }
     
     
-    
-    void RunAway()
-    {
-
-        //transform.position = RunAwayPoint();
-        isRunningAway = true;
-        var target = RunAwayPoint();
-        var distance = (target - transform.position).magnitude;
-        var time = distance * runAwayTime;
-        transform.DOMove(RunAwayPoint(), time).SetEase(Ease.Linear);
-        StartCoroutine(finishedRunAway(time));
-    }
-
-    
-    
-    IEnumerator finishedRunAway(float time)
-    {
-        yield return new WaitForSeconds(time);
-        isRunningAway = false;
-        
-    }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {

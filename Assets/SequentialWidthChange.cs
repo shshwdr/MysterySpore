@@ -15,6 +15,10 @@ public class SequentialWidthChange : MonoBehaviour
     private int currentIndex;
     private bool finished = false;
 
+    public float GetHeight(int index)
+    {
+        return originalHeights[index];
+    }
     public void SetHeight(int index, float value)
     {
         originalHeights[index] = value;
