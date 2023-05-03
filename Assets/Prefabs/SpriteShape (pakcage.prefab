@@ -83,10 +83,10 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
-  - {fileID: 21300000, guid: 3bab026df42df40a5a6b43d96aac577a, type: 3}
+  - {fileID: 21300000, guid: 072cada73dc2d24459182a8e573e6b63, type: 3}
   m_LocalAABB:
     m_Center: {x: -0.46336865, y: 0, z: 0}
-    m_Extent: {x: 0.53663135, y: 0.64, z: 0}
+    m_Extent: {x: 0.53663135, y: 0.32, z: 0}
 --- !u!114 &310109785620813953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,9 +207,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1, y: -0.0012800049}
-  - {x: 0.05958853, y: -0.0012800049}
-  - {x: 0.07326269, y: -0.0012800049}
+  - {x: -1, y: -0.0006400024}
+  - {x: 0.05958853, y: -0.0006400024}
+  - {x: 0.07326269, y: -0.0006400024}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -244,6 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteShapeController: {fileID: 0}
-  widthMultiplier: 1.5
+  widthMultiplier: 1.2
   changeSpeed: 0.1
   smoothness: 5

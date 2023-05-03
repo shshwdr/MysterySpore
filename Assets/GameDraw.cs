@@ -116,7 +116,7 @@ public class GameDraw : MonoBehaviour
                 var newPointIndex = spline.GetPointCount() - 1;
                 Smoothen(spriteShapeController, newPointIndex - 1);
 
-                spline.SetHeight(newPointIndex, UnityEngine.Random.Range(0.7f, 0.9f));
+                spline.SetHeight(newPointIndex, 1f/*UnityEngine.Random.Range(0.9f, 1.1f)*/);
                 lastPosition = lastPosition+dir;
 
                 GameObject.FindObjectOfType<AstarPath>().Scan();
