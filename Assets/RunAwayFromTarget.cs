@@ -32,6 +32,7 @@ public class RunAwayFromTarget : MonoBehaviour
     void Start()
     {
         seeker = GetComponent<Seeker>();
+        updateTimer = updateRate;
         //ai = GetComponent<IAstarAI>();
 
         // // Schedule the first update

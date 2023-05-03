@@ -1,20 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class MeleeAttack : HumanAttack
+public class ShootAttack : HumanAttack
 {
     public float attackRange = 10f;
     public float damage = 0.3f;
     private Vector3 targetPosition;
-
-
-
-
-    
+    private LaserLine line;
     protected override void PerformAttack()
     {
         float minDistance = float.MaxValue;
@@ -41,6 +36,16 @@ public class MeleeAttack : HumanAttack
             isAttacking = true;
             GetComponent<HumanAI>().StopSeekPath();
             ApplyDamage(closestController, closestIndex, damage);
+
+            line.startPoint = transform;
+            if (closestIndex >= closestController.spline.GetPointCount())
+            {
+                isAttacking = false;
+                return;
+            }
+            line.endPoint = closestController.transform.TransformPoint(closestController.spline.GetPosition(closestIndex));
+            line.gameObject.SetActive(true);
+            StartCoroutine(hideLine());
         }
         else
         {
@@ -48,6 +53,14 @@ public class MeleeAttack : HumanAttack
         }
     }
 
+    private void Awake()
+    {
+        line = GetComponentInChildren<LaserLine>();
+    }
 
-    
+    IEnumerator hideLine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        line.gameObject.SetActive(false);
+    }
 }

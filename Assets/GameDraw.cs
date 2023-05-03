@@ -64,13 +64,15 @@ public class GameDraw : MonoBehaviour
         //GetComponent<Sprinkle>().UpdateSprinkles();
         GetComponent<SequentialWidthChange>().FinishCreation();
         MPProgressManager.Instance.stopDraw();
-        foreach (var humanAi in HumanManager.Instance.humans)
-        {
-            if (humanAi && humanAi.GetComponentInChildren<MeleeAttack>())
-            {
-                humanAi.GetComponentInChildren<MeleeAttack>().updateShapeControllers();
-            }
-        }
+        // foreach (var humanAi in HumanManager.Instance.humans)
+        // {
+        //     if (humanAi && humanAi.GetComponentInChildren<MeleeAttack>())
+        //     {
+        //         humanAi.GetComponentInChildren<MeleeAttack>().updateShapeControllers();
+        //     }
+        // }
+        //
+        VinesManager.Instance.addVine(GetComponent<SpriteShapeController>());
         
         GameObject.FindObjectOfType<AstarPath>().Scan();
     }

@@ -36,7 +36,7 @@ public class HumanAI : MonoBehaviour
     public float maxTimeBetweenMoves = 3f;
     public float nextPointDistanceThreshold = 0.5f;
 
-    private Seeker seeker;
+    public Seeker seeker;
     private Path path;
     private int currentWaypoint;
     private float nextMoveTime;
@@ -92,20 +92,33 @@ public class HumanAI : MonoBehaviour
     public void FindNextRandomPath()
     {
         
-        if (GetComponent<MeleeAttack>())
+        if (GetComponent<HumanAttack>())
         {
-            if (GetComponent<MeleeAttack>().isAttacking)
+            if (GetComponent<HumanAttack>().isAttacking)
+            {
+                return;
+            }
+
+            if (!seeker.IsDone())
             {
                 return;
             }
             Vector3 res;
-            var meleeFoundTarget = GetComponent<MeleeAttack>().ClosestPosition(out res);
+            var meleeFoundTarget = GetComponent<HumanAttack>().ClosestPosition(out res);
             if (meleeFoundTarget)
             {
                 seeker.StartPath(transform.position, res, OnPathComplete);
                 return;
             }
         }
+
+        // if (GetComponent<ShootAttack>())
+        // {
+        //     if (GetComponent<MeleeAttack>().isAttacking)
+        //     {
+        //         return;
+        //     }
+        // }
         return;
         {
             Vector3 randomPosition = GetRandomPositionAwayFromTarget(Vector3.zero, 10, 50);
