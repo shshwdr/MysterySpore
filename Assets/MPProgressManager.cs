@@ -12,8 +12,9 @@ public class MPProgressManager : Singleton<MPProgressManager>
 
     private float startCost = 30;
     private float moveCost = 1;
-    private bool isStartingDraw = false;
+    public bool isStartingDraw = false;
     private float recoverSpeed = 50;
+    
     private void Awake()
     {
         hpbar = GetComponent<HPBar>();
@@ -44,6 +45,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
     void updateValue()
     {
         hpbar.updateCurrent(currentValue);
+        
     }
 
     public void stopDraw()

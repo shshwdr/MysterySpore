@@ -9,11 +9,11 @@ public class GameDraw : MonoBehaviour
     private Vector3 startPosition;
     public bool isFinished = true;
 
-   public void init(Vector3 pos)
+   public void init(Vector3 startPos,Vector3 lastP)
     {
         isFinished = false;
-        lastPosition = pos;
-        startPosition = pos;
+        lastPosition = lastP;
+        startPosition = startPos;
     }
     // Use this for initialization
     void Start()

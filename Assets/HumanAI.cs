@@ -43,6 +43,7 @@ public class HumanAI : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         human = GetComponent<Human>();
         seeker = GetComponent<Seeker>();
         nextMoveTime = Time.time + Random.Range(minTimeBetweenMoves, maxTimeBetweenMoves);
@@ -62,6 +63,11 @@ public class HumanAI : MonoBehaviour
         return;
         }
 
+        if (GetComponent<RunAwayFromTarget>().isRunningAway)
+        {
+            return;
+        }
+
         Vector3 direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
         float distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
 
@@ -71,6 +77,7 @@ public class HumanAI : MonoBehaviour
         }
         else
         {
+            //rb.MovePosition((Vector3)rb.position+(direction * (Time.deltaTime * (human.isSuffering ? speed / 2:speed))));
             transform.position += direction * Time.deltaTime * (human.isSuffering ? speed / 2:speed);
         }
     }
@@ -84,6 +91,7 @@ public class HumanAI : MonoBehaviour
     }
     public void FindNextRandomPath()
     {
+        return;
         if (GetComponent<MeleeAttack>())
         {
             if (GetComponent<MeleeAttack>().isAttacking)
@@ -112,7 +120,7 @@ public class HumanAI : MonoBehaviour
         path = null;
     }
     
-    private void OnPathComplete(Path p)
+    public void OnPathComplete(Path p)
     {
         if (!p.error)
         {

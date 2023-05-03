@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1249391918472364001}
   - component: {fileID: 1255976841}
   - component: {fileID: 4588539457748644428}
+  - component: {fileID: 8638732372371020552}
   m_Layer: 0
   m_Name: human
   m_TagString: Untagged
@@ -210,13 +211,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
-  speed: 3
+  speed: 15
   nextWaypointDistance: 3
   moveRange: 10
   minTimeBetweenMoves: 1
   maxTimeBetweenMoves: 3
   nextPointDistanceThreshold: 0.5
   isEscaping: 0
+--- !u!114 &8638732372371020552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249391918472364005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a26cf7d9e5218948b3727a04e47f426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeDistance: 20
+  updateRate: 1
+  isRunningAway: 0
+  maxAttempts: 10
+  searchRadius: 20
 --- !u!1 &1249391919624843459
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ public class MouseController : MonoBehaviour
                 go.transform.position = closestPoint;
                 go.GetComponent<SpriteShapeController>().spline.SetPosition(0,Vector3.zero);
                 go.GetComponent<SpriteShapeController>().spline.SetPosition(1,mouseWorldPosition - closestPoint);
-                go.GetComponent<GameDraw>().init(mouseWorldPosition);
+                go.GetComponent<GameDraw>().init(closestPoint, mouseWorldPosition - closestPoint);
                 MPProgressManager.Instance.startDraw();
             }
         }
