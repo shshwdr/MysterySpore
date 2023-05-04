@@ -80,6 +80,8 @@ public class Human : MonoBehaviour
             RemoveAllComponentsExceptTransform();
             //Destroy(gameObject);
             MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);
+            
+            Destroy(hpbar.gameObject);
         }
     }
 
