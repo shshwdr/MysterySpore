@@ -149,7 +149,7 @@ public class GameDraw : MonoBehaviour
             {
                 var spriteShapeController = gameObject.GetComponent<SpriteShapeController>();
                 var spline = spriteShapeController.spline;
-                var dir = (mp - lastPosition).normalized *growLength;
+                var dir = (mp - lastPosition).normalized *growLength * MouseController.Instance.speed;
             
                 spline.InsertPointAt(spline.GetPointCount(), lastPosition+dir);
                 var newPointIndex = spline.GetPointCount() - 1;
@@ -171,7 +171,7 @@ public class GameDraw : MonoBehaviour
                     
                     finishCreation();
                 }
-                if (!MPProgressManager.Instance.CanDrawDistance(growLength))
+                if (!MPProgressManager.Instance.CanDrawDistance(growLength* MouseController.Instance.cost))
                 {
                 
                     finishCreation();

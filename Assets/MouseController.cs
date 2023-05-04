@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class MouseController : MonoBehaviour
+public class MouseController : Singleton<MouseController>
 {
     public SpriteShapeController[] spriteShapeControllers;
     public int numberOfSamples = 100;
@@ -9,9 +9,21 @@ public class MouseController : MonoBehaviour
     private float growDistance =5;
 
     public Transform Core;
-    
+    public bool boost;
+    private float boostScale = 2;
+    private float boostCostScale = 2;
+    public float speed => boost ? boostScale : 1;
+    public float cost => boost ? boostCostScale : 1;
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            boost = true;
+        }
+        else
+        {
+            boost = false;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (!MPProgressManager.Instance.CanStartDraw())
