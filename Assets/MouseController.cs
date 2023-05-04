@@ -62,6 +62,9 @@ public class MouseController : MonoBehaviour
                 controller.spline.SetHeight(0,width);
                 controller.spline.SetPosition(1,mouseWorldPosition - closestPoint);
                 controller.spline.SetHeight(1,width);
+                controller.GetComponent<SpriteShapeRenderer>().sortingOrder = closestController
+                    ? closestController.GetComponent<SpriteShapeRenderer>().sortingOrder - 1
+                    : -1;
                 go.GetComponent<GameDraw>().init(closestPoint, mouseWorldPosition - closestPoint,width,closestController?closestController.GetComponent<GameDraw>():null);
                 MPProgressManager.Instance.startDraw();
             }

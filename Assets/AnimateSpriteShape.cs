@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,18 +9,17 @@ public class AnimateSpriteShape : MonoBehaviour
     public SpriteShapeController spriteShapeController;
     public Sprite[] animationSprites;
     public float frameDuration = 0.1f;
+    private float frameTimer;
 
-    private void Start()
+    int currentSpriteIndex = 0;
+    private void Update()
     {
-        StartCoroutine(Animate());
-    }
-
-    private IEnumerator Animate()
-    {
-        int currentSpriteIndex = 0;
-
-        while (true)
+        frameTimer += Time.deltaTime;
+        if (frameTimer >= frameDuration)
         {
+            frameTimer = 0;
+            
+            
             for (int i = 0; i < spriteShapeController.spriteShape.angleRanges.Count; i++)
             {
                 AngleRange angleRange = spriteShapeController.spriteShape.angleRanges[i];
@@ -29,7 +29,14 @@ public class AnimateSpriteShape : MonoBehaviour
             spriteShapeController.spriteShape.SetDirty();
 
             currentSpriteIndex = (currentSpriteIndex + 1) % animationSprites.Length;
-            yield return new WaitForSeconds(frameDuration);
+        }
+    }
+
+    private IEnumerator Animate()
+    {
+
+        while (true)
+        {
         }
     }
 }

@@ -157,6 +157,8 @@ MonoBehaviour:
   heightDecrease: 0.01
   heightMin: 0.3
   growTime: 0.1
+  children: []
+  parent: {fileID: 0}
   growLength: 1
 --- !u!114 &310109785620813959
 MonoBehaviour:
