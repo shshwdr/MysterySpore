@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.U2D;
 public class GameDraw : MonoBehaviour
@@ -8,6 +9,11 @@ public class GameDraw : MonoBehaviour
     public Vector3 lastPosition;
     private Vector3 startPosition;
     public bool isFinished = true;
+
+    public float heightStart = 1.4f;
+
+    public float heightDecrease = 0.01f;
+    public float heightMin = 0.7f;
 
    public void init(Vector3 startPos,Vector3 lastP)
     {
@@ -116,7 +122,9 @@ public class GameDraw : MonoBehaviour
                 var newPointIndex = spline.GetPointCount() - 1;
                 Smoothen(spriteShapeController, newPointIndex - 1);
 
-                spline.SetHeight(newPointIndex, 1f/*UnityEngine.Random.Range(0.9f, 1.1f)*/);
+                spline.SetHeight(newPointIndex, heightStart/*UnityEngine.Random.Range(0.9f, 1.1f)*/);
+                heightStart -= heightDecrease;
+                heightStart = math.max(heightStart, heightMin);
                 lastPosition = lastPosition+dir;
 
                 GameObject.FindObjectOfType<AstarPath>().Scan();
