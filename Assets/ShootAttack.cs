@@ -36,7 +36,7 @@ public class ShootAttack : HumanAttack
             isAttacking = true;
             GetComponent<HumanAI>().StopSeekPath();
             ApplyDamage(closestController, closestIndex, damage);
-
+            
             line.startPoint = transform;
             if (closestIndex >= closestController.spline.GetPointCount())
             {

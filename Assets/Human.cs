@@ -22,9 +22,13 @@ public class Human : MonoBehaviour
     private float runAwayTime = 0.3f;
     private float strugglingAwayTime = 1f;
 
+    [HideInInspector]
+    public Animator animator;
     public bool isSuffering => collideByVineCount > 0;
 
     private HumanAI humanAi;
+
+    public bool isDead = false;
     private void Awake()
     {
         hpbar = GetComponentInChildren<HPBar>();
@@ -34,6 +38,7 @@ public class Human : MonoBehaviour
         checkRadius = collider.radius * collider.transform.lossyScale.x;
         layerMask = 1 << LayerMask.NameToLayer(vineTag);
         humanAi = GetComponent<HumanAI>();
+        animator = GetComponentInChildren<Animator>();
         ;
     }
 
@@ -52,8 +57,7 @@ public class Human : MonoBehaviour
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
             if (currentHP <= 0)
             {
-                Destroy(gameObject);
-                MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);
+                Die();
             }
             hpbar.updateCurrent(currentHP);
             if (!humanAi.isEscaping)
@@ -63,7 +67,35 @@ public class Human : MonoBehaviour
         }
     }
 
-    
+    void Die()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+            if (GetComponent<Human>().animator)
+            {
+                GetComponent<Human>().animator.SetTrigger("die");
+            }
+
+            RemoveAllComponentsExceptTransform();
+            //Destroy(gameObject);
+            MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);
+        }
+    }
+
+    void RemoveAllComponentsExceptTransform()
+    {
+        Component[] components = gameObject.GetComponents<Component>();
+
+        foreach (Component component in components)
+        {
+            // Skip the Transform component
+            if (!(component is Transform) && !(component is SpriteRenderer)&& !(component is Animator))
+            {
+                Destroy(component);
+            }
+        }
+    }
     
 
     private void OnTriggerEnter2D(Collider2D other)

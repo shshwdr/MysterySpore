@@ -114,6 +114,11 @@ public class HumanAttack : MonoBehaviour
         // You can use "controller.spline.SetHeight(index, newHeight)" to adjust the width of the point at the specified index.
 
         // Example: Decrease the width by the damage value
+
+        if (GetComponent<Human>().animator)
+        {
+            GetComponent<Human>().animator.SetTrigger("attack");
+        }
         FloatingTextManager.Instance.addText("HIT!", transform.position, Color.red);
         float currentWidth = controller.GetComponent<SequentialWidthChange>().GetHeight(index);
         float newWidth = Mathf.Max(0, currentWidth - damage);
@@ -158,9 +163,10 @@ public class HumanAttack : MonoBehaviour
             int remainingPoints = spline.GetPointCount();
             if (remainingPoints < 3)
             {
-                VinesManager.Instance.removeVine(controller);
-                // If not, destroy the entire SpriteShapeController
-                Destroy(controller.gameObject);
+
+                controller.GetComponent<GameDraw>().DestorySelf() ;
+                
+                
             }
             
             stopAttackTimer = stopAttackTime;

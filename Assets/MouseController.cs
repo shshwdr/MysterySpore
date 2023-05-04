@@ -25,7 +25,7 @@ public class MouseController : MonoBehaviour
 
             float closestDistance = Mathf.Infinity;
             Vector3 closestPoint = Vector3.zero;
-
+            float width = 1;
             var corePoint = Core.position;
             var dis = Vector3.Distance(mouseWorldPosition, corePoint);
             if (dis < closestDistance)
@@ -34,18 +34,20 @@ public class MouseController : MonoBehaviour
                 closestPoint = corePoint;
             }
 
+            SpriteShapeController closestController = null;
             foreach (var spriteShapeController in spriteShapeControllers)
             {
-                for (int i = 0; i < numberOfSamples; i++)
+                for (int i = 0; i < spriteShapeController.spline.GetPointCount(); i++)
                 {
-                    float t = (float)i / numberOfSamples;
-                    Vector3 point = GetInterpolatedPosition(spriteShapeController.spline, t) + spriteShapeController.transform.position;
+                    Vector3 point = spriteShapeController.spline.GetPosition(i) + spriteShapeController.transform.position;
                     float distance = Vector3.Distance(mouseWorldPosition, point);
 
                     if (distance < closestDistance)
                     {
                         closestDistance = distance;
                         closestPoint = point;
+                        width = spriteShapeController.spline.GetHeight(i);
+                        closestController = spriteShapeController;
                     }
                 }
             }
@@ -55,9 +57,12 @@ public class MouseController : MonoBehaviour
                 
                 var go = Instantiate(shapePrefab);
                 go.transform.position = closestPoint;
-                go.GetComponent<SpriteShapeController>().spline.SetPosition(0,Vector3.zero);
-                go.GetComponent<SpriteShapeController>().spline.SetPosition(1,mouseWorldPosition - closestPoint);
-                go.GetComponent<GameDraw>().init(closestPoint, mouseWorldPosition - closestPoint);
+                var controller = go.GetComponent<SpriteShapeController>();
+                controller.spline.SetPosition(0,Vector3.zero);
+                controller.spline.SetHeight(0,width);
+                controller.spline.SetPosition(1,mouseWorldPosition - closestPoint);
+                controller.spline.SetHeight(1,width);
+                go.GetComponent<GameDraw>().init(closestPoint, mouseWorldPosition - closestPoint,width,closestController?closestController.GetComponent<GameDraw>():null);
                 MPProgressManager.Instance.startDraw();
             }
         }

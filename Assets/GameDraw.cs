@@ -15,11 +15,49 @@ public class GameDraw : MonoBehaviour
     public float heightDecrease = 0.01f;
     public float heightMin = 0.7f;
 
-   public void init(Vector3 startPos,Vector3 lastP)
+    
+    
+    public float growTime = 0.3f;
+
+    private float growTimer = 0;
+
+    public List<GameDraw> children = new List<GameDraw>();
+    public GameDraw parent;
+    
+    
+
+    public float growLength = 1;
+
+     void RemoveChildren()
+    {
+        foreach (var child in children)
+        {
+            child.DestorySelf();
+        }
+    }
+
+    public void DestorySelf()
+    {
+        if (parent)
+        {
+            parent.children.Remove(this);
+        }
+        RemoveChildren();
+        
+        VinesManager.Instance.removeVine(GetComponent<SpriteShapeController>());
+        Destroy(gameObject);
+    }
+   public void init(Vector3 startPos,Vector3 lastP,float width, GameDraw parent)
     {
         isFinished = false;
         lastPosition = lastP;
         startPosition = startPos;
+        heightStart = width;
+        this.parent = parent;
+        if (this.parent)
+        {
+            parent.children.Add(this);
+        }
     }
     // Use this for initialization
     void Start()
@@ -83,11 +121,6 @@ public class GameDraw : MonoBehaviour
         GameObject.FindObjectOfType<AstarPath>().Scan();
     }
 
-    public float growTime = 0.3f;
-
-    private float growTimer = 0;
-
-    public float growLength = 1;
     // Update is called once per frame
     void Update()
     {
@@ -124,7 +157,7 @@ public class GameDraw : MonoBehaviour
 
                 spline.SetHeight(newPointIndex, heightStart/*UnityEngine.Random.Range(0.9f, 1.1f)*/);
                 heightStart -= heightDecrease;
-                heightStart = math.max(heightStart, heightMin);
+                
                 lastPosition = lastPosition+dir;
 
                 GameObject.FindObjectOfType<AstarPath>().Scan();
@@ -133,7 +166,11 @@ public class GameDraw : MonoBehaviour
                 // {
                 //     humanAi.FindNextRandomPath();
                 // }
-            
+                if (heightStart <= heightMin)
+                {
+                    
+                    finishCreation();
+                }
                 if (!MPProgressManager.Instance.CanDrawDistance(growLength))
                 {
                 
