@@ -6,7 +6,7 @@ public class MouseController : Singleton<MouseController>
     public SpriteShapeController[] spriteShapeControllers;
     public int numberOfSamples = 100;
     public GameObject shapePrefab;
-    private float growDistance =5;
+    public float growDistance =5;
 
     public Transform Core;
     public bool boost;
