@@ -10,6 +10,7 @@ public class ShootAttack : HumanAttack
     public float damage = 0.3f;
     private Vector3 targetPosition;
     private LaserLine line;
+    public Transform laserLineStart;
     protected override void PerformAttack()
     {
         float minDistance = float.MaxValue;
@@ -37,7 +38,7 @@ public class ShootAttack : HumanAttack
             GetComponent<HumanAI>().StopSeekPath();
             ApplyDamage(closestController, closestIndex, damage);
             
-            line.startPoint = transform;
+            line.startPoint = laserLineStart;
             if (closestIndex >= closestController.spline.GetPointCount())
             {
                 isAttacking = false;
@@ -55,7 +56,7 @@ public class ShootAttack : HumanAttack
 
     private void Awake()
     {
-        line = GetComponentInChildren<LaserLine>();
+        line = GetComponentInChildren<LaserLine>(true);
     }
 
     IEnumerator hideLine()

@@ -30,22 +30,32 @@ public class GameDraw : MonoBehaviour
 
      void RemoveChildren()
     {
-        foreach (var child in children)
+        Debug.Log("remove children "+children.Count);
+        for (int i = 0; i < children.Count; i++)
         {
-            child.DestorySelf();
+            var child = children[0];
+            if (!child)
+            {
+            }
+            else
+            {
+                child.DestorySelf();
+            }
+            children.Remove(child);
         }
     }
 
     public void DestorySelf()
     {
-        if (parent)
-        {
-            parent.children.Remove(this);
-        }
         RemoveChildren();
         
         VinesManager.Instance.removeVine(GetComponent<SpriteShapeController>());
         Destroy(gameObject);
+
+        if (!isFinished)
+        {
+            finishCreation();
+        }
     }
    public void init(Vector3 startPos,Vector3 lastP,float width, GameDraw parent)
     {

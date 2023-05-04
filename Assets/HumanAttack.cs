@@ -117,13 +117,24 @@ public class HumanAttack : MonoBehaviour
 
         if (GetComponent<Human>().animator)
         {
+            
+            
+            var direction = controller.spline.GetPosition(index)+controller.transform.position - transform.position;
+            
+            
+            GetComponent<Human>().animator.SetFloat("horizontal",direction.x);
+            GetComponent<Human>().animator.SetFloat("verticle",direction.y);
+            
             GetComponent<Human>().animator.SetTrigger("attack");
+
+            
         }
         FloatingTextManager.Instance.addText("HIT!", transform.position, Color.red);
         float currentWidth = controller.GetComponent<SequentialWidthChange>().GetHeight(index);
         float newWidth = Mathf.Max(0, currentWidth - damage);
         controller.spline.SetHeight(index, newWidth);
         controller.GetComponent<SequentialWidthChange>().SetHeight(index,newWidth);
+        
 
         if (newWidth <= 0)
         {

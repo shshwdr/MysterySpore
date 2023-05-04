@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DialogueManager.Instance.showTutorialDialogue(0));
+        //StartCoroutine(DialogueManager.Instance.showTutorialDialogue(0));
     }
 
     // Update is called once per frame

@@ -40,6 +40,7 @@ public class HumanAI : MonoBehaviour
     private Path path;
     private int currentWaypoint;
     private float nextMoveTime;
+    private Animator animator;
 
     private void Start()
     {
@@ -48,6 +49,7 @@ public class HumanAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         nextMoveTime = Time.time + Random.Range(minTimeBetweenMoves, maxTimeBetweenMoves);
         FindNextRandomPath();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -69,6 +71,9 @@ public class HumanAI : MonoBehaviour
         }
 
         Vector3 direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        
+        animator.SetFloat("horizontal",direction.x);
+        animator.SetFloat("verticle",direction.y);
         float distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
 
         if (distanceToWaypoint < nextPointDistanceThreshold)
