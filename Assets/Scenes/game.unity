@@ -522,6 +522,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: humanMelee (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 649389210273538931, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
 --- !u!4 &512596020 stripped
@@ -916,6 +920,10 @@ PrefabInstance:
     - target: {fileID: 649389210273538931, guid: d62b579786c578a448f5bf54e8abaa0b, type: 3}
       propertyPath: m_Name
       value: humanShoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 649389210273538931, guid: d62b579786c578a448f5bf54e8abaa0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d62b579786c578a448f5bf54e8abaa0b, type: 3}
@@ -3651,10 +3659,6 @@ PrefabInstance:
     - target: {fileID: 1249391918472364005, guid: f18bc526f370cc44a8fc19720227ffb1, type: 3}
       propertyPath: m_Name
       value: human (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249391918472364005, guid: f18bc526f370cc44a8fc19720227ffb1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1249391918472364007, guid: f18bc526f370cc44a8fc19720227ffb1, type: 3}
       propertyPath: m_RootOrder
