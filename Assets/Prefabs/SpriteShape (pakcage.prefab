@@ -153,6 +153,9 @@ MonoBehaviour:
   minimumDistance: 1
   lastPosition: {x: 0, y: 0, z: 0}
   isFinished: 1
+  heightStart: 1.4
+  heightDecrease: 0.01
+  heightMin: 0.3
   growTime: 0.1
   growLength: 1
 --- !u!114 &310109785620813959
