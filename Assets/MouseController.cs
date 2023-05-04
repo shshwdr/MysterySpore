@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 
 public class MouseController : Singleton<MouseController>
@@ -26,6 +27,10 @@ public class MouseController : Singleton<MouseController>
         }
         if (Input.GetMouseButtonDown(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
             if (!MPProgressManager.Instance.CanStartDraw())
             {
                 FloatingTextManager.Instance.addText("Not Enough Energy", Vector3.zero, Color.black);
