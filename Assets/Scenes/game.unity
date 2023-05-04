@@ -522,10 +522,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: humanMelee (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 649389210273538931, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4033567018c9d684c9a85cd2775dc2ad, type: 3}
 --- !u!4 &512596020 stripped
