@@ -123,7 +123,7 @@ MonoBehaviour:
       corner: 0
       m_CornerMode: 0
   m_SpriteShape: {fileID: 11400000, guid: 75491bd3f4fb8434aa39dd12c0856ac7, type: 2}
-  m_FillPixelPerUnit: 100
+  m_FillPixelPerUnit: 25
   m_StretchTiling: 1
   m_SplineDetail: 16
   m_AdaptiveUV: 1
@@ -221,16 +221,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310109785620814011}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6ea82f9c848bc43b4df9b2ea4cec53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteShapeController: {fileID: 310109785620813953}
   animationSprites:
-  - {fileID: 21300000, guid: 248f2d0c63d8ae941835cef1f208de0e, type: 3}
-  - {fileID: 21300000, guid: 3bab026df42df40a5a6b43d96aac577a, type: 3}
-  frameDuration: 0.1
+  - {fileID: -8682136129135021687, guid: f8eec3fce905b294ea4d08b9487a7c83, type: 3}
+  - {fileID: 3192211871843431360, guid: f8eec3fce905b294ea4d08b9487a7c83, type: 3}
+  - {fileID: 5694462398575543154, guid: f8eec3fce905b294ea4d08b9487a7c83, type: 3}
+  - {fileID: 5758479800137174406, guid: f8eec3fce905b294ea4d08b9487a7c83, type: 3}
+  frameDuration: 0.25
 --- !u!114 &1746265193
 MonoBehaviour:
   m_ObjectHideFlags: 0
