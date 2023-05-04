@@ -1,45 +1,46 @@
-﻿text,type,speaker,hasNext,isTranslation
-I must not break my vow of non-violence! I’ve been cursed with enough nightmares after my kind committed genocide on the bloodrust orcs.,tutorial,mage,1,
-"Anyway, l’ll try to calm the queen bee down using the linguistics magic my staff pulled from the bee book",tutorial,mage,1,
-Bee language is tricky. I need to remember what effect each buzz has! Every buzzes in the same line has different effects that may add up or counter each other.,tutorial,mage,,
-Hello.,-1,mage,1,1
-YOUR ACCENT AMUSING!,-1,bee,,1
-Your kind are such hard workers.,-2,mage,1,1
-QUEEN KNOWS. SISTERS AND DAUGHTERS TOIL DAY AND NIGHT. SONS NOT SO MUCH.,-2,bee,,1
-I saved a bee from a storm once.,-2,mage,1,1
-"THANK YOU. YOUR KIND HAS KILLED MANY OF US, BUT YOU NOT BAD.",-2,bee,,1
-I’ll bring flower offerings straight to your hive.,-4,mage,1,1
-VERY WELL.,-4,bee,,1
-Bees are the most terrifying creatures.,-4,mage,1,1
-THIS PLEASES ME TO HEAR.,-4,bee,,1
-You can use my house as a hive. Me casa es your casa.,-6,mage,1,1
-PERHAPS YOU MAY SERVE ME WELL.,-6,bee,,1
-I can create a spell to help your bees fly out of storms.,-6,mage,1,1
-YOU CAN DO THAT???,-6,bee,,1
-I’m confused and stupid.,0,mage,1,1
-I CAN SEE THAT.,0,bee,,1
-Your stripes are pretty…weird…huh?,0,mage,1,1
-YOUR FEEBLE MIND CANNOT COMPREHEND MY BODY.,0,bee,,1
-I think I am allergic to pollen.,0,mage,1,1
-OUR DUTY IS WORTH YOUR SUFFERING.,0,bee,,1
-HELloo?,1,mage,1,1
-YOUR ACCENT ATROCIOUS,1,bee,,1
-Can I touch your fuzz?,2,mage,1,1
-NO.,2,bee,,1
-Black and yellow are my least favourite colours!,2,mage,1,1
-YOUR FLESH UNAPPEALING!,2,bee,,1
-I’ve never eaten a monster bee before.,4,mage,1,1
-My children will feast on the blood of your servants.,4,bee,,1
-Does it hurt when you lay 1000 eggs a day?,4,mage,1,1
-I PERFORM MY DUTIES JUST FINE.,4,bee,,1
-Leave or I’ll set your hive on fire.,6,mage,1,1
-YOU HAVE POOR TASTE IN JOKES.,6,bee,,1
-Let’s see if I can turn you into a teapot.,6,mage,1,1
-TRY IT AND I WILL USE YOUR BLOOD TO FEED MY NEXT BROOD.,6,bee,,1
-"Try remember what each word means, positive or negative",tutorial,mage,1,
-Always target to get a negative sumary of the words you picked,tutorial,mage,,
-What can I do with my magic to support your hive security and access to nectar?,win,mage,1,1
-YOU MAY USE MAGIC STICK TO SERVE US IN FRUITFUL ALLIANCE.,win,bee,,1
-"Bloody eyes, do you want to start a war?",lose,mage,1,1
-I TIRE OF THIS UNFRUITFUL EXCHANGE! DIE NOW!,lose,bee,,1
-What did I do! I should not break my peaceful bound. I'll be more careful next time.,lose,mage,,
+﻿text,type,speaker,hasNext,description
+AHHHHHHHHHHHHHH!,tutorial,Aileen,1,Intro tutorial dialogue
+"Oh my god, what the hell did they do to us?",tutorial,Marina,1,
+Why can’t we move?? We look like a weird spiky avocado.,tutorial,Benny,1,
+"Oh my god, what the hell did they do to us?",tutorial,Marina,1,
+Why can’t we move?? We look like a weird spiky avocado.,tutorial,Benny,1,
+Wait a second. Click and drag on our body.,tutorial,Benny,0,
+WOAH. Is that…part of us?,tutorial,Aileen,1,After drag
+We are not letting those corporate clones get away with this!,tutorial,Marina,0,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
