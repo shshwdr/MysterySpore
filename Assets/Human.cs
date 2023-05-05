@@ -71,6 +71,7 @@ public class Human : MonoBehaviour
     {
         if (!isDead)
         {
+            DialogueManager.Instance.showKillDialogue();
             isDead = true;
             if (GetComponent<Human>().animator)
             {

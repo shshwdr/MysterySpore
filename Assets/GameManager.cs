@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : Singleton<GameManager>
 {
     public bool shouldSkipCinematic = false;
-    private int level = 0;
+    public int level = 0;
+
+    public bool hasKilled = false;
+    public bool hasDragged = false;
     public bool skipCinematic()
     {
         return shouldSkipCinematic || level != 0;
@@ -16,6 +19,11 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(gameObject);
         //StartCoroutine(DialogueManager.Instance.showTutorialDialogue(0));
+    }
+
+    public bool shouldRecoverEnergy()
+    {
+        return level == 0;
     }
 
     // Update is called once per frame

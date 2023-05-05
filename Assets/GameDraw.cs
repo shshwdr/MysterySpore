@@ -23,8 +23,8 @@ public class GameDraw : MonoBehaviour
 
     public List<GameDraw> children = new List<GameDraw>();
     public GameDraw parent;
-    
-    
+
+    private AstarPath astarPath;
 
     public float growLength = 1;
 
@@ -77,6 +77,7 @@ public class GameDraw : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        astarPath = GameObject.FindObjectOfType<AstarPath>();
     }
 
     private static int NextIndex(int index, int pointCount)
@@ -117,6 +118,8 @@ public class GameDraw : MonoBehaviour
 
     void finishCreation()
     {
+        DialogueManager.Instance.showDragDialogue();
+       // if(GetComponent<SpriteShapeController>().spline.)
         
         isFinished = true;
             
@@ -132,7 +135,7 @@ public class GameDraw : MonoBehaviour
         // }
         //
         
-        GameObject.FindObjectOfType<AstarPath>().Scan();
+        astarPath.Scan();
     }
 
     // Update is called once per frame

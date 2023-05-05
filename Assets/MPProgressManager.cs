@@ -87,7 +87,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
         }
         if (!isStartingDraw)
         {
-            if (false)
+            if (GameManager.Instance.shouldRecoverEnergy())
             {
                 currentValue += recoverSpeed * Time.deltaTime;
                 currentValue = math.min(currentValue, maxValue);

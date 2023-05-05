@@ -72,7 +72,7 @@ public class HumanAI : MonoBehaviour
 
         //actual move code with animation
         Vector3 direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        
+        animator.SetTrigger("move");
         animator.SetFloat("horizontal",direction.x);
         animator.SetFloat("verticle",direction.y);
         float distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
