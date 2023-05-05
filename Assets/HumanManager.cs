@@ -22,11 +22,14 @@ public class HumanManager : Singleton<HumanManager>
         humans.Remove(human);
         if (humans.Count == 0)
         {
-            NextLevelOBj.SetActive(true);
-            NextLevelOBj.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                GameManager.Instance.GotoNextLevel();
-            });
+            GameObject.FindObjectOfType<Door>().Open();
+            
+            
+            // NextLevelOBj.SetActive(true);
+            // NextLevelOBj.GetComponent<Button>().onClick.AddListener(() =>
+            // {
+            //     GameManager.Instance.GotoNextLevel();
+            // });
         }
     }
 
