@@ -82,6 +82,14 @@ public class Human : MonoBehaviour
                 GetComponent<Human>().animator.SetTrigger("die");
             }
 
+            if(Random.Range(0,100)>50)
+            {
+                
+                if (GetComponent<ShowText>())
+                {
+                    GetComponent<ShowText>().Show(" Dying");
+                }
+            }
             RemoveAllComponentsExceptTransform();
             //Destroy(gameObject);
             MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);

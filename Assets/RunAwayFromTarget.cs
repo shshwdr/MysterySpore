@@ -50,6 +50,10 @@ public class RunAwayFromTarget : MonoBehaviour
 
     public bool shouldRunAway()
     {
+        if (!MPProgressManager.Instance.isStartingDraw)
+        {
+            return false;
+        }
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0;
         // Check if the mouse is close enough
@@ -75,7 +79,7 @@ public class RunAwayFromTarget : MonoBehaviour
                 firstTime = false;
                 if (GetComponent<ShowText>())
                 {
-                    GetComponent<ShowText>().Show();
+                    GetComponent<ShowText>().Show(" Chased");
                 }
             }
             FindNewPath();

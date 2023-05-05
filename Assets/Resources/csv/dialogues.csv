@@ -86,11 +86,11 @@ Please I'm just another intern! It's not my fault!,Intern Chased,Intern Greggo,,
 "No please! It's the supervisor's fault, we're just interns too!",Intern Chased,Intern Greg #50,,,Chasing intern 8,InternDying (any number)
 "Don't be mad, you are a scientific breakthrough!!",Intern Chased,Intern Greg (the one that drugged you),,,Chasing intern 9,InternDying (any number)
 ,,,,,,InternDying (any number)
-Oh MAMA!,Intern Attack / Dying,,,,Attack intern 1,InternDying (any number)
-AUUGHHHHH!!!,Intern Attack / Dying,,,,Attack intern 2,
-I should have quit a long time agooooo....,Intern Attack / Dying,,,,Attack intern 3,WeakScientist (any number)
-Why did I waste so much of my life at work...,Intern Attack / Dying,,,,Attack intern 4,WeakScientist (any number)
-I see the light...,Intern Attack / Dying,,,,Attack intern 5,WeakScientist (any number)
+Oh MAMA!,Intern Dying,,,,Attack intern 1,InternDying (any number)
+AUUGHHHHH!!!,Intern Dying,,,,Attack intern 2,
+I should have quit a long time agooooo....,Intern Dying,,,,Attack intern 3,WeakScientist (any number)
+Why did I waste so much of my life at work...,Intern Dying,,,,Attack intern 4,WeakScientist (any number)
+I see the light...,Intern Dying,,,,Attack intern 5,WeakScientist (any number)
 ,,,,,,WeakScientist (any number)
 Nooooo I don’t have insurance! The medical bills will kill me and I can't afford a clone body!,Scientist Chased,Scientist Doug #46,,,Chasing scientist 1,WeakScientist (any number)
 Aughhh! I am not paid enough for this!,Scientist Chased,Scientist Dougie,,,Chasing scientist 2,WeakScientist (any number)
@@ -100,10 +100,16 @@ I delegate my duties to Scientist Doug #242!,Scientist Chased,Supervisor Doug #8
 "Dang it, I JUST got promoted and now this?!",Scientist Chased,Supervisor Doug #242,,,Chasing scientist 6,Scientist (any number)
 "NOOOO, I forgot to fill in the paperwork for a replacement clone body in case of death!",Scientist Chased,Scientist Doug #31,,,Chasing scientist 7,Scientist (any number)
 ,,,,,,Scientist (any number)
-REMAIN CALM! EVERYTHING IS UNDER CONTROL!,Scientist ready to attack,Scientist Doug #46,,,Scientist ready to attack,Scientist (any number)
-SURRENDER NOW SUBJECT 2409!,Scientist ready to attack,Scientist Dougie,,,Scientist ready to attack,Scientist (any number)
-Just my luck. This is going to affect my performance review.,Scientist ready to attack,Scientist Douglan,,,Scientist ready to attack,Scientist (any number)
-"REMOVE YOUR TENTACLES, INTERNS OF SUBJECT 2409!",Scientist ready to attack,Scientist Doug #719,,,Scientist ready to attack,
-INTERNS OF SUBJECT 2409! WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist ready to attack,Supervisor Doug #87,,,Scientist ready to attack,
-"Great, another experiment gone wrong. Who could've guessed?",Scientist ready to attack,Supervisor Doug #242,,,Scientist ready to attack,
-Why do I always get the worst shifts??,Scientist ready to attack,Scientist Doug #31,,,Scientist ready to attack,
+REMAIN CALM! EVERYTHING IS UNDER CONTROL!,Scientist Attack,Scientist Doug #46,,,Scientist ready to attack,Scientist (any number)
+SURRENDER NOW SUBJECT 2409!,Scientist Attack,Scientist Dougie,,,Scientist ready to attack,Scientist (any number)
+Just my luck. This is going to affect my performance review.,Scientist Attack,Scientist Douglan,,,Scientist ready to attack,Scientist (any number)
+"REMOVE YOUR TENTACLES, INTERNS OF SUBJECT 2409!",Scientist Attack,Scientist Doug #719,,,Scientist ready to attack,
+INTERNS OF SUBJECT 2409! WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist Attack,Supervisor Doug #87,,,Scientist ready to attack,
+"Great, another experiment gone wrong. Who could've guessed?",Scientist Attack,Supervisor Doug #242,,,Scientist ready to attack,
+Why do I always get the worst shifts??,Scientist Attack,Scientist Doug #31,,,Scientist ready to attack,
+,,,,,,
+Oh MAMA!,Scientist Dying,,,,Attack intern 1,InternDying (any number)
+AUUGHHHHH!!!,Scientist Dying,,,,Attack intern 2,
+I should have quit a long time agooooo....,Scientist Dying,,,,Attack intern 3,WeakScientist (any number)
+Why did I waste so much of my life at work...,Scientist Dying,,,,Attack intern 4,WeakScientist (any number)
+I see the light...,Scientist Dying,,,,Attack intern 5,WeakScientist (any number)

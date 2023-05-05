@@ -97,6 +97,10 @@ public class HumanAI : MonoBehaviour
     public void FindNextRandomPath()
     {
 
+        if (!astar)
+        {
+            return;
+        }
         if (GetComponent<RunAwayFromTarget>().shouldRunAway())
         {
             GetComponent<RunAwayFromTarget>().UpdatePath();
@@ -113,7 +117,6 @@ public class HumanAI : MonoBehaviour
             var meleeFoundTarget = GetComponent<HumanAttack>().ClosestPosition(out res);
             if (meleeFoundTarget)
             {
-                
                 GraphNode startNode = astar.GetNearest(transform.position).node;
                 GraphNode endNode = astar.GetNearest(res).node;
                 bool isPathPossible = PathUtilities.IsPathPossible(startNode, endNode);

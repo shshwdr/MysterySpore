@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ShowText : MonoBehaviour
 {
@@ -10,12 +11,13 @@ public class ShowText : MonoBehaviour
     public GameObject panel;
     public string textKey;
     public float showTime = 1;
-    public void Show()
+    public void Show(string extra)
     {
-        if (DialogueManager.Instance.DialogueDict.ContainsKey(textKey))
+        if (DialogueManager.Instance.DialogueDict.ContainsKey(textKey + extra))
         {
+            var potentialWords = DialogueManager.Instance.DialogueDict[textKey + extra];
             panel.SetActive(true);
-            label.text = DialogueManager.Instance.DialogueDict[textKey][0][0].text;
+            label.text = potentialWords[Random.Range(0,potentialWords.Count)][0].text;
             StartCoroutine(hide());
         }
     }
@@ -36,7 +38,7 @@ public class ShowText : MonoBehaviour
         if (col.collider.tag == "Vine")
         {
             StopAllCoroutines();
-            Show();
+            Show("");
         }
     }
 

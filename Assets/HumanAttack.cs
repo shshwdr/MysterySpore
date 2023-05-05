@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.U2D;
+using Random = UnityEngine.Random;
 
 public class HumanAttack : MonoBehaviour
 {
@@ -109,8 +110,21 @@ public class HumanAttack : MonoBehaviour
     {
     }
 
+    private bool firstTime;
     protected void ApplyDamage(SpriteShapeController controller, int index, float damage)
     {
+        if (firstTime)
+        {
+            firstTime = false;
+            if (Random.Range(0, 100) > 50)
+            {
+                
+                if (GetComponent<ShowText>())
+                {
+                    GetComponent<ShowText>().Show(" Attack");
+                }
+            }
+        }
         // Apply damage logic here (e.g., decrease point's width and break the SpriteShape into two parts)
         // You can use "controller.spline.SetHeight(index, newHeight)" to adjust the width of the point at the specified index.
 
