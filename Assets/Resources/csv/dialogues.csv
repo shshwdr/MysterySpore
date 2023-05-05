@@ -1,8 +1,7 @@
 text,type,speaker/,special,hasNext,description,Icon
 AHHHHHHHHHHHHHH!,0,Aileen,,1,Intro tutorial dialogue,AileenScared
 "Oh my god, what the hell did they do to us?",0,Marina,,1,,Marina
-Why can’t we move?? We look like a weird spiky avocado.,0,Benny,,1,,Benny
-"Oh my god, what the hell did they do to us?",0,Marina,,1,,Marina
+Why can’t we move?? We look like a weird spiky avocado.,0,Aileen,,1,,AileenScared
 Wait a second. Click and drag on our body.,0,Benny,,0,,Benny
 ,,,,,,
 WOAH. Is that…part of us?,AfterDrag,Aileen,,1,After drag,AileenScared
@@ -35,13 +34,36 @@ Not cool of them to give us that mystery sugar.,3,Benny,,1,cont...,Benny
 I wonder what was in it? Maybe I could continue research as the world's first monster scientist...,3,Marina,,0,cont...,Marina
 ,,,,,,
 "Let's try and get out of this room, maybe we'll get some answers.",4,Marina,,1,get into level 4,Marina
-"What's the point, we're a FREAKING UGLY HORRIFYING monster!!",4,Aileen,,1,,Aileen
-"Hey, I don't appreciate you body shaming us.",4,Benny,,0,,Benny
+"What's the point, we're a FREAKING UGLY HORRIFYING monster!!",4,Aileen,,1,cont...,AileenScared
+"Hey, I don't appreciate you body shaming us.",4,Benny,,0,cont...,Benny
 ,,,,,,
-Dah we are out of energy!,OutOfEnergyLvl1,Marina,Level 1,1,out of energy,Marina
-We can't move now! OH NO!,OutOfEnergyLvl1,Aileen,Level 1,1,,AileenScared
-"It's okay, the fluid will give us energy again, just wait.",OutOfEnergyLvl1,Benny,Level 1,0,,Benny
+At least we finally know what those robots do.,5,Benny,,,,Benny
+I thought they were there to replace us.,5,Marina,,,,Marina
+"Nope, just to destroy experiments gone wrong!",5,Aileen,,,,Aileen
 ,,,,,,
+"Wow, I can't believe we actually made it this far.",WIN,Benny,,,,Benny
+"I know all we did was make a mess, but I feel accomplished.",WIN,Aileen,,,,Aileen
+We can do anything we want! Let's become the world's first MONSTER scientists!,WIN,Marina,,,,Marina
+,,,,,,
+Dah we are out of energy!,OutOfEnergy Lvl0,Marina,Level 0,1,out of energy,Marina
+We can't move now! OH NO!,OutOfEnergy Lvl0,Aileen,Level 0,1,cont...,AileenScared
+"It's okay, the fluid they injected into us will help us recover energy.",OutOfEnergy Lvl0,Benny,Level 0,0,cont...,Benny
+,,,,,,
+Slow down! We used up all the energy injections they gave us.,LowEnergyLvl1,Aileen,Level 1,1,low energy,AileenScared
+Maybe we can look for other kinds of fluids...,LowEnergyLvl1,Marina,Level 1,1,cont...,Marina
+We poured our blood and tears into this unpaid internship. Time to get some of that back!,LowEnergyLvl1,Benny,Level 1,0,cont...,Benny
+,,,,,,
+Feeling hungry...,OutOfEnergyLvl1,Benny,Level 1,,out of energy,Benny
+"Uh oh, we ran out of energy again. ",OutOfEnergyLvl1,Marina,Level 1,,cont...,Marina
+We need to feed on their blood!,OutOfEnergyLvl1,AileenScared,Level 1,,cont...,AileenScared
+,,,,,,
+"I'm huuuuuuuungry, wanna eat more corporate clones!",OutOfEnergyLvl2-5,,Level 2-5,,out of energy,Aileen
+"Noooo, we need more blood!",OutOfEnergyLvl2-5,,Level 2-5,,out of energy,Aileen
+"Welp, we're all out again.",OutOfEnergyLvl2-5,,Level 2-5,,out of energy,Benny
+,,,,,,
+Let's use our energy wisely!,LowEnergyLvl2-5,,Level 2-5,,low energy,Marina
+Fascinating how we can get energy from their bodies.,LowEnergyLvl2-5,,Level 2-5,,low energy,Marina
+We've got to be careful not to use up all our energy.,LowEnergyLvl2-5,,Level 2-5,,low energy,Benny
 ,,,,,,
 Be careful! This holds the experimental fluid that helps us grow.,Big tube that they are connected to,,,,Textbox,
 Don't need this anymore. They got us booster board workstations...so we could work on the way to the bathroom.,Desk,,,,Textbox,
@@ -50,38 +72,38 @@ So many long hours here...,Whiteboard,,,,Textbox,
 Should I email my mom? ,Computer,,,,Textbox,
 I'm sick of experiments.,Test Tube,,,,Textbox,
 Wonder what I look like under there now?,Microscope,,,,Textbox,
-We're the hazard now!,Hazard Sign,,,,Textbox,
-There's never anything good left for us!,Fridge,,,,Textbox,
-Poor things got experimented on too...,Other experiment tube,,,,Textbox,
-,,,,,,
+We're the hazard now!,Hazard Sign,,,,Textbox,InternScared (any number)
+There's never anything good left for us!,Fridge,,,,Textbox,InternScared (any number)
+Poor things got experimented on too...,Other experiment tube,,,,Textbox,InternScared (any number)
+,,,,,,InternScared (any number)
 Nonononono don't hurt me! I'm sorry!,Intern Chased,Intern Greg,,,Chasing intern 1,InternScared (any number)
 Help!! SECURITY!!!!,Intern Chased,Intern Gregory,,,Chasing intern 2,InternScared (any number)
 Uh oh uh oh! WE NEED MORE SECURITY!,Intern Chased,Intern Greggy,,,Chasing intern 3,InternScared (any number)
 Ahhhh get away from me!!!,Intern Chased,Intern Greg-greg,,,Chasing intern 4,InternScared (any number)
 Please I'm just another intern! It's not my fault!,Intern Chased,Intern Greggo,,,Chasing intern 5,InternScared (any number)
-"I'm sorry, I was just following orders! I have rent to pay!",Intern Chased,Intern Greg #23,,,Chasing intern 6,InternScared (any number)
-"Come on, we're all interns here! Don't hurt us!",Intern Chased,Intern Greg #86,,,Chasing intern 7,InternScared (any number)
-"No please! It's the supervisor's fault, we're just interns too!",Intern Chased,Intern Greg #50,,,Chasing intern 8,InternScared (any number)
-"Don't be mad, you are a scientific breakthrough!!",Intern Chased,Intern Greg (the one that drugged you),,,Chasing intern 9,InternScared (any number)
-,,,,,,
+"I'm sorry, I was just following orders! I have rent to pay!",Intern Chased,Intern Greg #23,,,Chasing intern 6,
+"Come on, we're all interns here! Don't hurt us!",Intern Chased,Intern Greg #86,,,Chasing intern 7,InternDying (any number)
+"No please! It's the supervisor's fault, we're just interns too!",Intern Chased,Intern Greg #50,,,Chasing intern 8,InternDying (any number)
+"Don't be mad, you are a scientific breakthrough!!",Intern Chased,Intern Greg (the one that drugged you),,,Chasing intern 9,InternDying (any number)
+,,,,,,InternDying (any number)
 Oh MAMA!,Intern Attack / Dying,,,,Attack intern 1,InternDying (any number)
-AUUGHHHHH!!!,Intern Attack / Dying,,,,Attack intern 2,InternDying (any number)
-I should have quit a long time agooooo....,Intern Attack / Dying,,,,Attack intern 3,InternDying (any number)
-Why did I waste so much of my life at work...,Intern Attack / Dying,,,,Attack intern 4,InternDying (any number)
-I see the light...,Intern Attack / Dying,,,,Attack intern 5,InternDying (any number)
-,,,,,,
+AUUGHHHHH!!!,Intern Attack / Dying,,,,Attack intern 2,
+I should have quit a long time agooooo....,Intern Attack / Dying,,,,Attack intern 3,WeakScientist (any number)
+Why did I waste so much of my life at work...,Intern Attack / Dying,,,,Attack intern 4,WeakScientist (any number)
+I see the light...,Intern Attack / Dying,,,,Attack intern 5,WeakScientist (any number)
+,,,,,,WeakScientist (any number)
 Nooooo I don’t have insurance! The medical bills will kill me and I can't afford a clone body!,Scientist Chased,Scientist Doug #46,,,Chasing scientist 1,WeakScientist (any number)
 Aughhh! I am not paid enough for this!,Scientist Chased,Scientist Dougie,,,Chasing scientist 2,WeakScientist (any number)
 This was NOT in the workplace hazard training!,Scientist Chased,Scientist Douglan,,,Chasing scientist 3,WeakScientist (any number)
-UGHHH I hate dying from these experiments! Now I gotta get reimbursed for a new clone body.,Scientist Chased,Scientist Doug #719,,,Chasing scientist 4,WeakScientist (any number)
-I delegate my duties to Scientist Doug #242!,Scientist Chased,Supervisor Doug #87,,,Chasing scientist 5,WeakScientist (any number)
-"Dang it, I JUST got promoted and now this?!",Scientist Chased,Supervisor Doug #242,,,Chasing scientist 6,WeakScientist (any number)
-"NOOOO, I forgot to fill in the paperwork for a replacement clone body in case of death!",Scientist Chased,Scientist Doug #31,,,Chasing scientist 7,WeakScientist (any number)
-,,,,,,
+UGHHH I hate dying from these experiments! Now I gotta get reimbursed for a new clone body.,Scientist Chased,Scientist Doug #719,,,Chasing scientist 4,
+I delegate my duties to Scientist Doug #242!,Scientist Chased,Supervisor Doug #87,,,Chasing scientist 5,Scientist (any number)
+"Dang it, I JUST got promoted and now this?!",Scientist Chased,Supervisor Doug #242,,,Chasing scientist 6,Scientist (any number)
+"NOOOO, I forgot to fill in the paperwork for a replacement clone body in case of death!",Scientist Chased,Scientist Doug #31,,,Chasing scientist 7,Scientist (any number)
+,,,,,,Scientist (any number)
 REMAIN CALM! EVERYTHING IS UNDER CONTROL!,Scientist ready to attack,Scientist Doug #46,,,Scientist ready to attack,Scientist (any number)
 SURRENDER NOW SUBJECT 2409!,Scientist ready to attack,Scientist Dougie,,,Scientist ready to attack,Scientist (any number)
 Just my luck. This is going to affect my performance review.,Scientist ready to attack,Scientist Douglan,,,Scientist ready to attack,Scientist (any number)
-"REMOVE YOUR TENTACLES, INTERNS OF SUBJECT 2409!",Scientist ready to attack,Scientist Doug #719,,,Scientist ready to attack,Scientist (any number)
-INTERNS OF SUBJECT 2409! WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist ready to attack,Supervisor Doug #87,,,Scientist ready to attack,Scientist (any number)
-"Great, another experiment gone wrong. Who could've guessed?",Scientist ready to attack,Supervisor Doug #242,,,Scientist ready to attack,Scientist (any number)
-Why do I always get the worst shifts??,Scientist ready to attack,Scientist Doug #31,,,Scientist ready to attack,Scientist (any number)
+"REMOVE YOUR TENTACLES, INTERNS OF SUBJECT 2409!",Scientist ready to attack,Scientist Doug #719,,,Scientist ready to attack,
+INTERNS OF SUBJECT 2409! WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist ready to attack,Supervisor Doug #87,,,Scientist ready to attack,
+"Great, another experiment gone wrong. Who could've guessed?",Scientist ready to attack,Supervisor Doug #242,,,Scientist ready to attack,
+Why do I always get the worst shifts??,Scientist ready to attack,Scientist Doug #31,,,Scientist ready to attack,
