@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class MPProgressManager : Singleton<MPProgressManager>
 {
@@ -14,7 +15,8 @@ public class MPProgressManager : Singleton<MPProgressManager>
     public float moveCost = 1;
     public float recoverSpeed = 50;
     public float recoverFromHuman = 50;
-    
+
+    public bool unlimitEnergy = false;
     
     [HideInInspector]
     public bool isStartingDraw = false;
@@ -28,6 +30,10 @@ public class MPProgressManager : Singleton<MPProgressManager>
     public bool CanDrawDistance(float dis)
     {
         
+        if (unlimitEnergy)
+        {
+            return true;
+        }
         currentValue -= moveCost*dis;
         updateValue();
         return currentValue > 0;
@@ -35,6 +41,10 @@ public class MPProgressManager : Singleton<MPProgressManager>
 
     public bool CanStartDraw()
     {
+        if (unlimitEnergy)
+        {
+            return true;
+        }
         return currentValue > startCost;
     }
 
@@ -71,12 +81,19 @@ public class MPProgressManager : Singleton<MPProgressManager>
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            unlimitEnergy = true;
+        }
         if (!isStartingDraw)
         {
-            currentValue += recoverSpeed * Time.deltaTime;
-            currentValue = math.min(currentValue, maxValue);
+            if (false)
+            {
+                currentValue += recoverSpeed * Time.deltaTime;
+                currentValue = math.min(currentValue, maxValue);
             
-            updateValue();
+                updateValue();
+            }
         }
     }
 }

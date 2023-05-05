@@ -14,22 +14,8 @@ public class HumanAI : MonoBehaviour
 
     public float nextWaypointDistance = 3f;
 
-    // private Path path;
-    //
-    // private int currentWaypoint = 0;
-    //
-    // private bool reachedEndOfPath = false;
-    //
-    // private Seeker seeker;
-
     private Rigidbody2D rb;
 
-    // private void Awake()
-    // {
-    //     seeker = GetComponent<Seeker>();
-    //     rb = GetComponent<Rigidbody2D>();
-    //     seeker.StartPath(rb.position,)
-    // }
     private Human human;
     public float moveRange = 10f;
     public float minTimeBetweenMoves = 1f;
@@ -42,34 +28,45 @@ public class HumanAI : MonoBehaviour
     private float nextMoveTime;
     private Animator animator;
 
-    private void Start()
+    public bool isMoving = false;
+    public bool isEscaping = false;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         human = GetComponent<Human>();
         seeker = GetComponent<Seeker>();
+        animator = GetComponentInChildren<Animator>();
+    }
+
+    private void Start()
+    {
         nextMoveTime = Time.time + Random.Range(minTimeBetweenMoves, maxTimeBetweenMoves);
         FindNextRandomPath();
-        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
 
-        if (path == null) return;
-
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            
-            FindNextRandomPath();
-            isEscaping = false;
-        return;
-        }
-
-        if (GetComponent<RunAwayFromTarget>().isRunningAway)
+        if (path == null)
         {
             return;
         }
 
+        if (currentWaypoint >= path.vectorPath.Count) //reach the end of the current path
+        {
+            isMoving = false;
+            FindNextRandomPath();
+            isEscaping = false;
+            return;
+        }
+
+        // if (GetComponent<RunAwayFromTarget>().isRunningAway)
+        // {
+        //     return;
+        // }
+
+        //actual move code with animation
         Vector3 direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
         
         animator.SetFloat("horizontal",direction.x);
@@ -87,7 +84,6 @@ public class HumanAI : MonoBehaviour
         }
     }
 
-    public bool isEscaping = false;
 
     public void Escape()
     {
@@ -117,13 +113,6 @@ public class HumanAI : MonoBehaviour
             }
         }
 
-        // if (GetComponent<ShootAttack>())
-        // {
-        //     if (GetComponent<MeleeAttack>().isAttacking)
-        //     {
-        //         return;
-        //     }
-        // }
         return;
         {
             Vector3 randomPosition = GetRandomPositionAwayFromTarget(Vector3.zero, 10, 50);
@@ -144,6 +133,11 @@ public class HumanAI : MonoBehaviour
         {
             path = p;
             currentWaypoint = 0;
+            isMoving = true;
+        }
+        else
+        {
+            Debug.Log("path error");
         }
     }
 

@@ -253,8 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a26cf7d9e5218948b3727a04e47f426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  safeDistance: 20
-  updateRate: 1
+  safeDistance: 10
   isRunningAway: 0
   maxAttempts: 10
   searchRadius: 20
