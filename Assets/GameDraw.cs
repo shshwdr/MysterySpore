@@ -64,10 +64,15 @@ public class GameDraw : MonoBehaviour
         startPosition = startPos;
         heightStart = width;
         this.parent = parent;
+        
+        GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
+        GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
         if (this.parent)
         {
             parent.children.Add(this);
         }
+        
+        VinesManager.Instance.addVine(GetComponent<SpriteShapeController>());
     }
     // Use this for initialization
     void Start()
@@ -126,7 +131,6 @@ public class GameDraw : MonoBehaviour
         //     }
         // }
         //
-        VinesManager.Instance.addVine(GetComponent<SpriteShapeController>());
         
         GameObject.FindObjectOfType<AstarPath>().Scan();
     }
@@ -165,6 +169,7 @@ public class GameDraw : MonoBehaviour
                 var newPointIndex = spline.GetPointCount() - 1;
                 Smoothen(spriteShapeController, newPointIndex - 1);
 
+                GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
                 spline.SetHeight(newPointIndex, heightStart/*UnityEngine.Random.Range(0.9f, 1.1f)*/);
                 heightStart -= heightDecrease;
                 

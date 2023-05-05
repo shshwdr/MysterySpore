@@ -11,7 +11,6 @@ public class RunAwayFromTarget : MonoBehaviour
     private float updateTimer = 0;
     private Seeker seeker;
 
-    public  bool isRunningAway; //is he is actually running away
     private AstarPath astar;
     private void Update()
     {
@@ -48,7 +47,14 @@ public class RunAwayFromTarget : MonoBehaviour
         }
     }
 
-    void UpdatePath()
+    public bool shouldRunAway()
+    {
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0;
+        // Check if the mouse is close enough
+        return (Vector3.Distance(transform.position, mouseWorldPosition) < safeDistance);
+    }
+    public void UpdatePath()
     {
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0;
@@ -120,6 +126,7 @@ public class RunAwayFromTarget : MonoBehaviour
                 {
                     // Start a new path to the target position
                     seeker.StartPath(transform.position, targetPosition, GetComponent<HumanAI>().OnPathComplete);
+                    GetComponent<HumanAI>(). isRunningAway = true;
                     return true;
                 }
 

@@ -60,10 +60,10 @@ public class Human : MonoBehaviour
                 Die();
             }
             hpbar.updateCurrent(currentHP);
-            if (!humanAi.isEscaping)
-            {
-                humanAi.Escape();
-            }
+            // if (!humanAi.isEscaping)
+            // {
+            //     humanAi.Escape();
+            // }
         }
     }
 

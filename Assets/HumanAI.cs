@@ -8,11 +8,9 @@ using Random = UnityEngine.Random;
 public class HumanAI : MonoBehaviour
 {
 
-    public Vector3 targetPosition;
 
     public float speed = 200f;
 
-    public float nextWaypointDistance = 3f;
 
     private Rigidbody2D rb;
 
@@ -25,12 +23,12 @@ public class HumanAI : MonoBehaviour
     public Seeker seeker;
     private Path path;
     private int currentWaypoint;
-    private float nextMoveTime;
     private Animator animator;
 
     public bool isMoving = false;
     public bool isEscaping = false;
-
+    private AstarPath astar;
+    public  bool isRunningAway; //is he is actually running away
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,7 +39,12 @@ public class HumanAI : MonoBehaviour
 
     private void Start()
     {
-        nextMoveTime = Time.time + Random.Range(minTimeBetweenMoves, maxTimeBetweenMoves);
+        astar = AstarPath.active;
+        if (astar == null)
+        {
+            Debug.LogError("No active AstarPath found in the scene.");
+            return;
+        }
         FindNextRandomPath();
     }
 
@@ -58,6 +61,7 @@ public class HumanAI : MonoBehaviour
             isMoving = false;
             FindNextRandomPath();
             isEscaping = false;
+            isRunningAway = false;
             return;
         }
 
@@ -85,13 +89,18 @@ public class HumanAI : MonoBehaviour
     }
 
 
-    public void Escape()
-    {
-        isEscaping = true;
-        FindNextRandomPath();
-    }
+    // public void Escape()
+    // {
+    //     isEscaping = true;
+    //     FindNextRandomPath();
+    // }
     public void FindNextRandomPath()
     {
+
+        if (GetComponent<RunAwayFromTarget>().shouldRunAway())
+        {
+            GetComponent<RunAwayFromTarget>().UpdatePath();
+        }
         
         if (GetComponent<HumanAttack>())
         {
@@ -99,26 +108,27 @@ public class HumanAI : MonoBehaviour
             {
                 return;
             }
-
-            if (!seeker.IsDone())
-            {
-                return;
-            }
+            //if is attacker, find attackable point and move
             Vector3 res;
             var meleeFoundTarget = GetComponent<HumanAttack>().ClosestPosition(out res);
             if (meleeFoundTarget)
             {
+                
+                GraphNode startNode = astar.GetNearest(transform.position).node;
+                GraphNode endNode = astar.GetNearest(res).node;
+                bool isPathPossible = PathUtilities.IsPathPossible(startNode, endNode);
+                
                 seeker.StartPath(transform.position, res, OnPathComplete);
                 return;
             }
         }
 
         return;
-        {
-            Vector3 randomPosition = GetRandomPositionAwayFromTarget(Vector3.zero, 10, 50);
-            //Vector3 randomPosition = GetRandomPosition(transform.position, moveRange);
-            seeker.StartPath(transform.position, randomPosition, OnPathComplete);
-        }
+        // {
+        //     Vector3 randomPosition = GetRandomPositionAwayFromTarget(Vector3.zero, 10, 50);
+        //     //Vector3 randomPosition = GetRandomPosition(transform.position, moveRange);
+        //     seeker.StartPath(transform.position, randomPosition, OnPathComplete);
+        // }
     }
 
     public void StopSeekPath()
@@ -141,23 +151,23 @@ public class HumanAI : MonoBehaviour
         }
     }
 
-    private Vector3 GetRandomPosition(Vector3 center, float range)
-    {
-        float x = Random.Range(center.x - range, center.x + range);
-        float z = Random.Range(center.z - range, center.z + range);
-
-        return new Vector3(x, z, 0);
-    }
-    
-    private Vector3 GetRandomPositionAwayFromTarget(Vector3 targetPosition, float minRange, float maxRange)
-    {
-        Vector3 randomDirection = Random.insideUnitSphere.normalized;
-        float randomDistance = Random.Range(minRange, maxRange);
-
-        Vector3 randomPosition = targetPosition + randomDirection * randomDistance;
-        randomPosition.z = targetPosition.z;
-
-        return randomPosition;
-    }
+    // private Vector3 GetRandomPosition(Vector3 center, float range)
+    // {
+    //     float x = Random.Range(center.x - range, center.x + range);
+    //     float z = Random.Range(center.z - range, center.z + range);
+    //
+    //     return new Vector3(x, z, 0);
+    // }
+    //
+    // private Vector3 GetRandomPositionAwayFromTarget(Vector3 targetPosition, float minRange, float maxRange)
+    // {
+    //     Vector3 randomDirection = Random.insideUnitSphere.normalized;
+    //     float randomDistance = Random.Range(minRange, maxRange);
+    //
+    //     Vector3 randomPosition = targetPosition + randomDirection * randomDistance;
+    //     randomPosition.z = targetPosition.z;
+    //
+    //     return randomPosition;
+    // }
 
 }

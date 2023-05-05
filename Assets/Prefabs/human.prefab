@@ -232,14 +232,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf648b3d135c63449b93b3b1d8f4eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
   speed: 15
-  nextWaypointDistance: 3
   moveRange: 10
   minTimeBetweenMoves: 1
   maxTimeBetweenMoves: 3
   nextPointDistanceThreshold: 0.5
   seeker: {fileID: 0}
+  isMoving: 0
   isEscaping: 0
 --- !u!114 &8638732372371020552
 MonoBehaviour:

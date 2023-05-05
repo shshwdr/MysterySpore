@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -10,7 +11,7 @@ public class SequentialWidthChange : MonoBehaviour
 
     private Spline spline;
     private int pointCount;
-    private float[] originalHeights;
+    public List<float> originalHeights;
     private float elapsedTime;
     private int currentIndex;
     private bool finished = false;
@@ -33,12 +34,7 @@ public class SequentialWidthChange : MonoBehaviour
     {
         finished = true;
         pointCount = spline.GetPointCount();
-        originalHeights = new float[pointCount];
 
-        for (int i = 0; i < pointCount; i++)
-        {
-            originalHeights[i] = spline.GetHeight(i);
-        }
     }
 
     private void Update()

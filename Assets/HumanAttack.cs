@@ -8,8 +8,8 @@ using UnityEngine.U2D;
 public class HumanAttack : MonoBehaviour
 {
     
-    public float stopAttackTime = 3;
-    private float stopAttackTimer = 0;
+    //public float stopAttackTime = 3;
+    //private float stopAttackTimer = 0;
     public bool isAttacking = false;
     public float breakDelay = 2f;
     
@@ -18,28 +18,29 @@ public class HumanAttack : MonoBehaviour
 
     public bool wouldAttack()
     {
-        return stopAttackTimer <= 0;
+        return true;
+        // return stopAttackTimer <= 0;
     }
     
     
     private void Update()
     {
-        if (stopAttackTimer < 0  && !isAttacking && GetComponent<HumanAI>().seeker.IsDone())
-        {
-            GetComponent<HumanAI>().FindNextRandomPath();
-        }
+        // if (stopAttackTimer < 0  && !isAttacking && GetComponent<HumanAI>().seeker.IsDone())
+        // {
+        //     GetComponent<HumanAI>().FindNextRandomPath();
+        // }
         
-        if (stopAttackTimer > 0)
-        {
-            stopAttackTimer -= Time.deltaTime;
-        }
+        // if (stopAttackTimer > 0)
+        // {
+        //     stopAttackTimer -= Time.deltaTime;
+        // }
+        //
+        // if (stopAttackTimer > 0)
+        // {
+        //     return;
+        // }
 
-        if (stopAttackTimer > 0)
-        {
-            return;
-        }
-
-        if (GetComponent<RunAwayFromTarget>().isRunningAway)
+        if (GetComponent<HumanAI>().isRunningAway)
         {
             return;
         }
@@ -180,7 +181,7 @@ public class HumanAttack : MonoBehaviour
                 
             }
             
-            stopAttackTimer = stopAttackTime;
+            //stopAttackTimer = stopAttackTime;
             isAttacking = false;
             GetComponent<HumanAI>().FindNextRandomPath();
         }

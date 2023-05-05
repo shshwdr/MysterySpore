@@ -39,6 +39,7 @@ public class MeleeAttack : HumanAttack
         if (closestController != null && closestIndex<closestController.spline.GetPointCount()-1)
         {
             isAttacking = true;
+            GetComponent<HumanAI>().isMoving = false;
             GetComponent<HumanAI>().StopSeekPath();
             ApplyDamage(closestController, closestIndex, damage);
         }
