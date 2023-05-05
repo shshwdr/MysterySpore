@@ -42,6 +42,10 @@ public class Human : MonoBehaviour
         ;
     }
 
+    private void Start()
+    {
+        HumanManager.Instance.AddHuman(GetComponent<HumanAI>());
+    }
 
     // Update is called once per frame
     void Update()
@@ -81,7 +85,7 @@ public class Human : MonoBehaviour
             RemoveAllComponentsExceptTransform();
             //Destroy(gameObject);
             MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);
-            
+            HumanManager.Instance.RemoveHuman(GetComponent<HumanAI>());
             Destroy(hpbar.gameObject);
         }
     }

@@ -7,12 +7,18 @@ public class GameManager : Singleton<GameManager>
 {
     public bool shouldSkipCinematic = false;
     public int level = 0;
-
+    
     public bool hasKilled = false;
     public bool hasDragged = false;
     public bool skipCinematic()
     {
         return shouldSkipCinematic || level != 0;
+    }
+
+    public void GotoNextLevel()
+    {
+        level++;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     // Start is called before the first frame update
     void Start()
@@ -32,6 +38,11 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            GotoNextLevel();
         }
     }
 }

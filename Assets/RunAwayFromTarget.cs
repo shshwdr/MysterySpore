@@ -12,6 +12,7 @@ public class RunAwayFromTarget : MonoBehaviour
     private Seeker seeker;
 
     private AstarPath astar;
+    private bool firstTime = true;
     private void Update()
     {
         //isRunningAway = false;
@@ -69,6 +70,14 @@ public class RunAwayFromTarget : MonoBehaviour
             // // Start a new path to the target position
             // seeker.StartPath(transform.position, targetPosition, GetComponent<HumanAI>(). OnPathComplete);
             //StartCoroutine(FindNewPath());
+            if (firstTime)
+            {
+                firstTime = false;
+                if (GetComponent<ShowText>())
+                {
+                    GetComponent<ShowText>().Show();
+                }
+            }
             FindNewPath();
         }
         else

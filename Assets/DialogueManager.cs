@@ -68,7 +68,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void showDragDialogue()
     {
-        if (!GameManager.Instance.hasDragged)
+        if (!GameManager.Instance.hasDragged&& GameManager.Instance.level == 0)
         {
             GameManager.Instance.hasDragged = true;
             StartCoroutine( showDialogueGeneral("AfterDrag"));
@@ -77,7 +77,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void showKillDialogue()
     {
-        if (!GameManager.Instance.hasKilled)
+        if (!GameManager.Instance.hasKilled && GameManager.Instance.level == 0)
         {
             GameManager.Instance.hasKilled = true;
             StartCoroutine( showDialogueGeneral("FirstKill"));
