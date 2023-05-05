@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -156,6 +156,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7125493061821707896}
     m_Modifications:
+    - target: {fileID: 656572499317567452, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_fontSize
+      value: 36.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5991061834781298394, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -190,11 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 300
+      value: 288
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 200
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_LocalPosition.x
@@ -230,7 +238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

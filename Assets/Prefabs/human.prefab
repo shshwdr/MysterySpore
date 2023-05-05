@@ -622,61 +622,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249391918472364007}
     m_Modifications:
-    - target: {fileID: 656572499317567452, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_text
-      value: Nonononono don't hurt me! I'm sorry!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_fontSize
-      value: 22.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_margin.w
-      value: 5.203928
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_margin.x
-      value: 8.18441
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_margin.y
-      value: 6.690752
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_margin.z
-      value: 8.184418
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 3dc7fc6716aa0194b9e95c897e4f3218, type: 2}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_fontSizeMin
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 8427721812692856307, guid: 3dc7fc6716aa0194b9e95c897e4f3218, type: 2}
     - target: {fileID: 5991061834781298394, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_Name
       value: floatDialogueBubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 6696893239273603553, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6696893239273603553, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7654fa3ad401f6148879bc1185530100, type: 3}
-    - target: {fileID: 6696893239273603553, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_Pivot.x
@@ -713,14 +661,6 @@ PrefabInstance:
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_SizeDelta.y
       value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_LocalPosition.x
