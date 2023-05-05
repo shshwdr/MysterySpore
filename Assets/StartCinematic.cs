@@ -12,11 +12,11 @@ public class StartCinematic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if (GameManager.Instance.skipCinematic)
-        // {
-        //     gameObject.SetActive(false);
-        //     return;
-        // }
+        if (GameManager.Instance.skipCinematic())
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         image.gameObject.SetActive(true);
         StartCoroutine(showImage());
         
