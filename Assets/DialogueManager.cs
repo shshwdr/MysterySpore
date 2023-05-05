@@ -19,6 +19,9 @@ public class DialogueInfo
     public string speaker;
     public int hasNext;
     public string special;
+    public string icon;
+
+    public Sprite Icon => Resources.Load<Sprite>("DialogueIcons/DialogueIcon" + icon);
 
     public string Text => text;
 }
@@ -31,7 +34,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public bool shouldShowDialogues = true;
 
-
+    public Image DialogueThumbnail;
     public TMP_Text dialogueLabel;
     public TMP_Text speakerLabel;
     public GameObject dialoguePanel;
@@ -263,7 +266,8 @@ public class DialogueManager : Singleton<DialogueManager>
                 }
             }
 
-
+            DialogueThumbnail.sprite = info.Icon;
+            DialogueThumbnail.gameObject.SetActive(info.Icon != null);
             speakerLabel.text = info.speaker;
             dialogueLabel.text = ""; //info.text;
             var showText = info.Text;
