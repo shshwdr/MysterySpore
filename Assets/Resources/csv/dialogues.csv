@@ -1,59 +1,87 @@
-text,type,speaker,special,hasNext,description
-AHHHHHHHHHHHHHH!,0,Aileen,,1,Intro tutorial dialogue
-"Oh my god, what the hell did they do to us?",0,Marina,,1,
-Why can’t we move?? We look like a weird spiky avocado.,0,Benny,,1,
-"Oh my god, what the hell did they do to us?",0,Marina,,1,
-Wait a second. Click and drag on our body.,0,Benny,,0,
-,,,,,
-WOAH. Is that…part of us?,AfterDrag,Aileen,,1,After drag
-We are not letting those corporate clones get away with this!,AfterDrag,Marina,,1,
-"Subject 2409, please cooperate.",AfterDrag,Research Intern #105,internEnter,1,Weaponless Scientist intro
-"Hell no, we did NOT consent to getting turned into…whatever this is",AfterDrag,Benny,,1,cont...
-"I was just getting back into CrossFit, why now???",AfterDrag,Aileen,,1,cont...
-"If they want an experiment, we’ll experiment. Let’s mess with them and click and drag to block their way.",AfterDrag,Marina,,0,cont...
-,,,,,
-"Guys, am I crazy or does he taste delicious?",FirstKill,Aileen,,1,After eating scientist
-"Yeah, his flavour has this unami mouthfeel.",FirstKill,Benny,,1,cont...
-"Meh, I prefer steak.",FirstKill,Marina,,0,cont...
-,,,,,
-"Our shareholders cannot know about this! Take the subject down, use lethal force if necessary.",,Supervisor Doug #6,,1,Activate laserbot
-BEEP! SURRENDER NOW TERRORIST.,,Laserbot,,1,cont...
-"Woah, I was born here.",,Benny,,1,cont...
-I have a work visa.,,Aileen,,1,cont...
-WATCH OUT FOR THE LASERS!,,Marina,,0,cont...
-,,,,,
-I pulled so many all-nighters for this company and they turn me into THIS?!,1,Marina,,1,get into level 1
-Growing a tentacle is the biggest career advancement I’ve had this past year.,1,Aileen,,1,cont...
-Worst internship ever...I can’t wait until we have enough energy to give them some more payback.,1,Benny,,0,cont...
-,,,,,
-I had PLANS before turning into this thing! I wanted to win the Nobel prize!,2,Marina,,1,get into level 2
-"I didn’t think my life would turn out this way, but at least I didn't turn into a corporate clone.",2,Benny,,1,cont...
-Being a monster is not that bad. Definitely more fun than paperwork.,2,Aileen,,0,cont...
-,,,,,
-I always thought it was weird the only employees here are all clones except us,3,Aileen,,1,get into level 3
-Not cool of them to give us that mystery sugar.,3,Benny,,1,cont...
-I wonder what was in it? Maybe I could continue research as the world's first monster scientist...,3,Marina,,0,cont...
-,,,,,
-"Let's try and get out of this room, maybe we'll get some answers.",4,Marina,,1,get into level 4
-"What's the point, we're a FREAKING UGLY HORRIFYING monster!!",4,Aileen,,1,
-"Hey, I don't appreciate you body shaming us.",4,Benny,,0,
-,,,,,
-Dah we are out of energy!,OutOfEnergy,Marina,,1,out of energy
-We can't move now! We stuck! ,OutOfEnergy,Aileen,,1,
-Try again!,OutOfEnergy,Benny,,0,
-,,,,,
-,,,,,
-It's Aileen,Aileen,,,,from now on are small dialogue bubbles
-It's Marina,Marina,,,,
-It's Benny,Benny,,,,
-,,,,,
-Wth nonononono don't kill me! I'm sorry!,Intern,,,,
-,,,,,
-,,,,,
-Nooooo I don’t have insurance! The medical bills will kill me and I can't afford a clone body!,Scientist,Scientist Doug #46,,,After attacking scientist 1
-Aughhh! I am not paid enough for this!,Scientist,Scientist Dougie,,,After attacking scientist 2
-This was NOT in the workplace hazard training!,Scientist,Scientist Douglan,,,After attacking scientist 3
-UGHHH I hate dying from these experiments! Now I gotta get reimbursed for a new clone body.,Scientist,Scientist Doug #719,,,After attacking scientist 4
-I delegate my duties to Scientist Doug #242!,Scientist,Supervisor Doug #87,,,After attacking scientist 5
-"Dang it, I JUST got promoted and now this?!",Scientist,Supervisor Doug #242,,,After attacking scientist 6
-"NOOOO, I forgot to fill in the paperwork for a replacement clone body in case of death!",Scientist,Scientist Doug #31,,,After attacking scientist 7
+text,type,speaker/,special,hasNext,description,Icon
+AHHHHHHHHHHHHHH!,0,Aileen,,1,Intro tutorial dialogue,AileenScared
+"Oh my god, what the hell did they do to us?",0,Marina,,1,,Marina
+Why can’t we move?? We look like a weird spiky avocado.,0,Benny,,1,,Benny
+"Oh my god, what the hell did they do to us?",0,Marina,,1,,Marina
+Wait a second. Click and drag on our body.,0,Benny,,0,,Benny
+,,,,,,
+WOAH. Is that…part of us?,AfterDrag,Aileen,,1,After drag,AileenScared
+We are not letting those corporate clones get away with this!,AfterDrag,Marina,,1,,Marina
+"Subject 2409, please cooperate.",AfterDrag,Research Intern #105,internEnter,1,Weaponless Scientist intro,InternOblivious
+"Hell no, we did NOT consent to getting turned into…whatever this is",AfterDrag,Benny,,1,cont...,Benny
+"I was just getting back into CrossFit, why now???",AfterDrag,Aileen,,1,cont...,Aileen
+"If they want an experiment, we’ll experiment. Let’s mess with them and click and drag to block their way.",AfterDrag,Marina,,0,cont...,Marina
+,,,,,,
+"Guys, am I crazy or does he taste delicious?",FirstKill,Aileen,,1,After eating scientist,Aileen
+"Yeah, his flavour has this unami mouthfeel.",FirstKill,Benny,,1,cont...,Benny
+"Meh, I prefer steak.",FirstKill,Marina,,0,cont...,Marina
+,,,,,,
+"Our shareholders cannot know about this! Take the subject down, use lethal force if necessary.",,Supervisor Doug #6,,1,Activate laserbot,Scientist2
+BEEP! SURRENDER NOW TERRORIST.,,Laserbot,,1,cont...,Laserbot
+"Woah, I was born here.",,Benny,,1,cont...,Benny
+I have a work visa.,,Aileen,,1,cont...,Aileen
+WATCH OUT FOR THE LASERS!,,Marina,,0,cont...,Marina
+,,,,,,
+I pulled so many all-nighters for this company and they turn me into THIS?!,1,Marina,,1,get into level 1,Marina
+Growing a tentacle is the biggest career advancement I’ve had this past year.,1,Aileen,,1,cont...,Aileen
+Worst internship ever...I can’t wait until we have enough energy to give them some more payback.,1,Benny,,0,cont...,Benny
+,,,,,,
+I had PLANS before turning into this thing! I wanted to win the Nobel prize!,2,Marina,,1,get into level 2,Marina
+"I didn’t think my life would turn out this way, but at least I didn't turn into a corporate clone.",2,Benny,,1,cont...,Benny
+Being a monster is not that bad. Definitely more fun than paperwork.,2,Aileen,,0,cont...,Aileen
+,,,,,,
+I always thought it was weird the only employees here are all clones except us,3,Aileen,,1,get into level 3,Aileen
+Not cool of them to give us that mystery sugar.,3,Benny,,1,cont...,Benny
+I wonder what was in it? Maybe I could continue research as the world's first monster scientist...,3,Marina,,0,cont...,Marina
+,,,,,,
+"Let's try and get out of this room, maybe we'll get some answers.",4,Marina,,1,get into level 4,Marina
+"What's the point, we're a FREAKING UGLY HORRIFYING monster!!",4,Aileen,,1,,Aileen
+"Hey, I don't appreciate you body shaming us.",4,Benny,,0,,Benny
+,,,,,,
+Dah we are out of energy!,OutOfEnergyLvl1,Marina,Level 1,1,out of energy,Marina
+We can't move now! OH NO!,OutOfEnergyLvl1,Aileen,Level 1,1,,AileenScared
+"It's okay, the fluid will give us energy again, just wait.",OutOfEnergyLvl1,Benny,Level 1,0,,Benny
+,,,,,,
+,,,,,,
+Be careful! This holds the experimental fluid that helps us grow.,Big tube that they are connected to,,,,Textbox,
+Don't need this anymore. They got us booster board workstations...so we could work on the way to the bathroom.,Desk,,,,Textbox,
+WOOHOO! No more paperwork!,File Cabinet,,,,Textbox,
+So many long hours here...,Whiteboard,,,,Textbox,
+Should I email my mom? ,Computer,,,,Textbox,
+I'm sick of experiments.,Test Tube,,,,Textbox,
+Wonder what I look like under there now?,Microscope,,,,Textbox,
+We're the hazard now!,Hazard Sign,,,,Textbox,
+There's never anything good left for us!,Fridge,,,,Textbox,
+Poor things got experimented on too...,Other experiment tube,,,,Textbox,
+,,,,,,
+Nonononono don't hurt me! I'm sorry!,Intern Chased,Intern Greg,,,Chasing intern 1,InternScared (any number)
+Help!! SECURITY!!!!,Intern Chased,Intern Gregory,,,Chasing intern 2,InternScared (any number)
+Uh oh uh oh! WE NEED MORE SECURITY!,Intern Chased,Intern Greggy,,,Chasing intern 3,InternScared (any number)
+Ahhhh get away from me!!!,Intern Chased,Intern Greg-greg,,,Chasing intern 4,InternScared (any number)
+Please I'm just another intern! It's not my fault!,Intern Chased,Intern Greggo,,,Chasing intern 5,InternScared (any number)
+"I'm sorry, I was just following orders! I have rent to pay!",Intern Chased,Intern Greg #23,,,Chasing intern 6,InternScared (any number)
+"Come on, we're all interns here! Don't hurt us!",Intern Chased,Intern Greg #86,,,Chasing intern 7,InternScared (any number)
+"No please! It's the supervisor's fault, we're just interns too!",Intern Chased,Intern Greg #50,,,Chasing intern 8,InternScared (any number)
+"Don't be mad, you are a scientific breakthrough!!",Intern Chased,Intern Greg (the one that drugged you),,,Chasing intern 9,InternScared (any number)
+,,,,,,
+Oh MAMA!,Intern Attack / Dying,,,,Attack intern 1,InternDying (any number)
+AUUGHHHHH!!!,Intern Attack / Dying,,,,Attack intern 2,InternDying (any number)
+I should have quit a long time agooooo....,Intern Attack / Dying,,,,Attack intern 3,InternDying (any number)
+Why did I waste so much of my life at work...,Intern Attack / Dying,,,,Attack intern 4,InternDying (any number)
+I see the light...,Intern Attack / Dying,,,,Attack intern 5,InternDying (any number)
+,,,,,,
+Nooooo I don’t have insurance! The medical bills will kill me and I can't afford a clone body!,Scientist Chased,Scientist Doug #46,,,Chasing scientist 1,WeakScientist (any number)
+Aughhh! I am not paid enough for this!,Scientist Chased,Scientist Dougie,,,Chasing scientist 2,WeakScientist (any number)
+This was NOT in the workplace hazard training!,Scientist Chased,Scientist Douglan,,,Chasing scientist 3,WeakScientist (any number)
+UGHHH I hate dying from these experiments! Now I gotta get reimbursed for a new clone body.,Scientist Chased,Scientist Doug #719,,,Chasing scientist 4,WeakScientist (any number)
+I delegate my duties to Scientist Doug #242!,Scientist Chased,Supervisor Doug #87,,,Chasing scientist 5,WeakScientist (any number)
+"Dang it, I JUST got promoted and now this?!",Scientist Chased,Supervisor Doug #242,,,Chasing scientist 6,WeakScientist (any number)
+"NOOOO, I forgot to fill in the paperwork for a replacement clone body in case of death!",Scientist Chased,Scientist Doug #31,,,Chasing scientist 7,WeakScientist (any number)
+,,,,,,
+REMAIN CALM! EVERYTHING IS UNDER CONTROL!,Scientist ready to attack,Scientist Doug #46,,,Scientist ready to attack,Scientist (any number)
+SURRENDER NOW SUBJECT 2409!,Scientist ready to attack,Scientist Dougie,,,Scientist ready to attack,Scientist (any number)
+Just my luck. This is going to affect my performance review.,Scientist ready to attack,Scientist Douglan,,,Scientist ready to attack,Scientist (any number)
+"REMOVE YOUR TENTACLES, INTERNS OF SUBJECT 2409!",Scientist ready to attack,Scientist Doug #719,,,Scientist ready to attack,Scientist (any number)
+INTERNS OF SUBJECT 2409! WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist ready to attack,Supervisor Doug #87,,,Scientist ready to attack,Scientist (any number)
+"Great, another experiment gone wrong. Who could've guessed?",Scientist ready to attack,Supervisor Doug #242,,,Scientist ready to attack,Scientist (any number)
+Why do I always get the worst shifts??,Scientist ready to attack,Scientist Doug #31,,,Scientist ready to attack,Scientist (any number)
