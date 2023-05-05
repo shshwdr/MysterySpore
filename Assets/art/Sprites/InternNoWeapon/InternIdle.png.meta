@@ -1,16 +1,28 @@
 fileFormatVersion: 2
-guid: 939496ed1824513448282b02e28bf759
+guid: 9f23133619e488948a70b1b1b7740844
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4476741231857763350
-    second: InternMoveUp_0
+      213: 6325204532787221626
+    second: InternIdle_0
   - first:
-      213: 4118677566909764296
-    second: InternMoveUp_1
+      213: 2180823723768034577
+    second: InternIdle_1
   - first:
-      213: -2684134932195013752
-    second: InternMoveUp_2
+      213: 773905352916816602
+    second: InternIdle_2
+  - first:
+      213: 511211607596979100
+    second: InternIdle_3
+  - first:
+      213: 7327319220988191849
+    second: InternIdle_4
+  - first:
+      213: 8211134629339584792
+    second: InternIdle_5
+  - first:
+      213: -3419088997575739771
+    second: InternIdle_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,7 +136,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InternMoveUp_0
+      name: InternIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74197c9204a7c750800000000000000
+      internalID: 6325204532787221626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InternIdle_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11530fc4f97d34e10800000000000000
+      internalID: 2180823723768034577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InternIdle_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad2516271d67dba00800000000000000
+      internalID: 773905352916816602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InternIdle_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93dfd3af30381700800000000000000
+      internalID: 511211607596979100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InternIdle_4
       rect:
         serializedVersion: 2
         x: 0
@@ -138,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aebf5c3819b6fd1c0800000000000000
-      internalID: -4476741231857763350
+      spriteID: 964a4ea720edfa560800000000000000
+      internalID: 7327319220988191849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InternMoveUp_1
+      name: InternIdle_5
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c2d608ec6b782930800000000000000
-      internalID: 4118677566909764296
+      spriteID: 819d1b0e07fc3f170800000000000000
+      internalID: 8211134629339584792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InternMoveUp_2
+      name: InternIdle_6
       rect:
         serializedVersion: 2
         x: 0
@@ -180,8 +276,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b8c45108900cad0800000000000000
-      internalID: -2684134932195013752
+      spriteID: 5863d0cfba4fc80d0800000000000000
+      internalID: -3419088997575739771
       vertices: []
       indices: 
       edges: []

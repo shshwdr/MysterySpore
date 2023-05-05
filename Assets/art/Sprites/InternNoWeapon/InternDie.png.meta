@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 939496ed1824513448282b02e28bf759
+guid: ff89a2ce450b99b489f892f6cbfb9c32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4476741231857763350
-    second: InternMoveUp_0
+      213: -4422852815992801779
+    second: InternDie_0
   - first:
-      213: 4118677566909764296
-    second: InternMoveUp_1
+      213: -8880360301171326447
+    second: InternDie_1
   - first:
-      213: -2684134932195013752
-    second: InternMoveUp_2
+      213: 5938785566243002850
+    second: InternDie_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,7 +124,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InternMoveUp_0
+      name: InternDie_0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,14 +138,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aebf5c3819b6fd1c0800000000000000
-      internalID: -4476741231857763350
+      spriteID: d06b9e01ccede92c0800000000000000
+      internalID: -4422852815992801779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InternMoveUp_1
+      name: InternDie_1
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c2d608ec6b782930800000000000000
-      internalID: 4118677566909764296
+      spriteID: 112c3333b5f92c480800000000000000
+      internalID: -8880360301171326447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InternMoveUp_2
+      name: InternDie_2
       rect:
         serializedVersion: 2
         x: 0
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b8c45108900cad0800000000000000
-      internalID: -2684134932195013752
+      spriteID: 2e99129e10eca6250800000000000000
+      internalID: 5938785566243002850
       vertices: []
       indices: 
       edges: []
