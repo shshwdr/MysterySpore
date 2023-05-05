@@ -36,7 +36,12 @@ public class MPProgressManager : Singleton<MPProgressManager>
         }
         currentValue -= moveCost*dis;
         updateValue();
-        return currentValue > 0;
+        bool res = currentValue > 0;
+        if (!res)
+        {
+            OutOfEnergy();
+        }
+        return res;
     }
 
     public bool CanStartDraw()
@@ -45,7 +50,18 @@ public class MPProgressManager : Singleton<MPProgressManager>
         {
             return true;
         }
-        return currentValue > startCost;
+
+        bool res = currentValue > startCost;
+        if (!res)
+        {
+            OutOfEnergy();
+        }
+        return res;
+    }
+
+    public void OutOfEnergy()
+    {
+        HumanManager.Instance.outOfEnergy();
     }
 
     public void startDraw()

@@ -57,7 +57,10 @@ public class Human : MonoBehaviour
         // }
         if (collideByVineCount > 0)
         {
-            
+            if (HumanManager.Instance.isLose)
+            {
+                return;
+            }
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
             if (currentHP <= 0)
             {
@@ -105,7 +108,7 @@ public class Human : MonoBehaviour
         foreach (Component component in components)
         {
             // Skip the Transform component
-            if (!(component is Transform) && !(component is SpriteRenderer)&& !(component is Animator))
+            if (!(component is Transform) && !(component is SpriteRenderer)&& !(component is Animator) && !(component is ShowText))
             {
                 Destroy(component);
             }

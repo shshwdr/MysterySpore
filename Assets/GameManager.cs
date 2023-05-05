@@ -15,6 +15,11 @@ public class GameManager : Singleton<GameManager>
         return shouldSkipCinematic || level != 0;
     }
 
+    public void  restart()
+    {
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void GotoNextLevel()
     {
         level++;
@@ -29,7 +34,7 @@ public class GameManager : Singleton<GameManager>
 
     public bool shouldRecoverEnergy()
     {
-        return level == 0;
+        return level == 0 || HumanManager.Instance.isWin;
     }
 
     // Update is called once per frame

@@ -45,25 +45,25 @@ I thought they were there to replace us.,5,Marina,,,,Marina
 "I know all we did was make a mess, but I feel accomplished.",WIN,Aileen,,,,Aileen
 We can do anything we want! Let's become the world's first MONSTER scientists!,WIN,Marina,,,,Marina
 ,,,,,,
-Dah we are out of energy!,OutOfEnergy Lvl0,Marina,Level 0,1,out of energy,Marina
-We can't move now! OH NO!,OutOfEnergy Lvl0,Aileen,Level 0,1,cont...,AileenScared
-"It's okay, the fluid they injected into us will help us recover energy.",OutOfEnergy Lvl0,Benny,Level 0,0,cont...,Benny
+Dah we are out of energy!,OutOfEnergy0,Marina,,1,out of energy,Marina
+We can't move now! OH NO!,OutOfEnergy0,Aileen,,1,cont...,AileenScared
+"It's okay, the fluid they injected into us will help us recover energy.",OutOfEnergy0,Benny,,0,cont...,Benny
 ,,,,,,
-Slow down! We used up all the energy injections they gave us.,LowEnergyLvl1,Aileen,Level 1,1,low energy,AileenScared
-Maybe we can look for other kinds of fluids...,LowEnergyLvl1,Marina,Level 1,1,cont...,Marina
-We poured our blood and tears into this unpaid internship. Time to get some of that back!,LowEnergyLvl1,Benny,Level 1,0,cont...,Benny
+Slow down! We used up all the energy injections they gave us.,OutOfEnergy,Aileen,,1,low energy,AileenScared
+Maybe we can look for other kinds of fluids...,OutOfEnergy,Marina,,1,cont...,Marina
+We poured our blood and tears into this unpaid internship. Time to get some of that back!,OutOfEnergy,Benny,,0,cont...,Benny
 ,,,,,,
-Feeling hungry...,OutOfEnergyLvl1,Benny,Level 1,,out of energy,Benny
-"Uh oh, we ran out of energy again. ",OutOfEnergyLvl1,Marina,Level 1,,cont...,Marina
-We need to feed on their blood!,OutOfEnergyLvl1,AileenScared,Level 1,,cont...,AileenScared
+Feeling hungry...,OutOfEnergy,Benny,,1,out of energy,Benny
+"Uh oh, we ran out of energy again. ",OutOfEnergy,Marina,,1,cont...,Marina
+We need to feed on their blood!,OutOfEnergy,AileenScared,,0,cont...,AileenScared
 ,,,,,,
-"I'm huuuuuuuungry, wanna eat more corporate clones!",OutOfEnergyLvl2-5,,Level 2-5,,out of energy,Aileen
-"Noooo, we need more blood!",OutOfEnergyLvl2-5,,Level 2-5,,out of energy,Aileen
-"Welp, we're all out again.",OutOfEnergyLvl2-5,,Level 2-5,,out of energy,Benny
+"I'm huuuuuuuungry, wanna eat more corporate clones!",OutOfEnergy,Marina,,1,out of energy,Aileen
+"Noooo, we need more blood!",OutOfEnergy,Aileen,,1,out of energy,Aileen
+"Welp, we're all out again.",OutOfEnergy,Benny,,0,out of energy,Benny
 ,,,,,,
-Let's use our energy wisely!,LowEnergyLvl2-5,,Level 2-5,,low energy,Marina
-Fascinating how we can get energy from their bodies.,LowEnergyLvl2-5,,Level 2-5,,low energy,Marina
-We've got to be careful not to use up all our energy.,LowEnergyLvl2-5,,Level 2-5,,low energy,Benny
+Let's use our energy wisely!,OutOfEnergy,Benny,,1,low energy,Marina
+Fascinating how we can get energy from their bodies.,OutOfEnergy,Aileen,,1,low energy,Marina
+We've got to be careful not to use up all our energy.,OutOfEnergy,Marina,,0,low energy,Benny
 ,,,,,,
 Be careful! This holds the experimental fluid that helps us grow.,Big tube that they are connected to,,,,Textbox,
 Don't need this anymore. They got us booster board workstations...so we could work on the way to the bathroom.,Desk,,,,Textbox,

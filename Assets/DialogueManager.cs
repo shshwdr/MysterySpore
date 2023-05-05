@@ -149,11 +149,21 @@ public class DialogueManager : Singleton<DialogueManager>
         yield return StartCoroutine(showDialogue(DialogueLists, DialogueState.posAnswer));
     }
 
-    public IEnumerator showLoseDialogue(bool isKilling)
+    public IEnumerator showLoseDialogue(bool isLevel0)
     {
-        var DialogueLists = DialogueDict["lose"][isKilling ? 1 : 0];
+        List<DialogueInfo> dialogueList;
+        if (isLevel0)
+        {
+            
+            dialogueList = DialogueDict["OutOfEnergy0"][0];
+        }
+        else
+        {
+            
+            dialogueList = DialogueDict["OutOfEnergy"][Random.Range(0,DialogueDict["OutOfEnergy"].Count)];
+        }
 
-        yield return StartCoroutine(showDialogue(DialogueLists, DialogueState.posAnswer));
+        yield return StartCoroutine(showDialogue(dialogueList, DialogueState.posAnswer));
     }
 
     public IEnumerator showTutorialDialogue(int id)
