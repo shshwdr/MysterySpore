@@ -2,7 +2,7 @@ text,type,speaker,special,hasNext,description,icon
 AHHHHHHHHHHHHHH!,0,Aileen,,1,Intro tutorial dialogue,AileenScared
 "Oh my god, what the hell did they do to us?",0,Marina,,1,,Marina
 Why can’t we move?? We look like a weird spiky avocado.,0,Aileen,,1,,AileenScared
-Wait a second. Click and drag on our body.,0,Benny,,0,,Benny
+Wait a second. <color=#FF0000>Click and drag</color> on our body.,0,Benny,,0,,Benny
 ,,,,,,
 WOAH. Is that…part of us?,AfterDrag,Aileen,,1,After drag,AileenScared
 We are not letting those corporate clones get away with this!,AfterDrag,Marina,,1,,Marina

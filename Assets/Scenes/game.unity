@@ -28024,6 +28024,10 @@ PrefabInstance:
       value: -26.870972
       objectReference: {fileID: 0}
     - target: {fileID: 5215509035964612409, guid: 84384dc0d30f15740a838ca41b548a2f, type: 3}
+      propertyPath: m_text
+      value: 'New <color=#FF0000>Text '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215509035964612409, guid: 84384dc0d30f15740a838ca41b548a2f, type: 3}
       propertyPath: m_margin.x
       value: 51.762085
       objectReference: {fileID: 0}
