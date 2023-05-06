@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.U2D;
+
 public class GameDraw : MonoBehaviour
 {
     public float minimumDistance = 1.0f;
@@ -15,8 +16,7 @@ public class GameDraw : MonoBehaviour
     public float heightDecrease = 0.01f;
     public float heightMin = 0.7f;
 
-    
-    
+
     public float growTime = 0.3f;
 
     private float growTimer = 0;
@@ -27,10 +27,11 @@ public class GameDraw : MonoBehaviour
     private AstarPath astarPath;
 
     public float growLength = 1;
+    public float lungeLength = 1;
 
-     void RemoveChildren()
+    void RemoveChildren()
     {
-        Debug.Log("remove children "+children.Count);
+        Debug.Log("remove children " + children.Count);
         for (int i = 0; i < children.Count; i++)
         {
             var child = children[0];
@@ -41,6 +42,7 @@ public class GameDraw : MonoBehaviour
             {
                 child.DestorySelf();
             }
+
             children.Remove(child);
         }
     }
@@ -48,7 +50,7 @@ public class GameDraw : MonoBehaviour
     public void DestorySelf()
     {
         RemoveChildren();
-        
+
         VinesManager.Instance.removeVine(GetComponent<SpriteShapeController>());
         Destroy(gameObject);
 
@@ -57,29 +59,36 @@ public class GameDraw : MonoBehaviour
             finishCreation();
         }
     }
-   public void init(Vector3 startPos,Vector3 lastP,float width, GameDraw parent)
+
+    public void init(Vector3 startPos, Vector3 lastP, float width, GameDraw parent)
     {
         isFinished = false;
         lastPosition = lastP;
         startPosition = startPos;
         heightStart = width;
         this.parent = parent;
-        
+
         GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
         GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
         if (this.parent)
         {
             parent.children.Add(this);
         }
-        
+
         VinesManager.Instance.addVine(GetComponent<SpriteShapeController>());
     }
+
     // Use this for initialization
     void Start()
     {
         astarPath = GameObject.FindObjectOfType<AstarPath>();
+        
+        spriteShapeController = gameObject.GetComponent<SpriteShapeController>();
+        spline = spriteShapeController.spline;
     }
 
+    SpriteShapeController spriteShapeController;
+    private Spline spline;
     private static int NextIndex(int index, int pointCount)
     {
         return Mod(index + 1, pointCount);
@@ -118,13 +127,12 @@ public class GameDraw : MonoBehaviour
 
     public void finishCreation()
     {
-        
-        VinesManager.Instance. StopAddingVine();
+        VinesManager.Instance.StopAddingVine();
         DialogueManager.Instance.showDragDialogue();
-       // if(GetComponent<SpriteShapeController>().spline.)
-        
+        // if(GetComponent<SpriteShapeController>().spline.)
+
         isFinished = true;
-            
+
         //GetComponent<Sprinkle>().UpdateSprinkles();
         GetComponent<SequentialWidthChange>().FinishCreation();
         MPProgressManager.Instance.stopDraw();
@@ -136,10 +144,36 @@ public class GameDraw : MonoBehaviour
         //     }
         // }
         //
-        
+
         astarPath.Scan();
     }
 
+    void draw(Vector3 dir)
+    {
+        //Debug.Log("insertPoint "+lastPosition+dir);
+        spline.InsertPointAt(spline.GetPointCount(), lastPosition + dir);
+        var newPointIndex = spline.GetPointCount() - 1;
+        Smoothen(spriteShapeController, newPointIndex - 1);
+
+        GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
+        spline.SetHeight(newPointIndex, heightStart /*UnityEngine.Random.Range(0.9f, 1.1f)*/);
+        heightStart -= heightDecrease;
+
+        lastPosition = lastPosition + dir;
+
+        GameObject.FindObjectOfType<AstarPath>().Scan();
+
+        // foreach (var humanAi in HumanManager.Instance.humans)
+        // {
+        //     humanAi.FindNextRandomPath();
+        // }
+        if (heightStart <= heightMin)
+        {
+            finishCreation();
+        }
+
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -153,11 +187,42 @@ public class GameDraw : MonoBehaviour
             finishCreation();
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            
+            if (!MPProgressManager.Instance.CanLungeDistance())
+            {
+                finishCreation();
+            }
+            else
+            {
+                MPProgressManager.Instance.startLunge();
+                var mp = Input.mousePosition;
+                //mp.z = 10.0f;
+                mp = Camera.main.ScreenToWorldPoint(mp);
+                mp -= startPosition;
+                mp.z = 0.0f;
+                var dt = Mathf.Abs((mp - lastPosition).magnitude);
+                var md = minimumDistance;
+                if (dt > md)
+                {
+
+                    var dir = (mp - lastPosition).normalized;
+                    dir *= lungeLength;
+                    draw(dir);
+                
+                    //if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                    }
+                }
+            }
+        }
+        
         growTimer += Time.deltaTime;
         if (growTimer > growTime)
         {
             growTimer = 0;
-            
+
             var mp = Input.mousePosition;
             //mp.z = 10.0f;
             mp = Camera.main.ScreenToWorldPoint(mp);
@@ -165,42 +230,29 @@ public class GameDraw : MonoBehaviour
             mp.z = 0.0f;
             var dt = Mathf.Abs((mp - lastPosition).magnitude);
             var md = minimumDistance;
-            if (Input.GetMouseButton(0) && dt > md)
+
+            if (dt > md && Input.GetMouseButton(0))
             {
-                var spriteShapeController = gameObject.GetComponent<SpriteShapeController>();
-                var spline = spriteShapeController.spline;
-                var dir = (mp - lastPosition).normalized *growLength * MouseController.Instance.speed;
-                if (dir.z != 0 ||lastPosition.z!=0 )
+
+                var dir = (mp - lastPosition).normalized;
+                if (dir.z != 0 || lastPosition.z != 0)
                 {
                     Debug.LogError("clear z!");
                 }
-                Debug.Log("insertPoint "+lastPosition+dir);
-                spline.InsertPointAt(spline.GetPointCount(), lastPosition+dir);
-                var newPointIndex = spline.GetPointCount() - 1;
-                Smoothen(spriteShapeController, newPointIndex - 1);
 
-                GetComponent<SequentialWidthChange>().originalHeights.Add(heightStart);
-                spline.SetHeight(newPointIndex, heightStart/*UnityEngine.Random.Range(0.9f, 1.1f)*/);
-                heightStart -= heightDecrease;
-                
-                lastPosition = lastPosition+dir;
 
-                GameObject.FindObjectOfType<AstarPath>().Scan();
+                        dir *= growLength;
 
-                // foreach (var humanAi in HumanManager.Instance.humans)
-                // {
-                //     humanAi.FindNextRandomPath();
-                // }
-                if (heightStart <= heightMin)
-                {
-                    
-                    finishCreation();
-                }
-                if (!MPProgressManager.Instance.CanDrawDistance(growLength* MouseController.Instance.cost))
-                {
-                
-                    finishCreation();
-                }
+                        draw(dir);
+
+                    if (Input.GetMouseButton(0))
+                    {
+                        if (!MPProgressManager.Instance.CanDrawDistance(growLength * MouseController.Instance.cost))
+                        {
+                            finishCreation();
+                        }
+                    }
+
             }
         }
         

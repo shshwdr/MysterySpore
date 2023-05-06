@@ -12,6 +12,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
     private float currentValue;
 
     public float startCost = 30;
+    public float lungeCost = 10;
     public float moveCost = 1;
     public float recoverSpeed = 50;
     public float recoverFromHuman = 50;
@@ -27,6 +28,21 @@ public class MPProgressManager : Singleton<MPProgressManager>
         hpbar.init(maxValue);
     }
 
+    public bool CanLungeDistance()
+    {
+        
+        if (unlimitEnergy)
+        {
+            return true;
+        }
+
+        bool res = currentValue > lungeCost;
+        if (!res)
+        {
+            OutOfEnergy();
+        }
+        return res;
+    }
     public bool CanDrawDistance(float dis)
     {
         
@@ -42,6 +58,13 @@ public class MPProgressManager : Singleton<MPProgressManager>
             OutOfEnergy();
         }
         return res;
+    }
+    
+    
+    public void startLunge()
+    {
+        currentValue -= lungeCost;
+        updateValue();
     }
 
     public bool CanStartDraw()
@@ -80,6 +103,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
     public void recoverEnergy(float value)
     {
         currentValue += value;
+        currentValue = math.min(currentValue, maxValue);
         updateValue();
     }
 
