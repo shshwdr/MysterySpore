@@ -6406,7 +6406,7 @@ PrefabInstance:
       objectReference: {fileID: 2060102933}
     - target: {fileID: 5453231009530770334, guid: d62b579786c578a448f5bf54e8abaa0b, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5453231009530770334, guid: d62b579786c578a448f5bf54e8abaa0b, type: 3}
       propertyPath: m_SortingLayerID
@@ -17955,6 +17955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61312a76a63c6d7469c523f37817917e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActivated: 0
+  activateTime: 0
 --- !u!1001 &2043986898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19571,7 +19573,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1915900027, guid: 28358f2a0d6706042bc1dca2aa051a97, type: 3}
       propertyPath: level
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915900027, guid: 28358f2a0d6706042bc1dca2aa051a97, type: 3}
       propertyPath: shouldSkipCinematic
