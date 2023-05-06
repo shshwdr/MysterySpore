@@ -42,7 +42,7 @@ class LoadAssets : MonoBehaviour
     void Update()
     {
         // Update the loading indication
-        if (hasStartedLoading == false && Input.anyKeyDown)
+        if (hasStartedLoading == false)
         {
             StartCoroutine(LoadGameAsync());
             hasStartedLoading = true;
