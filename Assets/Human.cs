@@ -34,7 +34,10 @@ public class Human : MonoBehaviour
         hpbar = GetComponentInChildren<HPBar>();
         collider = GetComponent<CircleCollider2D>();
         currentHP = maxHP;
-        hpbar.init(maxHP);
+        if (hpbar)
+        {
+            hpbar.init(maxHP);
+        }
         checkRadius = collider.radius * collider.transform.lossyScale.x;
         layerMask = 1 << LayerMask.NameToLayer(vineTag);
         humanAi = GetComponent<HumanAI>();
