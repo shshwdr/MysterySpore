@@ -24,6 +24,10 @@ public class GameManager : Singleton<GameManager>
     {
         level++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }public void GotoPrevLevel()
+    {
+        level--;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,10 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             GotoNextLevel();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            GotoPrevLevel();
         }
     }
 }
