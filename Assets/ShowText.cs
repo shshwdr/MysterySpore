@@ -10,21 +10,20 @@ public class ShowText : MonoBehaviour
     public TMP_Text label;
     public GameObject panel;
     public string textKey;
-    public float showTime = 1;
-    public void Show(string extra)
+    public void Show(string extra, float time)
     {
         if (DialogueManager.Instance.DialogueDict.ContainsKey(textKey + extra))
         {
             var potentialWords = DialogueManager.Instance.DialogueDict[textKey + extra];
             panel.SetActive(true);
             label.text = potentialWords[Random.Range(0,potentialWords.Count)][0].text;
-            StartCoroutine(hide());
+            StartCoroutine(hide(time));
         }
     }
 
-    IEnumerator hide()
+    IEnumerator hide(float time)
     {
-        yield return new WaitForSeconds(showTime);
+        yield return new WaitForSeconds(time);
         
         panel.SetActive(false);
     }
@@ -38,7 +37,7 @@ public class ShowText : MonoBehaviour
         if (col.collider.tag == "Vine")
         {
             StopAllCoroutines();
-            Show("");
+            Show("",DialogueManager.Instance.popupShowTime);
         }
     }
 

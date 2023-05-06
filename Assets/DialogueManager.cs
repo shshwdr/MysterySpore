@@ -28,6 +28,9 @@ public class DialogueInfo
 
 public class DialogueManager : Singleton<DialogueManager>
 {
+    private bool isShowingPopup = false;
+    
+    
     public  Dictionary<string, List<List<DialogueInfo>>> DialogueDict =
         new Dictionary<string, List<List<DialogueInfo>>>();
 
@@ -54,6 +57,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private bool isInAnim = false;
 
+    public float popupShowTime = 2;
     private void Start()
     {
         if (DialogueDict.ContainsKey(GameManager.Instance.level.ToString()))
@@ -62,6 +66,23 @@ public class DialogueManager : Singleton<DialogueManager>
         }
     }
 
+    public bool showPopup(ShowText showtext, string text)
+    {
+        if (isShowingPopup)
+        {
+            return false;
+        }
+        showtext.Show(text, popupShowTime);
+        isShowingPopup = true;
+        StartCoroutine(resetPopup());
+        return false;
+    }
+
+    IEnumerator resetPopup()
+    {
+        yield return new WaitForSeconds(popupShowTime);
+        isShowingPopup = false;
+    }
     public IEnumerator showDialogueGeneral(string key)
     {
         var DialogueLists = DialogueDict[key][0];

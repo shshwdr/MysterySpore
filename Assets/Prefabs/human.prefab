@@ -244,6 +244,9 @@ MonoBehaviour:
   isMoving: 0
   isEscaping: 0
   isRunningAway: 0
+  hasTube: 0
+  fluidPrefab: {fileID: 0}
+  fluidGenerateTime: 0.3
   meleeAnimatorController: {fileID: 22100000, guid: 2a30de00068d9d3448c2eb347b14188d, type: 2}
 --- !u!114 &8638732372371020552
 MonoBehaviour:
@@ -275,7 +278,6 @@ MonoBehaviour:
   label: {fileID: 3442423238026671048}
   panel: {fileID: 3704948449558682207}
   textKey: Intern
-  showTime: 1
 --- !u!114 &2887690088752340381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
-  breakDelay: 2
   attackInterval: 1
   attackRange: 9
   damage: 0.2
@@ -452,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -478,7 +479,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1249391919788262269}
   - component: {fileID: 1249391919788262271}
-  - component: {fileID: 1249391919788262268}
   - component: {fileID: 1249391919788262270}
   m_Layer: 0
   m_Name: hpbar
@@ -516,36 +516,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249391919788262242}
   m_CullTransparentMesh: 1
---- !u!114 &1249391919788262268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249391919788262242}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1249391919788262270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -641,9 +611,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1249391918472364007}
     m_Modifications:
+    - target: {fileID: 656572499317567452, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563860108225037899, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5991061834781298394, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_Name
       value: floatDialogueBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696893239273603553, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b23c01488616d348af7e7732bda7337, type: 3}
+    - target: {fileID: 6696893239273603553, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696893239273603553, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570238404164168697, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8199904382151726901, guid: e877f55ab6b81c14ea315cf4f8d1b711, type: 3}
       propertyPath: m_Pivot.x

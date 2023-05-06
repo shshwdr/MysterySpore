@@ -76,11 +76,18 @@ public class RunAwayFromTarget : MonoBehaviour
             //StartCoroutine(FindNewPath());
             if (firstTime)
             {
-                firstTime = false;
-                if (GetComponent<ShowText>())
+                
+                var suc = DialogueManager.Instance.showPopup(GetComponent<ShowText>(), " Chased");
+                if (suc)
                 {
-                    GetComponent<ShowText>().Show(" Chased");
+                    
+                    firstTime = false;
                 }
+                // firstTime = false;
+                // if (GetComponent<ShowText>())
+                // {
+                //     GetComponent<ShowText>().Show(" Chased");
+                // }
             }
             FindNewPath();
         }
