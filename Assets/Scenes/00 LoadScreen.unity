@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press Any Key to Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3dc7fc6716aa0194b9e95c897e4f3218, type: 2}
+  m_sharedMaterial: {fileID: 8427721812692856307, guid: 3dc7fc6716aa0194b9e95c897e4f3218, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -371,11 +371,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Banks:
   - Master
-  - Music
-  - SFX
   - Master.strings
   Scene: game
-  mainText: {fileID: 0}
+  mainText: {fileID: 333655409}
 --- !u!4 &554370546
 Transform:
   m_ObjectHideFlags: 0

@@ -25971,7 +25971,331 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4533744381196890073, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <door>k__BackingField.Path
+      value: event:/SFX/Oneshot/Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <damage>k__BackingField.Path
+      value: event:/SFX/Oneshot/Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <itemHit>k__BackingField.Path
+      value: event:/SFX/Oneshot/Item hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogue>k__BackingField.Path
+      value: event:/SFX/Oneshot/Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeHit>k__BackingField.Path
+      value: event:/SFX/Oneshot/Knife hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanYell>k__BackingField.Path
+      value: event:/SFX/Oneshot/Human Yell
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelLose>k__BackingField.Path
+      value: event:/Music/Fanfare/Level lose
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotRays>k__BackingField.Path
+      value: event:/SFX/Loop/Robot Rays
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineBurnt>k__BackingField.Path
+      value: event:/SFX/Oneshot/Vine burnt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <door>k__BackingField.Guid.Data1
+      value: 1187464321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <door>k__BackingField.Guid.Data2
+      value: 1318341790
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <door>k__BackingField.Guid.Data3
+      value: -1288510020
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <door>k__BackingField.Guid.Data4
+      value: -1833815003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanDying>k__BackingField.Path
+      value: event:/SFX/Oneshot/Human dying
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineGrowing>k__BackingField.Path
+      value: event:/SFX/Loop/Vine Growing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <damage>k__BackingField.Guid.Data1
+      value: 722756216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <damage>k__BackingField.Guid.Data2
+      value: 1325512782
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <damage>k__BackingField.Guid.Data3
+      value: 1615142591
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <damage>k__BackingField.Guid.Data4
+      value: 1389490832
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <itemHit>k__BackingField.Guid.Data1
+      value: -1945710021
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <itemHit>k__BackingField.Guid.Data2
+      value: 1093146544
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <itemHit>k__BackingField.Guid.Data3
+      value: 1460322451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <itemHit>k__BackingField.Guid.Data4
+      value: 1189587527
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelComplete>k__BackingField.Path
+      value: event:/Music/Fanfare/Level complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicGameplay>k__BackingField.Path
+      value: event:/Music/Music/Gameplay Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicMainMenu>k__BackingField.Path
+      value: event:/Music/Music/Gameplay Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogue>k__BackingField.Guid.Data1
+      value: 874016131
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogue>k__BackingField.Guid.Data2
+      value: 1333647326
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogue>k__BackingField.Guid.Data3
+      value: -470298956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogue>k__BackingField.Guid.Data4
+      value: -1574185176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogueBubble>k__BackingField.Path
+      value: event:/SFX/Oneshot/Dialogue bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeHit>k__BackingField.Guid.Data1
+      value: 524213123
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeHit>k__BackingField.Guid.Data2
+      value: 1170363280
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeHit>k__BackingField.Guid.Data3
+      value: 1259068304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeHit>k__BackingField.Guid.Data4
+      value: 605936503
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanYell>k__BackingField.Guid.Data1
+      value: 989110388
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanYell>k__BackingField.Guid.Data2
+      value: 1083092176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanYell>k__BackingField.Guid.Data3
+      value: -1527438956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanYell>k__BackingField.Guid.Data4
+      value: 1294588586
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelLose>k__BackingField.Guid.Data1
+      value: 882991205
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelLose>k__BackingField.Guid.Data2
+      value: 1225062807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelLose>k__BackingField.Guid.Data3
+      value: 153078674
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelLose>k__BackingField.Guid.Data4
+      value: 2081874201
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotActivation>k__BackingField.Path
+      value: event:/SFX/Oneshot/Robot activation
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotRays>k__BackingField.Guid.Data1
+      value: 248105639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotRays>k__BackingField.Guid.Data2
+      value: 1157875317
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotRays>k__BackingField.Guid.Data3
+      value: -2068023903
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotRays>k__BackingField.Guid.Data4
+      value: -683562188
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineBurnt>k__BackingField.Guid.Data1
+      value: 1261719940
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineBurnt>k__BackingField.Guid.Data2
+      value: 1181987652
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineBurnt>k__BackingField.Guid.Data3
+      value: 1574072961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineBurnt>k__BackingField.Guid.Data4
+      value: 616814546
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanDying>k__BackingField.Guid.Data1
+      value: -520516005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanDying>k__BackingField.Guid.Data2
+      value: 1077830030
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanDying>k__BackingField.Guid.Data3
+      value: 1841148589
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <humanDying>k__BackingField.Guid.Data4
+      value: 2022048616
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineGrowing>k__BackingField.Guid.Data1
+      value: -725266669
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineGrowing>k__BackingField.Guid.Data2
+      value: 1280035937
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineGrowing>k__BackingField.Guid.Data3
+      value: -1545310306
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <vineGrowing>k__BackingField.Guid.Data4
+      value: 160146347
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelComplete>k__BackingField.Guid.Data1
+      value: -684810878
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelComplete>k__BackingField.Guid.Data2
+      value: 1300429443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelComplete>k__BackingField.Guid.Data3
+      value: 2135088789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <levelComplete>k__BackingField.Guid.Data4
+      value: 2038032193
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicGameplay>k__BackingField.Guid.Data1
+      value: 268971971
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicGameplay>k__BackingField.Guid.Data2
+      value: 1246568786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicGameplay>k__BackingField.Guid.Data3
+      value: 939951494
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicGameplay>k__BackingField.Guid.Data4
+      value: 941240870
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicMainMenu>k__BackingField.Guid.Data1
+      value: 268971971
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicMainMenu>k__BackingField.Guid.Data2
+      value: 1246568786
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicMainMenu>k__BackingField.Guid.Data3
+      value: 939951494
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicMainMenu>k__BackingField.Guid.Data4
+      value: 941240870
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <musicPlaylist>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogueBubble>k__BackingField.Guid.Data1
+      value: -1240313824
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogueBubble>k__BackingField.Guid.Data2
+      value: 1208875584
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogueBubble>k__BackingField.Guid.Data3
+      value: -1153837898
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <dialogueBubble>k__BackingField.Guid.Data4
+      value: 835537641
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotActivation>k__BackingField.Guid.Data1
+      value: -309362132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotActivation>k__BackingField.Guid.Data2
+      value: 1260463641
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotActivation>k__BackingField.Guid.Data3
+      value: 1940118918
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <robotActivation>k__BackingField.Guid.Data4
+      value: 2050446688
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7017af39510029040809bf09c46e9ac3, type: 3}

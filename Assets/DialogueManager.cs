@@ -65,6 +65,7 @@ public class DialogueManager : Singleton<DialogueManager>
     public IEnumerator showDialogueGeneral(string key)
     {
         var DialogueLists = DialogueDict[key][0];
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialogueBubble, transform.position);
 
         yield return StartCoroutine(showDialogue(DialogueLists, DialogueState.posAnswer));
     }
@@ -110,7 +111,7 @@ public class DialogueManager : Singleton<DialogueManager>
             while (info.hasNext == 1)
             {
                 i++;
-
+                
                 info = dialogInfos[i];
                 if (info.text == "")
                 {

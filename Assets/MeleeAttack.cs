@@ -41,6 +41,8 @@ public class MeleeAttack : HumanAttack
             isAttacking = true;
             GetComponent<HumanAI>().isMoving = false;
             GetComponent<HumanAI>().StopSeekPath();
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.knifeHit, transform.position);
+
             ApplyDamage(closestController, closestIndex, damage);
         }
         else

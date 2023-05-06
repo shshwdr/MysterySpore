@@ -32,7 +32,7 @@ class LoadAssets : MonoBehaviour
     // The name of the scene to load and switch to
     public string Scene = null;
     bool hasStartedLoading = false;
-    public TextMeshPro mainText;
+    public TMP_Text mainText;
 
     public void Start()
     {

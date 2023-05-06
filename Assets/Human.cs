@@ -101,7 +101,7 @@ public class Human : MonoBehaviour
             MPProgressManager.Instance.recoverEnergy(MPProgressManager.Instance.recoverFromHuman);
             HumanManager.Instance.RemoveHuman(GetComponent<HumanAI>());
             Destroy(hpbar.gameObject);
-            //AudioManager.Instance.PlayOneShot(FMODEvents.Instance.humanDying, transform.position);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.humanDying, transform.position);
         }
     }
 

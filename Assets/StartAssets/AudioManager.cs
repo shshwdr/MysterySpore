@@ -41,8 +41,6 @@ public class AudioManager : Singleton<AudioManager>
         eventEmitters = new List<StudioEventEmitter>();
 
         masterBus = RuntimeManager.GetBus("bus:/");
-        musicBus = RuntimeManager.GetBus("bus:/Music");
-        sfxBus = RuntimeManager.GetBus("bus:/SFX");
         reverbBus = RuntimeManager.GetBus("bus:/Reverb");
 
         //unparent itself from Managers to make DontDestroyOnLoad work properly
@@ -58,8 +56,6 @@ public class AudioManager : Singleton<AudioManager>
     private void Update()
     {
         masterBus.setVolume(masterVolume);
-        musicBus.setVolume(musicVolume);
-        sfxBus.setVolume(SFXVolume);
 
         if (Input.GetKeyDown(KeyCode.RightBracket))
         {

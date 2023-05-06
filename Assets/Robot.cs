@@ -30,6 +30,8 @@ public class Robot : MonoBehaviour
             scientistInView++;
             isActivated = true;
             activateTime = Time.time;
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.robotActivation, transform.position);
+
             animator.SetTrigger("activate");
         }
     }
