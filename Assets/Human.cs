@@ -100,13 +100,10 @@ public class Human : MonoBehaviour
                 GetComponent<Human>().animator.SetTrigger("die");
             }
 
-            if(Random.Range(0,100)>50)
+            //if(Random.Range(0,100)>50)
             {
-                
-                if (GetComponent<ShowText>())
-                {
-                    GetComponent<ShowText>().Show(" Dying");
-                }
+                DialogueManager.Instance.showPopup(GetComponent<ShowText>(), " Dying");
+         
             }
             RemoveAllComponentsExceptTransform();
             //Destroy(gameObject);

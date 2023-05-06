@@ -114,16 +114,25 @@ public class HumanAttack : MonoBehaviour
     {
         if (firstTime)
         {
-            firstTime = false;
-            if (Random.Range(0, 100) > 50)
+            var suc = DialogueManager.Instance.showPopup(GetComponent<ShowText>(), " Attack");
+            if (suc)
             {
-                
-                if (GetComponent<ShowText>())
-                {
-                    GetComponent<ShowText>().Show(" Attack");
-                }
+                firstTime = false;
             }
         }
+
+        // if (firstTime)
+        // {
+        //     firstTime = false;
+        //     if (Random.Range(0, 100) > 50)
+        //     {
+        //         
+        //         if (GetComponent<ShowText>())
+        //         {
+        //             GetComponent<ShowText>().Show(" Attack");
+        //         }
+        //     }
+        // }
         // Apply damage logic here (e.g., decrease point's width and break the SpriteShape into two parts)
         // You can use "controller.spline.SetHeight(index, newHeight)" to adjust the width of the point at the specified index.
 
