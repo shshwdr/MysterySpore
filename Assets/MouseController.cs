@@ -82,6 +82,10 @@ public class MouseController : Singleton<MouseController>
                 controller.GetComponent<SpriteShapeRenderer>().sortingOrder = closestController
                     ? closestController.GetComponent<SpriteShapeRenderer>().sortingOrder - 1
                     : -1;
+                
+                Debug.Log("insertPoint "+Vector3.zero);
+                Debug.Log("insertPoint "+(mouseWorldPosition - closestPoint));
+                
                 go.GetComponent<GameDraw>().init(closestPoint, mouseWorldPosition - closestPoint,width,closestController?closestController.GetComponent<GameDraw>():null);
                 MPProgressManager.Instance.startDraw();
             }

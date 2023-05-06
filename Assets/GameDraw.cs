@@ -157,9 +157,10 @@ public class GameDraw : MonoBehaviour
             growTimer = 0;
             
             var mp = Input.mousePosition;
-            mp.z = 10.0f;
+            //mp.z = 10.0f;
             mp = Camera.main.ScreenToWorldPoint(mp);
             mp -= startPosition;
+            mp.z = 0.0f;
             var dt = Mathf.Abs((mp - lastPosition).magnitude);
             var md = minimumDistance;
             if (Input.GetMouseButton(0) && dt > md)
@@ -168,6 +169,7 @@ public class GameDraw : MonoBehaviour
                 var spline = spriteShapeController.spline;
                 var dir = (mp - lastPosition).normalized *growLength * MouseController.Instance.speed;
             
+                Debug.Log("insertPoint "+lastPosition+dir);
                 spline.InsertPointAt(spline.GetPointCount(), lastPosition+dir);
                 var newPointIndex = spline.GetPointCount() - 1;
                 Smoothen(spriteShapeController, newPointIndex - 1);
