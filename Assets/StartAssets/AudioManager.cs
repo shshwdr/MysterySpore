@@ -18,6 +18,7 @@ public class AudioManager : Singleton<AudioManager>
     private Bus masterBus;
     private Bus musicBus;
     private Bus sfxBus;
+    private Bus reverbBus;
 
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
@@ -42,6 +43,7 @@ public class AudioManager : Singleton<AudioManager>
         masterBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
         sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        reverbBus = RuntimeManager.GetBus("bus:/Reverb");
 
         //unparent itself from Managers to make DontDestroyOnLoad work properly
         gameObject.transform.parent = null;
@@ -100,10 +102,8 @@ public class AudioManager : Singleton<AudioManager>
         {
             return;
         }
-        musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        musicEventInstance.release();
 
-
+        StopMusic();
 
         EventReference newReference = FMODEvents.Instance.getNextMusicReference();
 
@@ -120,6 +120,12 @@ public class AudioManager : Singleton<AudioManager>
         musicEventInstance.setParameterByName("area", (float)area);
     }
 */
+    public void StopMusic()
+    {
+        musicEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        musicEventInstance.release();
+    }
+    
     public void SetMusic(LevelTheme theme = LevelTheme.MAIN_MENU)
     {
         EventReference musicRef = FMODEvents.Instance.musicMainMenu;
@@ -135,7 +141,6 @@ public class AudioManager : Singleton<AudioManager>
     }
     public void RestartMusic()
     {
-        
         //musicEventInstance.setParameterByName("area", (float)BiomeArea.AIRPORT_BATTLE);
         musicEventInstance.start();
     }
