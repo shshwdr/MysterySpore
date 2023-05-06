@@ -37,13 +37,13 @@ I wonder what was in it? Maybe I could continue research as the world's first mo
 "What's the point, we're a FREAKING UGLY HORRIFYING monster!!",4,Aileen,,1,cont...,AileenScared
 "Hey, I don't appreciate you body shaming us.",4,Benny,,0,cont...,Benny
 ,,,,,,
-At least we finally know what those robots do.,5,Benny,,,,Benny
-I thought they were there to replace us.,5,Marina,,,,Marina
-"Nope, just to destroy experiments gone wrong!",5,Aileen,,,,Aileen
+At least we finally know what those robots do.,5,Benny,,1,,Benny
+I thought they were there to replace us.,5,Marina,,1,,Marina
+"Nope, just to destroy experiments gone wrong!",5,Aileen,,0,,Aileen
 ,,,,,,
-"Wow, I can't believe we actually made it this far.",WIN,Benny,,,,Benny
-"I know all we did was make a mess, but I feel accomplished.",WIN,Aileen,,,,Aileen
-We can do anything we want! Let's become the world's first MONSTER scientists!,WIN,Marina,,,,Marina
+"Wow, I can't believe we actually made it this far.",WIN,Benny,,1,,Benny
+"I know all we did was make a mess, but I feel accomplished.",WIN,Aileen,,1,,Aileen
+We can do anything we want! Let's become the world's first MONSTER scientists!,WIN,Marina,,0,,Marina
 ,,,,,,
 Dah we are out of energy!,OutOfEnergy0,Marina,,1,out of energy,Marina
 We can't move now! OH NO!,OutOfEnergy0,Aileen,,1,cont...,AileenScared

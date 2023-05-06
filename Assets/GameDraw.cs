@@ -116,7 +116,7 @@ public class GameDraw : MonoBehaviour
         sc.spline.SetRightTangent(pointIndex, rightTangent);
     }
 
-    void finishCreation()
+    public void finishCreation()
     {
         DialogueManager.Instance.showDragDialogue();
        // if(GetComponent<SpriteShapeController>().spline.)

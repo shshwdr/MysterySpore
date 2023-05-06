@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 310109785620813957}
   - component: {fileID: -7656905576646784205}
   - component: {fileID: 1746265193}
+  - component: {fileID: 1127104248491448342}
   m_Layer: 6
   m_Name: SpriteShape (pakcage
   m_TagString: Vine
@@ -264,6 +265,19 @@ MonoBehaviour:
   changeSpeed: 0.25
   smoothness: 5
   originalHeights: []
+--- !u!114 &1127104248491448342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310109785620814011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7c4bc734373454c89c20c4c78e6a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakDelay: 2
 --- !u!1 &2117837632898041076
 GameObject:
   m_ObjectHideFlags: 0

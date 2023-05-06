@@ -29,7 +29,10 @@ public class HumanAI : MonoBehaviour
     public bool isEscaping = false;
     private AstarPath astar;
     public  bool isRunningAway; //is he is actually running away
-
+    public bool hasTube = false;
+    public GameObject fluidPrefab;
+    public float fluidGenerateTime = 0.3f;
+    private float fluidGenerateTimer;
     public AnimatorOverrideController meleeAnimatorController;
     private void Awake()
     {
@@ -52,7 +55,6 @@ public class HumanAI : MonoBehaviour
 
     private void Update()
     {
-
         if (path == null)
         {
             return;
@@ -72,6 +74,18 @@ public class HumanAI : MonoBehaviour
         //     return;
         // }
 
+        
+
+        if (hasTube)
+        {
+            
+            fluidGenerateTimer += Time.deltaTime;
+            if (fluidGenerateTimer >= fluidGenerateTime)
+            {
+                fluidGenerateTimer = 0;
+                Instantiate(fluidPrefab, transform.position, Quaternion.identity);
+            }
+        }
         //actual move code with animation
         Vector3 direction = ((Vector2)(path.vectorPath[currentWaypoint] - transform.position)).normalized;
         animator.SetTrigger("move");
@@ -88,8 +102,8 @@ public class HumanAI : MonoBehaviour
             //rb.MovePosition((Vector3)rb.position+(direction * (Time.deltaTime * (human.isSuffering ? speed / 2:speed))));
             transform.position += direction * Time.deltaTime * (human.isSuffering ? speed / 2:speed);
         }
-
-        if (!GetComponent<HumanAttack>() || !GetComponent<HumanAttack>().enabled)
+    
+        if (!hasTube &&( !GetComponent<HumanAttack>() || !GetComponent<HumanAttack>().enabled))
         {
             foreach (var knife in HumanManager.Instance.knifes)
             {
@@ -151,7 +165,7 @@ public class HumanAI : MonoBehaviour
                 }
             }
         }
-        else
+        else if(!hasTube)
         {
             //if there is knife nearby, fetch it. 
             foreach (var knife in HumanManager.Instance.knifes)

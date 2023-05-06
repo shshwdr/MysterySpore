@@ -12,7 +12,6 @@ public class HumanAttack : MonoBehaviour
     //public float stopAttackTime = 3;
     //private float stopAttackTimer = 0;
     public bool isAttacking = false;
-    public float breakDelay = 2f;
     
     private float nextAttackTime;
     public float attackInterval = 0.5f;
@@ -144,64 +143,16 @@ public class HumanAttack : MonoBehaviour
 
             
         }
-        FloatingTextManager.Instance.addText("HIT!", transform.position, Color.red);
-        float currentWidth = controller.GetComponent<SequentialWidthChange>().GetHeight(index);
-        float newWidth = Mathf.Max(0, currentWidth - damage);
-        controller.spline.SetHeight(index, newWidth);
-        controller.GetComponent<SequentialWidthChange>().SetHeight(index,newWidth);
-        
 
-        if (newWidth <= 0)
+        FloatingTextManager.Instance.addText("HIT!", controller.spline.GetPosition(index)+controller.transform.position, Color.red);
+        var res = controller.GetComponent<VineLogic>().Damage(index, damage);
+        if (res)
         {
-            // Break the SpriteShape into two parts
-            // Note that this is a basic example and might not cover all scenarios.
-            // You may need to handle edge cases and consider specific game mechanics.
-            BreakSpriteShape(controller, index, breakDelay);
-        }
-    }
-
-    private void BreakSpriteShape(SpriteShapeController controller, int index, float delay)
-    {
-        // Destroy the second part after the delay
-        StartCoroutine(DestroySpriteShapePart(controller, index, delay));
-    }
-    private void RemoveAllVerticesAfter(Spline spline, int index)
-    {
-        int pointCount = spline.GetPointCount();
-    
-        for (int i = pointCount - 1; i > index; i--)
-        {
-            spline.RemovePointAt(i);
-        }
-    }
-    private IEnumerator DestroySpriteShapePart(SpriteShapeController controller, int index, float delay)
-    {
-        if (controller != null)
-        {
-            Spline spline = controller.spline;
-
-            // Remove the point at the specified index
-            //spline.RemovePointAt(index);
-
-            RemoveAllVerticesAfter(spline, index-1);
-
-            // Check if there are enough points to form a new SpriteShape
-            int remainingPoints = spline.GetPointCount();
-            if (remainingPoints < 3)
-            {
-
-                controller.GetComponent<GameDraw>().DestorySelf() ;
-                
-                
-            }
-            
-            //stopAttackTimer = stopAttackTime;
             isAttacking = false;
             GetComponent<HumanAI>().FindNextRandomPath();
         }
-        
-        yield return new WaitForSeconds(delay);
     }
+
     
 
 }

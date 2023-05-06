@@ -7,12 +7,13 @@ public class FloatingTextManager : Singleton<FloatingTextManager>
     public GameObject floatingTextObj;
 
 
-    public FloatingText addText(string text, Vector3 pos, Color color, bool autoDispose = true, float stayTime = 0.4f)
+    public FloatingText addText(string text, Vector3 pos, Color color,float scale = 1, bool autoDispose = true, float stayTime = 0.4f)
     {
         var obj = Instantiate(floatingTextObj);
         obj.SetActive(true);
         FloatingText floatingText = obj.GetComponent<FloatingText>();
         floatingText.init(text, pos, color, stayTime, autoDispose);
+        floatingText.transform.localScale = Vector3.one *scale;
         return floatingText;
     }
 
