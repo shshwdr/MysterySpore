@@ -50,6 +50,9 @@ public class Human : MonoBehaviour
         HumanManager.Instance.AddHuman(GetComponent<HumanAI>());
     }
 
+    private float damageSoundTime = 0.4f;
+
+    private float damageSoundTimer;
     // Update is called once per frame
     void Update()
     {
@@ -58,12 +61,21 @@ public class Human : MonoBehaviour
         //         
         //     RunAway();
         // }
+        
+        damageSoundTimer += Time.deltaTime;
         if (collideByVineCount > 0)
         {
             if (HumanManager.Instance.isLose)
             {
                 return;
             }
+
+            if (damageSoundTimer > damageSoundTime)
+            {
+                damageSoundTimer = 0;
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.damage, transform.position);
+            }
+            
             currentHP -= hpDecreaseSpeed * Time.deltaTime;
             if (currentHP <= 0)
             {
