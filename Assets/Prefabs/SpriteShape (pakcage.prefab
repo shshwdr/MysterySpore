@@ -84,7 +84,7 @@ SpriteShapeRenderer:
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
-  - {fileID: 3192211871843431360, guid: f8eec3fce905b294ea4d08b9487a7c83, type: 3}
+  - {fileID: -8682136129135021687, guid: f8eec3fce905b294ea4d08b9487a7c83, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: 1b99bf409da29c8488476bc02f7ebb58, type: 3}
   - {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6503747035165833587
 Transform:
   m_ObjectHideFlags: 0
