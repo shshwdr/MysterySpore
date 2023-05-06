@@ -55,6 +55,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
         bool res = currentValue > 0;
         if (!res)
         {
+            //startLunge();
             OutOfEnergy();
         }
         return res;
@@ -77,6 +78,7 @@ public class MPProgressManager : Singleton<MPProgressManager>
         bool res = currentValue > startCost;
         if (!res)
         {
+            startDraw();
             OutOfEnergy();
         }
         return res;

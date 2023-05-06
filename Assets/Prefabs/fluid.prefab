@@ -135,4 +135,4 @@ MonoBehaviour:
   attackRange: 1
   attackTime: 1
   stayTime: 10
-  damage: 0.1
+  damage: 0.15

@@ -12,7 +12,7 @@ public class Robot : MonoBehaviour
     private int scientistInView = 0;
     private Animator animator;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         collider = GetComponent<CircleCollider2D>();
         animator = GetComponentInChildren<Animator>();
