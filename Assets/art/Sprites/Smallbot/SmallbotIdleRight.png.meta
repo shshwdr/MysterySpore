@@ -1,9 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 5a3b4b9c8ea6d4e44b42b7fcd1542dd3
-TextureImporter:
-  internalIDToNameTable: []
-=======
 guid: c0a51ee43ddf31949bd8ed12ca84d52f
 TextureImporter:
   internalIDToNameTable:
@@ -16,7 +11,6 @@ TextureImporter:
   - first:
       213: 9175944013149302767
     second: SmallbotIdleRight_2
->>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -128,9 +122,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-    sprites: []
-=======
     sprites:
     - serializedVersion: 2
       name: SmallbotIdleRight_0
@@ -195,7 +186,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
->>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
     outline: []
     physicsShape: []
     bones: []

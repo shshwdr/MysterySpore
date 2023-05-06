@@ -1,9 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: befd42861fd594e2da77fcd34c75bc7a
-TextureImporter:
-  internalIDToNameTable: []
-=======
 guid: ee465b7277f57014dabbcd34136dfbb1
 TextureImporter:
   internalIDToNameTable:
@@ -22,7 +17,6 @@ TextureImporter:
   - first:
       213: -5507304807460898576
     second: SmallbotInactiveClosetoScientist_4
->>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -134,9 +128,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
-    sprites: []
-=======
     sprites:
     - serializedVersion: 2
       name: SmallbotInactiveClosetoScientist_0
@@ -243,7 +234,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
->>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
     outline: []
     physicsShape: []
     bones: []
