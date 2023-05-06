@@ -166,7 +166,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public IEnumerator showWinDialogue()
     {
-        var DialogueLists = DialogueDict["win"][0];
+        var DialogueLists = DialogueDict["WIN"][0];
 
         yield return StartCoroutine(showDialogue(DialogueLists, DialogueState.posAnswer));
     }

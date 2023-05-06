@@ -10,6 +10,8 @@ public class GameManager : Singleton<GameManager>
     
     public bool hasKilled = false;
     public bool hasDragged = false;
+
+    public int maxLevel = 6;
     public bool skipCinematic()
     {
         return shouldSkipCinematic || level != 0;
@@ -22,10 +24,21 @@ public class GameManager : Singleton<GameManager>
     }
     public void GotoNextLevel()
     {
-        level++;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (level >= maxLevel)
+        {
+            HumanManager.Instance.Win();
+        }
+        else
+        {
+            level++;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }public void GotoPrevLevel()
     {
+        if (level <= 0)
+        {
+            return;
+        }
         level--;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -49,11 +62,11 @@ public class GameManager : Singleton<GameManager>
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             GotoNextLevel();
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             GotoPrevLevel();
         }
