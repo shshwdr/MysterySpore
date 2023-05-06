@@ -2,7 +2,7 @@ text,type,speaker,special,hasNext,description,icon
 AHHHHHHHHHHHHHH!,0,Aileen,,1,Intro tutorial dialogue,AileenScared
 "Oh my god, what the hell did they do to us?",0,Marina,,1,,Marina
 Why can’t we move?? We look like a weird spiky avocado.,0,Aileen,,1,,AileenScared
-Wait a second. Click and drag on our body.,0,Benny,,0,,Benny
+Wait a second. <color=#FF0000>Click and drag</color> on our body.,0,Benny,,0,,Benny
 ,,,,,,
 WOAH. Is that…part of us?,AfterDrag,Aileen,,1,After drag,AileenScared
 We are not letting those corporate clones get away with this!,AfterDrag,Marina,,1,,Marina
@@ -41,9 +41,9 @@ Being a monster is not that bad. Definitely more fun than paperwork.,5,Benny,,1,
 "Uh, guys FOCUS! Look at those fluids over there, what is that?",5,Marina,,1,cont...,Marina
 "Mmmmm, hope it is tasty...I want more energy!",5,Aileen,,0,cont...,Aileen
 ,,,,,,
-Those chemicals were NOT tasty at all...hope they don't bring any more.,6,Aileen,,1,get into level 6,AileenScared
-Can you see them? Use the arrow keys or WASD to pan the room.,6,Marina,,1,cont...,Marina
-Yeah I see them...darn corporate clones.,6,Benny,,0,cont...,Benny
+Those chemicals were NOT tasty at all.,6,Aileen,,1,get into level 6,AileenScared
+...and now they're bringing more.,6,Marina,,1,cont...,Marina
+"You know what man, I feel sorry for you, following orders and turning into a corporate clone.",6,Benny,,0,cont...,Benny
 He'll be a corporate CORPSE soon! Hahaha!,6,Aileen,,,,Aileen
 ,,,,,,
 I think I'm entering my villain era.,7,Aileen,,1,get into level 7,Aileen

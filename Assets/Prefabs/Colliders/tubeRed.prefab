@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7125493061821707878, guid: babf3536d7ae9be4983241b8d200cc4c, type: 3}
       propertyPath: m_Name
-      value: tubeGreen
+      value: tubeRed
       objectReference: {fileID: 0}
     - target: {fileID: 7125493061821707879, guid: babf3536d7ae9be4983241b8d200cc4c, type: 3}
       propertyPath: m_Sprite

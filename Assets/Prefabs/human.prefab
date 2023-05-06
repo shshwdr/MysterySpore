@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6851a9a6be8f0864594df86fc8859790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 1
+  maxHP: 2
+  hpDecreaseSpeed: 2
   animator: {fileID: 0}
   isDead: 0
 --- !u!50 &1249391918472364001
@@ -293,8 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 0
   attackInterval: 1
-  attackRange: 9
-  damage: 0.2
+  attackRange: 7
+  damage: 0.4
 --- !u!1 &1249391919624843459
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1246386257922457056, guid: b7c6a8ef2c19f7449a1028987427c47b, type: 3}
       propertyPath: m_Intensity
-      value: 0.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2879181446880994186, guid: b7c6a8ef2c19f7449a1028987427c47b, type: 3}
       propertyPath: m_RootOrder

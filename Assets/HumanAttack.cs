@@ -44,6 +44,11 @@ public class HumanAttack : MonoBehaviour
         {
             return;
         }
+
+        if (DialogueManager.Instance.isInDialogue)
+        {
+            return;
+        }
         
         if (Time.time >= nextAttackTime)
         {
@@ -91,7 +96,7 @@ public class HumanAttack : MonoBehaviour
         int closestIndex = -1;
         Spline spline = controller.spline;
 
-        for (int i = 0; i < Math.Max(1,spline.GetPointCount()-5); i++)
+        for (int i = 1; i < Math.Max(1,spline.GetPointCount()-5); i++)
         {
             Vector3 pointWorldPosition = controller.transform.TransformPoint(spline.GetPosition(i));
             float distance = Vector3.Distance(position, pointWorldPosition);

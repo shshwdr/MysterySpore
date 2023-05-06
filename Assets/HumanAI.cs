@@ -57,6 +57,7 @@ public class HumanAI : MonoBehaviour
     {
         if (path == null)
         {
+            isRunningAway = false;
             return;
         }
 

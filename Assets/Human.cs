@@ -12,7 +12,7 @@ public class Human : MonoBehaviour
     private HPBar hpbar;
     public float maxHP = 15;
     private float currentHP = 10;
-    private float hpDecreaseSpeed = 2;
+    public float hpDecreaseSpeed = 2;
     private int collideByVineCount = 0;
     private int numberOfPoints = 12;
     private float checkRadius;
