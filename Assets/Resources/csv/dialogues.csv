@@ -41,10 +41,10 @@ Being a monster is not that bad. Definitely more fun than paperwork.,5,Benny,,1,
 "Uh, guys FOCUS! Look at those fluids over there, what is that?",5,Marina,,1,cont...,Marina
 "Mmmmm, hope it is tasty...I want more energy!",5,Aileen,,0,cont...,Aileen
 ,,,,,,
-Those chemicals were NOT tasty at all.,6,Aileen,,1,get into level 6,AileenScared
-...and now they're bringing more.,6,Marina,,1,cont...,Marina
-"You know what man, I feel sorry for you, following orders and turning into a corporate clone.",6,Benny,,0,cont...,Benny
-He'll be a corporate CORPSE soon! Hahaha!,6,Aileen,,,,Aileen
+Those chemicals were NOT tasty at all...hope they don't bring any more.,6,Aileen,,1,get into level 6,AileenScared
+Can you see them? Use the arrow keys or WASD to pan the room.,6,Marina,,1,cont...,Marina
+Yeah I see them...darn corporate clones.,6,Benny,,1,cont...,Benny
+He'll be a corporate CORPSE soon! Hahaha!,6,Aileen,,0,,Aileen
 ,,,,,,
 I think I'm entering my villain era.,7,Aileen,,1,get into level 7,Aileen
 We deserve to treat ourselves. We never even got to take our vacation days!,7,Benny,,1,cont...,Benny
@@ -87,12 +87,12 @@ Poor things got experimented on too...,Other experiment tube,,,,Textbox,
 ,,,,,,
 Nonononono don't hurt me! I'm sorry!,Intern Chased,Intern Greg,,,Chasing intern 1,InternScared (any number)
 Help!! SECURITY!!!!,Intern Chased,Intern Gregory,,,Chasing intern 2,InternScared (any number)
-Uh oh uh oh! WE NEED MORE SECURITY!,Intern Chased,Intern Greggy,,,Chasing intern 3,InternScared (any number)
+Uh oh! WE NEED MORE SECURITY!,Intern Chased,Intern Greggy,,,Chasing intern 3,InternScared (any number)
 Ahhhh get away from me!!!,Intern Chased,Intern Greg-greg,,,Chasing intern 4,InternScared (any number)
-Please I'm just another intern! It's not my fault!,Intern Chased,Intern Greggo,,,Chasing intern 5,InternScared (any number)
+Please I'm just another intern!,Intern Chased,Intern Greggo,,,Chasing intern 5,InternScared (any number)
 "I'm sorry, I was just following orders! I have rent to pay!",Intern Chased,Intern Greg #23,,,Chasing intern 6,InternScared (any number)
 "Come on, we're all interns here! Don't hurt us!",Intern Chased,Intern Greg #86,,,Chasing intern 7,InternScared (any number)
-"No please! It's the supervisor's fault, we're just interns too!",Intern Chased,Intern Greg #50,,,Chasing intern 8,InternScared (any number)
+"It's the supervisor's fault, we're just interns too!",Intern Chased,Intern Greg #50,,,Chasing intern 8,InternScared (any number)
 "Don't be mad, you are a scientific breakthrough!!",Intern Chased,Intern Greg (the one that drugged you),,,Chasing intern 9,InternScared (any number)
 ,,,,,,
 Oh MAMA!,Intern Dying,,,,Attack intern 1,InternDying (any number)
@@ -107,13 +107,13 @@ This was NOT in the workplace hazard training!,Scientist Chased,Scientist Dougla
 UGHHH I hate these experiments!,Scientist Chased,Scientist Doug #719,,,Chasing scientist 4,WeakScientist (any number)
 I delegate my duties to Scientist Doug #242!,Scientist Chased,Supervisor Doug #87,,,Chasing scientist 5,WeakScientist (any number)
 "Dang it, I JUST got promoted and now this?!",Scientist Chased,Supervisor Doug #242,,,Chasing scientist 6,WeakScientist (any number)
-"NOOOO, I forgot to do paperwork for a replacement clone body!",Scientist Chased,Scientist Doug #31,,,Chasing scientist 7,WeakScientist (any number)
+I forgot to do paperwork for a replacement clone body!,Scientist Chased,Scientist Doug #31,,,Chasing scientist 7,WeakScientist (any number)
 ,,,,,,
 REMAIN CALM! EVERYTHING IS UNDER CONTROL!,Scientist Attack,Scientist Doug #46,,,Scientist ready to attack,Scientist (any number)
 SURRENDER NOW SUBJECT 2409!,Scientist Attack,Scientist Dougie,,,Scientist ready to attack,Scientist (any number)
 Just my luck. This is going to affect my performance review.,Scientist Attack,Scientist Douglan,,,Scientist ready to attack,Scientist (any number)
 "REMOVE YOUR TENTACLES, INTERNS OF SUBJECT 2409!",Scientist Attack,Scientist Doug #719,,,Scientist ready to attack,Scientist (any number)
-INTERNS OF SUBJECT 2409! WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist Attack,Supervisor Doug #87,,,Scientist ready to attack,Scientist (any number)
+WE WILL GIVE YOU A YEAR END BONUS IF YOU CEASE ATTACKING!,Scientist Attack,Supervisor Doug #87,,,Scientist ready to attack,Scientist (any number)
 "Great, another experiment gone wrong. Who could've guessed?",Scientist Attack,Supervisor Doug #242,,,Scientist ready to attack,Scientist (any number)
 Why do I always get the worst shifts??,Scientist Attack,Scientist Doug #31,,,Scientist ready to attack,Scientist (any number)
 ,,,,,,

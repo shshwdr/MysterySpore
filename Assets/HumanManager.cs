@@ -61,7 +61,7 @@ public class HumanManager : Singleton<HumanManager>
 
        {
            yield return StartCoroutine( winCinematic.showLose());
-           GameManager.Instance.level = 0;
+           GameManager.Instance.level = GameManager.Instance.maxLevel+1;
            GameManager.Instance.restart();
        }
    }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
+    public bool DontDestory;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,6 +13,10 @@ public class Knife : MonoBehaviour
 
     public void destory()
     {
+        if (DontDestory)
+        {
+            return;
+        }
         HumanManager.Instance.RemoveKnife(this);
         Destroy(gameObject);
     }

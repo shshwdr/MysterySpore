@@ -28,11 +28,16 @@ public class Robot : MonoBehaviour
         if (col.tag == "Human")
         {
             scientistInView++;
-            isActivated = true;
             activateTime = Time.time;
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.robotActivation, transform.position);
 
-            animator.SetTrigger("activate");
+            if (!isActivated)
+            {
+                
+                isActivated = true;
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.robotActivation, transform.position);
+
+                animator.SetTrigger("activate");
+            }
         }
     }
 

@@ -51,7 +51,7 @@ public class GameManager : Singleton<GameManager>
 
     public bool shouldRecoverEnergy()
     {
-        return level == 0 || HumanManager.Instance.isWin;
+        return level == 0 || HumanManager.Instance.isWin || level>maxLevel;
     }
 
     // Update is called once per frame
