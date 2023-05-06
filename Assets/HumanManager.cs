@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class HumanManager : Singleton<HumanManager>
 {
     public List<HumanAI> humans;
+
+    public List<Knife> knifes;
    // public GameObject NextLevelOBj;
    public bool isWin = false;
 
@@ -39,6 +41,16 @@ public class HumanManager : Singleton<HumanManager>
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    public void AddKnife(Knife knife)
+    {
+        knifes.Add(knife);
+    }
+
+    public void RemoveKnife(Knife knife)
+    {
+        knifes.Remove(knife);
     }
 
     public void AddHuman(HumanAI human)

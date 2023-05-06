@@ -29,6 +29,8 @@ public class HumanAI : MonoBehaviour
     public bool isEscaping = false;
     private AstarPath astar;
     public  bool isRunningAway; //is he is actually running away
+
+    public AnimatorOverrideController meleeAnimatorController;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,7 +47,7 @@ public class HumanAI : MonoBehaviour
             Debug.LogError("No active AstarPath found in the scene.");
             return;
         }
-        FindNextRandomPath();
+        //FindNextRandomPath();
     }
 
     private void Update()
@@ -71,11 +73,11 @@ public class HumanAI : MonoBehaviour
         // }
 
         //actual move code with animation
-        Vector3 direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        Vector3 direction = ((Vector2)(path.vectorPath[currentWaypoint] - transform.position)).normalized;
         animator.SetTrigger("move");
         animator.SetFloat("horizontal",direction.x);
         animator.SetFloat("verticle",direction.y);
-        float distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+        float distanceToWaypoint = Vector2.Distance((Vector2)transform.position, (Vector2)path.vectorPath[currentWaypoint]);
 
         if (distanceToWaypoint < nextPointDistanceThreshold)
         {
@@ -85,6 +87,27 @@ public class HumanAI : MonoBehaviour
         {
             //rb.MovePosition((Vector3)rb.position+(direction * (Time.deltaTime * (human.isSuffering ? speed / 2:speed))));
             transform.position += direction * Time.deltaTime * (human.isSuffering ? speed / 2:speed);
+        }
+
+        if (!GetComponent<HumanAttack>() || !GetComponent<HumanAttack>().enabled)
+        {
+            foreach (var knife in HumanManager.Instance.knifes)
+            {
+                if ((knife.transform.position - transform.position).magnitude <= collectDistance)
+                {
+                    
+                    //equip knife
+                    knife.destory();
+
+                    GetComponent<MeleeAttack>().enabled = true;
+
+                    animator.runtimeAnimatorController = meleeAnimatorController;
+                    animator.Rebind();
+                    path = null;
+                    isMoving = false;
+                    break;
+                }
+            }
         }
     }
 
@@ -106,7 +129,7 @@ public class HumanAI : MonoBehaviour
             GetComponent<RunAwayFromTarget>().UpdatePath();
         }
         
-        if (GetComponent<HumanAttack>())
+        if (GetComponent<HumanAttack>() && GetComponent<HumanAttack>().enabled)
         {
             if (GetComponent<HumanAttack>().isAttacking)
             {
@@ -117,13 +140,34 @@ public class HumanAI : MonoBehaviour
             var meleeFoundTarget = GetComponent<HumanAttack>().ClosestPosition(out res);
             if (meleeFoundTarget)
             {
-                GraphNode startNode = astar.GetNearest(transform.position).node;
-                GraphNode endNode = astar.GetNearest(res).node;
-                bool isPathPossible = PathUtilities.IsPathPossible(startNode, endNode);
-                
-                seeker.StartPath(transform.position, res, OnPathComplete);
-                return;
+                //GraphNode startNode = astar.GetNearest(transform.position).node;
+                //GraphNode endNode = astar.GetNearest(res).node;
+                //bool isPathPossible = PathUtilities.IsPathPossible(startNode, endNode);
+
+                //if (isPathPossible)
+                {
+                    seeker.StartPath(transform.position, res, OnPathComplete);
+                    return;
+                }
             }
+        }
+        else
+        {
+            //if there is knife nearby, fetch it. 
+            foreach (var knife in HumanManager.Instance.knifes)
+            {
+                if ((knife.transform.position - transform.position).magnitude <= knifeSearchDistance)
+                {
+                   // GraphNode startNode = astar.GetNearest(transform.position).node;
+                   // GraphNode endNode = astar.GetNearest(knife.transform.position).node;
+                    //bool isPathPossible = PathUtilities.IsPathPossible(startNode, endNode);
+                    //if (isPathPossible)
+                    {
+                        seeker.StartPath(transform.position, knife.transform.position, OnPathComplete);
+                    }
+                }
+            }
+            
         }
 
         return;
@@ -133,6 +177,9 @@ public class HumanAI : MonoBehaviour
         //     seeker.StartPath(transform.position, randomPosition, OnPathComplete);
         // }
     }
+
+    private float collectDistance = 5;
+    private float knifeSearchDistance = 10;
 
     public void StopSeekPath()
     {

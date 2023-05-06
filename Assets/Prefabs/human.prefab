@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 4588539457748644428}
   - component: {fileID: 8638732372371020552}
   - component: {fileID: 6495991641184224375}
+  - component: {fileID: 2887690088752340381}
   m_Layer: 0
   m_Name: human
   m_TagString: Untagged
@@ -243,6 +244,7 @@ MonoBehaviour:
   isMoving: 0
   isEscaping: 0
   isRunningAway: 0
+  meleeAnimatorController: {fileID: 22100000, guid: 2a30de00068d9d3448c2eb347b14188d, type: 2}
 --- !u!114 &8638732372371020552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +276,23 @@ MonoBehaviour:
   panel: {fileID: 3704948449558682207}
   textKey: Intern
   showTime: 1
+--- !u!114 &2887690088752340381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249391918472364005}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146340a69c3fb7543b10d345fd6a8361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  breakDelay: 2
+  attackInterval: 1
+  attackRange: 9
+  damage: 0.2
 --- !u!1 &1249391919624843459
 GameObject:
   m_ObjectHideFlags: 0

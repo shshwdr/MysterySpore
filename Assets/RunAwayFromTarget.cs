@@ -123,7 +123,7 @@ public class RunAwayFromTarget : MonoBehaviour
         for (int i = 0; i < maxAttempts; i++)
         {
             // Generate a random path that avoids obstacles
-            Vector3 randomDirection = Random.insideUnitCircle.normalized * radius;
+            Vector3 randomDirection = (Vector2)(Random.insideUnitCircle.normalized) * radius;
             Vector3 targetPosition = transform.position + randomDirection;
 
             // Calculate the distance between the random position and the target

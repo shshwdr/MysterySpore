@@ -159,7 +159,7 @@ MonoBehaviour:
   growTime: 0.1
   children: []
   parent: {fileID: 0}
-  growLength: 1
+  growLength: 0.9
 --- !u!114 &310109785620813959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,3 +254,4 @@ MonoBehaviour:
   widthMultiplier: 1.2
   changeSpeed: 0.25
   smoothness: 5
+  originalHeights: []
