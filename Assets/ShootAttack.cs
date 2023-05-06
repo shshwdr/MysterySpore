@@ -42,6 +42,9 @@ public class ShootAttack : HumanAttack
         {
             isAttacking = true;
             GetComponent<HumanAI>().StopSeekPath();
+            
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.robotRays, transform.position);
+
             ApplyDamage(closestController, closestIndex, damage);
             
             line.startPoint = laserLineStart;

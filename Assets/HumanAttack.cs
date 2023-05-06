@@ -143,6 +143,8 @@ public class HumanAttack : MonoBehaviour
 
             
         }
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.damage, transform.position);
+
 
         FloatingTextManager.Instance.addText("HIT!", controller.spline.GetPosition(index)+controller.transform.position, Color.red);
         var res = controller.GetComponent<VineLogic>().Damage(index, damage);

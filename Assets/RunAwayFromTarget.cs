@@ -140,6 +140,9 @@ public class RunAwayFromTarget : MonoBehaviour
                     // Start a new path to the target position
                     seeker.StartPath(transform.position, targetPosition, GetComponent<HumanAI>().OnPathComplete);
                     GetComponent<HumanAI>(). isRunningAway = true;
+                    
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.humanYell, transform.position);
+
                     return true;
                 }
 
