@@ -374,7 +374,7 @@ MonoBehaviour:
   - Music
   - SFX
   - Master.strings
-  Scene: 0 startMenu
+  Scene: game
   mainText: {fileID: 0}
 --- !u!4 &554370546
 Transform:
