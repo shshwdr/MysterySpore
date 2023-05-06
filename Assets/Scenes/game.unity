@@ -20763,7 +20763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1915900027, guid: 28358f2a0d6706042bc1dca2aa051a97, type: 3}
       propertyPath: level
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915900027, guid: 28358f2a0d6706042bc1dca2aa051a97, type: 3}
       propertyPath: shouldSkipCinematic
