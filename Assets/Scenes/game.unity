@@ -6840,7 +6840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &541346648
 Transform:
   m_ObjectHideFlags: 0
@@ -10069,25 +10069,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 911703937}
-    m_ColliderPaths:
-    - - X: 280000000
-        Y: 200000000
-      - X: -280000000
-        Y: 200000000
-      - X: -280000000
-        Y: -160000000
-      - X: 280000000
-        Y: -160000000
-    - - X: -240000000
-        Y: -120000000
-      - X: -240000000
-        Y: 120000000
-      - X: 240000000
-        Y: 120000000
-      - X: 240000000
-        Y: -120000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 27.999971, y: -16}
@@ -28106,7 +28088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1915900027, guid: 28358f2a0d6706042bc1dca2aa051a97, type: 3}
       propertyPath: level
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915900027, guid: 28358f2a0d6706042bc1dca2aa051a97, type: 3}
       propertyPath: shouldSkipCinematic

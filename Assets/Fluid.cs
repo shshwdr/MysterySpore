@@ -54,6 +54,7 @@ public class Fluid : MonoBehaviour
                 {
                     //do damage
                     
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.vineBurnt, transform.position);
                     FloatingTextManager.Instance.addText("Hit!", controller.spline.GetPosition(i)+controller.transform.position, Color.green,0.5f);
                     var res = controller.GetComponent<VineLogic>().Damage(i, damage);
                     if (res)

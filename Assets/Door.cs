@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
     private bool isOpened = false;
     public void Open()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.door, transform.position);
         animator.enabled = true;
         collider.enabled = true;
         isOpened = true;

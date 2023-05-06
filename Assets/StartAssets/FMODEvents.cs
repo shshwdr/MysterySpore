@@ -24,6 +24,7 @@ public class FMODEvents : Singleton<FMODEvents>
     [field: SerializeField] public EventReference humanDying { get; private set; }
     [field: SerializeField] public EventReference itemHit { get; private set; }
     [field: SerializeField] public EventReference knifeHit { get; private set; }
+    [field: SerializeField] public EventReference knifeEquip{ get; private set; }
     [field: SerializeField] public EventReference robotActivation { get; private set; }
     [field: SerializeField] public EventReference vineBurnt { get; private set; }
     [field: SerializeField] public EventReference uiClick { get; private set; }

@@ -22,12 +22,16 @@ public class HumanManager : Singleton<HumanManager>
            return;
        }
 
-       isLose = true;
        StartCoroutine(lose());
    }
 
    IEnumerator lose()
    {
+       if (isWin || isLose)
+       {
+           yield break;
+       }
+       isLose = true;
        yield return  StartCoroutine( DialogueManager.Instance.showLoseDialogue(GameManager.Instance.level == 0));
        if (GameManager.Instance.level == 0)
        {
@@ -35,6 +39,7 @@ public class HumanManager : Singleton<HumanManager>
        }
        else
        {
+           AudioManager.Instance.PlayOneShot(FMODEvents.Instance.levelLose, transform.position);
            yield return StartCoroutine( loseCinematic.showLose());
            GameManager.Instance.restart();
        }
@@ -42,6 +47,12 @@ public class HumanManager : Singleton<HumanManager>
 
    public void Win()
    {
+       if (isWin || isLose)
+       {
+           return;
+       }
+       isWin = true;
+       AudioManager.Instance.PlayOneShot(FMODEvents.Instance.levelComplete, transform.position);
        StartCoroutine(win());
    }
    IEnumerator win()

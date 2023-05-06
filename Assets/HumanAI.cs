@@ -110,6 +110,7 @@ public class HumanAI : MonoBehaviour
                 if ((knife.transform.position - transform.position).magnitude <= collectDistance)
                 {
                     
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.knifeEquip, transform.position);
                     //equip knife
                     knife.destory();
 

@@ -9,6 +9,7 @@ public class VineLogic : MonoBehaviour
     public float breakDelay = 2f;
     public bool Damage(int index, float damage)
     {
+        
         float currentWidth = controller.GetComponent<SequentialWidthChange>().GetHeight(index);
         float newWidth = Mathf.Max(0, currentWidth - damage);
         controller.spline.SetHeight(index, newWidth);

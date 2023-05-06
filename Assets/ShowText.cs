@@ -14,6 +14,8 @@ public class ShowText : MonoBehaviour
     {
         if (DialogueManager.Instance.DialogueDict.ContainsKey(textKey + extra))
         {
+            
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.itemHit, transform.position);
             var potentialWords = DialogueManager.Instance.DialogueDict[textKey + extra];
             panel.SetActive(true);
             label.text = potentialWords[Random.Range(0,potentialWords.Count)][0].text;

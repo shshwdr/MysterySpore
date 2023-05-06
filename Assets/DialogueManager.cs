@@ -298,6 +298,7 @@ public class DialogueManager : Singleton<DialogueManager>
                 }
             }
 
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dialogueBubble, transform.position);
             DialogueThumbnail.sprite = info.Icon;
             DialogueThumbnail.gameObject.SetActive(info.Icon != null);
             speakerLabel.text = info.speaker;
