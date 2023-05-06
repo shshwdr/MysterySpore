@@ -56,6 +56,8 @@ namespace KoganeUnityLib
 		/// <param name="onComplete">演出完了時に呼び出されるコールバック</param>
 		public void Play( string text, float speed, Action onComplete )
 		{
+			
+			GetComponent<LoopingSoundController>().PlaySound();
 			isFinished = false;
 			m_textUI.text = text;
 			m_onComplete = onComplete;
@@ -79,6 +81,8 @@ namespace KoganeUnityLib
 				.SetEase( Ease.Linear )
 				.OnComplete( () =>
 				{
+					
+					GetComponent<LoopingSoundController>().StopSound();
 					isFinished = true;
 					OnComplete();
 				})

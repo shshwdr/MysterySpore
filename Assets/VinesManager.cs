@@ -11,8 +11,15 @@ public class VinesManager : Singleton<VinesManager>
     public void addVine(SpriteShapeController vine)
     {
         vines.Add(vine);
+        GetComponent<LoopingSoundController>().UpdateParameterValue(0);
+        GetComponent<LoopingSoundController>().PlaySound();
     }
 
+    public void StopAddingVine()
+    {
+        
+        GetComponent<LoopingSoundController>().UpdateParameterValue(1);
+    }
     public void removeVine(SpriteShapeController vine)
     {
         

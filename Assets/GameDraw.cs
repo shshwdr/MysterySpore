@@ -118,6 +118,8 @@ public class GameDraw : MonoBehaviour
 
     public void finishCreation()
     {
+        
+        VinesManager.Instance. StopAddingVine();
         DialogueManager.Instance.showDragDialogue();
        // if(GetComponent<SpriteShapeController>().spline.)
         

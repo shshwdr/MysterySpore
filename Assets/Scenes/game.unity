@@ -6898,6 +6898,31 @@ Transform:
   m_Father: {fileID: 1775736047}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &604102454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7571402466311682312, guid: 480c260cc903d5a4e846cbf0ebfa5a26, type: 3}
+  m_PrefabInstance: {fileID: 7571402466375842504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &604102457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604102454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd805852613dc74d8dd1f74c112c5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent:
+    Guid:
+      Data1: -725266669
+      Data2: 1280035937
+      Data3: -1545310306
+      Data4: 160146347
+    Path: event:/SFX/Loop/Vine Growing
+  parameterName: Variation
 --- !u!1 &604306503
 GameObject:
   m_ObjectHideFlags: 0
@@ -20437,6 +20462,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e0d308424396354995e397dbbfed458, type: 3}
+--- !u!1 &1846454874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5215509036363192919, guid: 84384dc0d30f15740a838ca41b548a2f, type: 3}
+  m_PrefabInstance: {fileID: 6059137670496586320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1846454875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846454874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd805852613dc74d8dd1f74c112c5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent:
+    Guid:
+      Data1: 874016131
+      Data2: 1333647326
+      Data3: -470298956
+      Data4: -1574185176
+    Path: event:/SFX/Oneshot/Dialogue
+  parameterName: 
 --- !u!1 &1861312923
 GameObject:
   m_ObjectHideFlags: 0
@@ -27783,7 +27833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <robotRays>k__BackingField.Path
-      value: event:/SFX/Loop/Robot Rays
+      value: event:/SFX/Oneshot/Robot rays
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <vineBurnt>k__BackingField.Path
@@ -27808,6 +27858,10 @@ PrefabInstance:
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <humanDying>k__BackingField.Path
       value: event:/SFX/Oneshot/Human dying
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeEquip>k__BackingField.Path
+      value: event:/SFX/Oneshot/Knife equip
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <vineGrowing>k__BackingField.Path
@@ -27931,19 +27985,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <robotRays>k__BackingField.Guid.Data1
-      value: 248105639
+      value: 281175805
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <robotRays>k__BackingField.Guid.Data2
-      value: 1157875317
+      value: 1325691720
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <robotRays>k__BackingField.Guid.Data3
-      value: -2068023903
+      value: -1067057508
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <robotRays>k__BackingField.Guid.Data4
-      value: -683562188
+      value: -1529874933
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <vineBurnt>k__BackingField.Guid.Data1
@@ -27976,6 +28030,22 @@ PrefabInstance:
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <humanDying>k__BackingField.Guid.Data4
       value: 2022048616
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeEquip>k__BackingField.Guid.Data1
+      value: -2047673471
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeEquip>k__BackingField.Guid.Data2
+      value: 1180980198
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeEquip>k__BackingField.Guid.Data3
+      value: 1043390361
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
+      propertyPath: <knifeEquip>k__BackingField.Guid.Data4
+      value: -605200155
       objectReference: {fileID: 0}
     - target: {fileID: 7266949157986349883, guid: 7017af39510029040809bf09c46e9ac3, type: 3}
       propertyPath: <vineGrowing>k__BackingField.Guid.Data1
