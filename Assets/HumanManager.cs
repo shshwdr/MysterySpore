@@ -13,7 +13,7 @@ public class HumanManager : Singleton<HumanManager>
    public bool isWin = false;
 
    public bool isLose = false;
-
+   public StartCinematic loseCinematic;
    public void outOfEnergy()
    {
        if (isWin)
@@ -34,6 +34,7 @@ public class HumanManager : Singleton<HumanManager>
        }
        else
        {
+           yield return StartCoroutine( loseCinematic.showLose());
            GameManager.Instance.restart();
        }
    }

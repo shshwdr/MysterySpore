@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class StartCinematic : MonoBehaviour
 {
+    public bool isLose = false;
     public Sprite[] images;
 
     public Image image;
@@ -12,18 +13,33 @@ public class StartCinematic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.Instance.skipCinematic())
+        if (!isLose)
         {
-            gameObject.SetActive(false);
-            return;
-        }
-        image.gameObject.SetActive(true);
-        StartCoroutine(showImage());
+            
+            if (GameManager.Instance.skipCinematic())
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+            image.gameObject.SetActive(true);
+            StartCoroutine(showImage());
         
+            GetComponentInChildren<Button>().onClick.AddListener(() =>
+            {
+                dialogueClick = true;
+            });
+        }
+    }
+
+    public IEnumerator showLose()
+    {
+        image.gameObject.SetActive(true);
         GetComponentInChildren<Button>().onClick.AddListener(() =>
         {
             dialogueClick = true;
         });
+        yield return StartCoroutine(showImage());
+        
     }
     
     IEnumerator showImage()
