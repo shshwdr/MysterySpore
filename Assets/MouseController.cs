@@ -63,7 +63,7 @@ public class MouseController : Singleton<MouseController>
                     {
                         closestDistance = distance;
                         closestPoint = point;
-                        width = spriteShapeController.spline.GetHeight(i);
+                        width = spriteShapeController.GetComponent<SequentialWidthChange>().originalHeights[i];
                         closestController = spriteShapeController;
                     }
                 }

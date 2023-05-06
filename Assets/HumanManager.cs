@@ -27,11 +27,16 @@ public class HumanManager : Singleton<HumanManager>
 
    IEnumerator lose()
    {
+       
        if (isWin || isLose)
        {
            yield break;
        }
-       isLose = true;
+
+       if (!GameManager.Instance.hasDragged)
+       {
+           yield break;
+       }
        yield return  StartCoroutine( DialogueManager.Instance.showLoseDialogue(GameManager.Instance.level == 0));
        if (GameManager.Instance.level == 0)
        {
@@ -39,6 +44,7 @@ public class HumanManager : Singleton<HumanManager>
        }
        else
        {
+           isLose = true;
            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.levelLose, transform.position);
            yield return StartCoroutine( loseCinematic.showLose());
            GameManager.Instance.restart();
