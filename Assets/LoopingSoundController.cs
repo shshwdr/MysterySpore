@@ -8,10 +8,11 @@ public class LoopingSoundController : MonoBehaviour
     public string parameterName;
 
     private EventInstance soundInstance;
-
+    private AudioSource audio;
     private void Start()
     {
-        soundInstance = RuntimeManager.CreateInstance(fmodEvent);
+        //soundInstance = RuntimeManager.CreateInstance(fmodEvent);
+        audio = GetComponent<AudioSource>();
     }
 
     // private void Update()
@@ -29,17 +30,19 @@ public class LoopingSoundController : MonoBehaviour
 
     public  void PlaySound()
     {
-        soundInstance.start();
+        //soundInstance.start();
+        audio.Play();
     }
 
-    public void UpdateParameterValue(float value)
-    {
-        soundInstance.setParameterByName(parameterName, value);
-    }
+    // public void UpdateParameterValue(float value)
+    // {
+    //     soundInstance.setParameterByName(parameterName, value);
+    // }
 
     public void StopSound()
     {
-        soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        soundInstance.release();
+        audio.Stop();
+        // soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        // soundInstance.release();
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class LoadLevel : MonoBehaviour
 {
     public PolygonCollider2D defaultBoundSahpe;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,11 +29,16 @@ public class LoadLevel : MonoBehaviour
                 GameObject.FindObjectOfType<CinemachineConfiner>().m_BoundingShape2D = defaultBoundSahpe;
             }
         }
+
+        if (GameManager.Instance.level == 0)
+        {
+            GameManager.Instance.hasDragged = false;
+            GameManager.Instance.hasKilled = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

@@ -70,6 +70,11 @@ public class Human : MonoBehaviour
                 return;
             }
 
+            if (DialogueManager.Instance.isInDialogue)
+            {
+                return;
+            }
+
             if (damageSoundTimer > damageSoundTime)
             {
                 damageSoundTimer = 0;

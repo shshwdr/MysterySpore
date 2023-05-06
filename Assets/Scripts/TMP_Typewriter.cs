@@ -57,7 +57,7 @@ namespace KoganeUnityLib
 		public void Play( string text, float speed, Action onComplete )
 		{
 			
-			GetComponent<LoopingSoundController>().PlaySound();
+			//GetComponent<LoopingSoundController>().PlaySound();
 			isFinished = false;
 			m_textUI.text = text;
 			m_onComplete = onComplete;
@@ -82,7 +82,7 @@ namespace KoganeUnityLib
 				.OnComplete( () =>
 				{
 					
-					GetComponent<LoopingSoundController>().StopSound();
+					//GetComponent<LoopingSoundController>().StopSound();
 					isFinished = true;
 					OnComplete();
 				})

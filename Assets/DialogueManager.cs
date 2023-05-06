@@ -29,7 +29,8 @@ public class DialogueInfo
 public class DialogueManager : Singleton<DialogueManager>
 {
     private bool isShowingPopup = false;
-    
+
+    public bool isInDialogue;
     
     public  Dictionary<string, List<List<DialogueInfo>>> DialogueDict =
         new Dictionary<string, List<List<DialogueInfo>>>();
@@ -275,12 +276,14 @@ public class DialogueManager : Singleton<DialogueManager>
         var intern = GameObject.Find("TheFirstIntern").transform;
         intern.DOMove(intern.Find("TargetPosition").transform.position,moveTime);
         intern.GetComponentInChildren<Animator>().SetTrigger("idle");
+        intern.GetComponent<RunAwayFromTarget>().enabled = true;
         yield return new WaitForSeconds(moveTime);
         isInAnim = false;
     }
     IEnumerator showDialogue(List<DialogueInfo> dialogueList, DialogueState state)
     {
         dialoguePanel.SetActive(true);
+        isInDialogue = true;
         // foreach (var b in selectionPanel.GetComponentsInChildren<Button>())
         // {
         //     b.gameObject.SetActive(false);
@@ -324,6 +327,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
 
         dialoguePanel.SetActive(false);
+        isInDialogue = false;
     }
 
 
