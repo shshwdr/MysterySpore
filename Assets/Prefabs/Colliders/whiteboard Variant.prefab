@@ -145,6 +145,10 @@ PrefabInstance:
       propertyPath: textKey
       value: Whiteboard
       objectReference: {fileID: 0}
+    - target: {fileID: 6122284450241127442, guid: dd902a2b70907754483821128d44d860, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 104
+      objectReference: {fileID: 0}
     - target: {fileID: 6734851159481006762, guid: dd902a2b70907754483821128d44d860, type: 3}
       propertyPath: m_Name
       value: whiteboard Variant
@@ -224,6 +228,10 @@ PrefabInstance:
     - target: {fileID: 7490209103291997174, guid: dd902a2b70907754483821128d44d860, type: 3}
       propertyPath: m_Intensity
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925641636802390551, guid: dd902a2b70907754483821128d44d860, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd902a2b70907754483821128d44d860, type: 3}
