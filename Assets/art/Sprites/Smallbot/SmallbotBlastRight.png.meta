@@ -1,7 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3ddac3b8614714bb3b0c3dc81065ab87
 TextureImporter:
   internalIDToNameTable: []
+=======
+guid: 7b45e5340681ce641943cec11ab088c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9156125188631823800
+    second: SmallbotBlastRight_0
+  - first:
+      213: -5185819098924590901
+    second: SmallbotBlastRight_1
+  - first:
+      213: -568252974328894800
+    second: SmallbotBlastRight_2
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,7 +128,74 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites: []
+=======
+    sprites:
+    - serializedVersion: 2
+      name: SmallbotBlastRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5086b0957111f70800000000000000
+      internalID: 9156125188631823800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallbotBlastRight_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8d92351054808b0800000000000000
+      internalID: -5185819098924590901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallbotBlastRight_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba219a3ee82d18f0800000000000000
+      internalID: -568252974328894800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
     outline: []
     physicsShape: []
     bones: []

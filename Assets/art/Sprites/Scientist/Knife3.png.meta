@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 3e471bc46c2554f95ab1c1bd56635729
+=======
+guid: 700c296514e921043b7ad4d0502f864a
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -41,12 +45,20 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spritePixelsToUnits: 25
+=======
+  spritePixelsToUnits: 12.5
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1

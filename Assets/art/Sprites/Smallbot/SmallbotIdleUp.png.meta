@@ -1,7 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f3dfcb98752774288a6ce529fd5394b6
 TextureImporter:
   internalIDToNameTable: []
+=======
+guid: c350a96e173164648a390c53449f63ab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4868870878059940965
+    second: SmallbotIdleUp_0
+  - first:
+      213: 5893093497686828434
+    second: SmallbotIdleUp_1
+  - first:
+      213: -5926578298993007951
+    second: SmallbotIdleUp_2
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,7 +128,74 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites: []
+=======
+    sprites:
+    - serializedVersion: 2
+      name: SmallbotIdleUp_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b933ef79bbb4e6cb0800000000000000
+      internalID: -4868870878059940965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallbotIdleUp_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295a9cd205978c150800000000000000
+      internalID: 5893093497686828434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmallbotIdleUp_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2abfaff6090cda0800000000000000
+      internalID: -5926578298993007951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+>>>>>>> 7359fd7f1e1529e419f9666ccf84614122527d8c
     outline: []
     physicsShape: []
     bones: []
