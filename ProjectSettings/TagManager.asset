@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Vine
   - Mouse
+  - Human
   layers:
   - Default
   - TransparentFX

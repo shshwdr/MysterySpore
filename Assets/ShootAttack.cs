@@ -11,8 +11,14 @@ public class ShootAttack : HumanAttack
     private Vector3 targetPosition;
     private LaserLine line;
     public Transform laserLineStart;
+    
     protected override void PerformAttack()
     {
+
+        if (!GetComponent<Robot>().isActivated || Time.time -  GetComponent<Robot>().activateTime<1)
+        {
+            return;
+        }
         float minDistance = float.MaxValue;
         int closestIndex = -1;
         SpriteShapeController closestController = null;
