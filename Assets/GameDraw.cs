@@ -168,7 +168,10 @@ public class GameDraw : MonoBehaviour
                 var spriteShapeController = gameObject.GetComponent<SpriteShapeController>();
                 var spline = spriteShapeController.spline;
                 var dir = (mp - lastPosition).normalized *growLength * MouseController.Instance.speed;
-            
+                if (dir.z != 0 ||lastPosition.z!=0 )
+                {
+                    Debug.LogError("clear z!");
+                }
                 Debug.Log("insertPoint "+lastPosition+dir);
                 spline.InsertPointAt(spline.GetPointCount(), lastPosition+dir);
                 var newPointIndex = spline.GetPointCount() - 1;
