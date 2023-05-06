@@ -62,7 +62,10 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (DialogueDict.ContainsKey(GameManager.Instance.level.ToString()))
         {
-            StartCoroutine( showDialogueGeneral(GameManager.Instance.level.ToString()));
+            if (GameManager.Instance.level != 0)
+            {
+                StartCoroutine( showDialogueGeneral(GameManager.Instance.level.ToString()));
+            }
         }
     }
 

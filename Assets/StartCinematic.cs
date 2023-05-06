@@ -21,14 +21,23 @@ public class StartCinematic : MonoBehaviour
                 gameObject.SetActive(false);
                 return;
             }
+            
             image.gameObject.SetActive(true);
-            StartCoroutine(showImage());
-        
             GetComponentInChildren<Button>().onClick.AddListener(() =>
             {
                 dialogueClick = true;
             });
+            
+            StartCoroutine(startone());
         }
+    }
+
+    public IEnumerator startone()
+    {
+        
+        yield return StartCoroutine(showImage());
+            
+        StartCoroutine( DialogueManager.Instance. showDialogueGeneral(GameManager.Instance.level.ToString()));
     }
 
     public IEnumerator showLose()
@@ -51,7 +60,7 @@ public class StartCinematic : MonoBehaviour
             yield return new WaitUntil(() => dialogueClick);
             dialogueClick = false;
         }
-        gameObject.SetActive(false);
+        image.gameObject.SetActive(false);
         //GameManager.Instance.skipCinematic = true;
     }
 
